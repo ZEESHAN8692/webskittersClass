@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Value Check with Input</title>
+    <style>
+      .hello {
+        margin: auto;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hello">
+      <h1>Check the Input Value</h1>
+
+      <label for="inputField">Enter a value: </label>
+      <input type="text" id="inputField" placeholder="Enter value" />
+      <button onclick="checkValue()">Check Value</button>
+
+      <p id="resultMessage"></p>
+    </div>
+    <script>
+      function checkValue() {
+        let inputValue = document.getElementById("inputField").value;
+        let resultMessage = document.getElementById("resultMessage");
+
+        if (inputValue === "0") {
+          resultMessage.innerHTML = "Value not found";
+        } else {
+          resultMessage.innerHTML = ` Value found  Value is :- ${inputValue}`;
+        }
+      }
+    </script>
+  </body>
+</html>
