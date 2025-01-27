@@ -50,22 +50,22 @@
 
 let number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-// let prime = number.filter((item) => {
-//   for (let i = 2; item > i; i++) {
-//     if (item % i === 0) {
-//       return false;
-//     }
-//     return true;
-//   }
-//   return item > 1;
-// });
-// console.log(prime);
-
 let prime = number.filter((item) => {
-  return item;
+  for (let i = 2; item > i; i++) {
+    if (item % i === 0) {
+      return false;
+    }
+    return true;
+  }
+  return item > 1;
 });
 console.log(prime);
 
-for (let i = 2; i < prime.length; i++) {
-  console.log(i);
-}
+// let prime = number.filter((item) => {
+//   return item;
+// });
+// console.log(prime);
+
+// for (let i = 2; i < prime.length; i++) {
+//   console.log(i);
+// }
