@@ -31,17 +31,17 @@
 // let {name,addres,hobby}=a
 // console.log(name);
 
-let a = [
-    {
-        name :'Zeeshan',
-        age:23
-    },
-    {
-        name:'khan',
-        age :42
-    }
-]
-let [b,c]=a
-console.log(c.name)
+// let a = [
+//     {
+//         name :'Zeeshan',
+//         age:23
+//     },
+//     {
+//         name:'khan',
+//         age :42
+//     }
+// ]
+// let [b,c]=a
+// console.log(c.age)
 
 
