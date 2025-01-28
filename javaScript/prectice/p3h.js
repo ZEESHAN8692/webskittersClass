@@ -49,11 +49,11 @@
 
     // concat 
 
-    let a = "Hello"
-    let b = "Zeeshan" 
-    let c = {...a,...b}
-      // let c = a.concat(b)
-    console.log(c);
+    // let a = "Hello"
+    // let b = "Zeeshan" 
+    // let c = {...a,...b}
+    //   // let c = a.concat(b)
+    // console.log(c);
 
 
 
