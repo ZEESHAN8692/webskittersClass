@@ -67,3 +67,29 @@
     
 // }
 
+// const a= [
+//     {
+//         id:1,
+//         name:"Zeeshan",
+//         age:25,
+
+//     },
+//     {
+//         id:2,
+//         name:"Zeesha Khan",
+//         age:23,
+
+//     },
+//     {
+//         id:3,
+//         name:"Zeeshan Raza",
+//         age:25,
+
+//     },
+// ]
+
+// for (const i of a ) {
+//     console.log(i.name);
+    
+// }
+
