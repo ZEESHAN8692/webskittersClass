@@ -37,29 +37,57 @@
 // })
 
 
-const PromiseFour= new Promise((resolve, reject)=>{
+// const PromiseFour= new Promise((resolve, reject)=>{
+//     setTimeout(()=>{
+//         let error = false
+//         if (!error) {
+//             resolve({name:"Zeeshan", age:23})
+            
+//         }else{
+//             reject({
+//                 error:"Something went wrong"
+//             })
+//         }
+
+//     },1000)
+// })
+
+// PromiseFour
+// .then((user)=>{
+//     console.log(user)
+//     return user.name
+// })
+// .then((username)=>{
+//     console.log(username)
+// })
+// .catch((Err)=>{
+//     console.log(Err)
+// })
+// .finally(()=>{
+//     console.log("Promise resolved and rejected")
+// })
+
+
+const PromiseFive= new Promise((resolve, reject)=>{
     setTimeout(()=>{
-        let error = false
+        let error = true
         if (!error) {
-            resolve({name:"Zeeshan", age:23})
+            resolve({name:'Zahid', age:30})
             
         }else{
-            reject({
-                error:"Something went wrong"
-            })
+            reject({error:"Somthin went wrong "})
         }
 
     },1000)
 })
 
-PromiseFour
-.then((user)=>{
-    console.log(user)
-    return user.name
-})
-.then((username)=>{
-    console.log(username)
-})
-.catch((Err)=>{
-    console.log(Err)
-})
+async function consumedPromis() {
+   try {
+     const response = await PromiseFive
+    console.log(response)
+   } catch (error) {
+    console.log(error)
+   }
+    
+}
+consumedPromis()
