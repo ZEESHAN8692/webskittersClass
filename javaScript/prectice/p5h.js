@@ -68,26 +68,68 @@
 // })
 
 
-const PromiseFive= new Promise((resolve, reject)=>{
-    setTimeout(()=>{
-        let error = true
-        if (!error) {
-            resolve({name:'Zahid', age:30})
+// const PromiseFive= new Promise((resolve, reject)=>{
+//     setTimeout(()=>{
+//         let error = false
+//         if (!error) {
+//             resolve({name:'Zahid', age:30})
             
-        }else{
-            reject({error:"Somthin went wrong "})
-        }
+//         }else{
+//             reject({error:"Somthin went wrong "})
+//         }
 
-    },1000)
+//     },1000)
+// })
+
+// async function consumedPromis() {
+//    try {
+//      const response = await PromiseFive
+//     console.log(response)
+//    } catch (error) {
+//     console.log(error)
+//    }
+    
+// }
+// consumedPromis()
+
+// ============================================
+
+// async function API() {
+//    try {
+//     const response = await fetch('https://dummyjson.com/products/3')
+//     const data = await response.json()
+//     console.log(data)
+    
+//    } catch (error) {
+//     console.log(error)
+//    }
+// }
+// API()
+
+const PromiseSix= new Promise((resolve , reject)=>{
+    setTimeout(()=>{
+        fetch('https://dummyjson.com/products/1')
+        .then((response)=>{
+            return response.json()
+        })
+        .then((data)=>{
+            resolve(data)
+        })
+        .catch((error)=>{
+            reject(error)
+        })
+    })
+
+}).then((ProductData)=>{
+    console.log(ProductData)
+})
+.catch((error)=>{
+    console.log(error)
 })
 
-async function consumedPromis() {
-   try {
-     const response = await PromiseFive
-    console.log(response)
-   } catch (error) {
-    console.log(error)
-   }
-    
-}
-consumedPromis()
+
+// const response = await fetch('https://dummyjson.com/products/1')
+// .then((respon)=>{
+//     return respon.json()})
+// .then((data)=>{console.log(data)})
+// .catch((error)=>console.log(error))
