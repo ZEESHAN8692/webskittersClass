@@ -27,7 +27,7 @@
 
 // const PromiseThree= new Promise((resolve, reject)=>{
 //     setTimeout(()=>{
-//         resolve({name:"Zeeshan", age:23, gender:'Male'})
+//         resolve([{name:"Zeeshan", age:23, gender:'Male'},{name:"Zeeshan", age:23, gender:'Male'}])
 //     },1000)
 
 // })
@@ -98,7 +98,11 @@
 //    try {
 //     const response = await fetch('https://dummyjson.com/products/3')
 //     const data = await response.json()
-//     console.log(data)
+//     // console.log(data)
+//     for (const i of data) {
+//         console.log(i)
+        
+//     }
     
 //    } catch (error) {
 //     console.log(error)
@@ -106,26 +110,26 @@
 // }
 // API()
 
-const PromiseSix= new Promise((resolve , reject)=>{
-    setTimeout(()=>{
-        fetch('https://dummyjson.com/products/1')
-        .then((response)=>{
-            return response.json()
-        })
-        .then((data)=>{
-            resolve(data)
-        })
-        .catch((error)=>{
-            reject(error)
-        })
-    })
+// const PromiseSix= new Promise((resolve , reject)=>{
+//     setTimeout(()=>{
+//         fetch('https://dummyjson.com/products/1')
+//         .then((response)=>{
+//             return response.json()
+//         })
+//         .then((data)=>{
+//             resolve(data)
+//         })
+//         .catch((error)=>{
+//             reject(error)
+//         })
+//     })
 
-}).then((ProductData)=>{
-    console.log(ProductData)
-})
-.catch((error)=>{
-    console.log(error)
-})
+// }).then((ProductData)=>{
+//     console.log(ProductData)
+// })
+// .catch((error)=>{
+//     console.log(error)
+// })
 
 
 // const response = await fetch('https://dummyjson.com/products/1')
@@ -133,3 +137,21 @@ const PromiseSix= new Promise((resolve , reject)=>{
 //     return respon.json()})
 // .then((data)=>{console.log(data)})
 // .catch((error)=>console.log(error))
+
+
+
+const UserData = async ()=>{
+    try{
+        const response = await fetch('https://jsonplaceholder.typicode.com/users')
+        const result = await response.json()
+        // console.log(result)
+        for (const i in result) {
+           console.log(`${result[i].name}  --- ${result[i].email} `)
+        }
+
+    }catch(error){
+        console.log(error)
+
+    }
+}
+UserData()
