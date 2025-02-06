@@ -1,21 +1,28 @@
 // 1)You are tasked with fetching data from a public API asynchronously. Write a function that fetches user data and logs the result or an error.
 
 
+
 // 2)You need to simulate two asynchronous tasks, one that resolves after 1 second and another that resolves after 2 seconds. Log the result when both tasks complete.
 
-// const tast1 = new Promise((resolve, reject)=>{
-//     setTimeout(()=>{
-//         resolve()
-//     },1000)
-// })
-// tast1.then(()=>{console.log("This tast print in 1 Second")})
+const tast1 = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        resolve("User 1 is Avl")
+    },1000)
+})
 
-// const tast2 = new Promise((resolve, reject)=>{
-//     setTimeout(()=>{
-//         resolve()
-//     },2000)
-// })
-// tast2.then(()=>{console.log("This tast print in 2 Second")})
+
+const tast2 = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        resolve("User 2 is Avl")
+    },2000)
+})
+Promise.all([tast1,tast2])
+.then((user)=>{
+    console.log(user)
+}).catch((err)=>{
+    console.log(err)
+})
+
 
 
 

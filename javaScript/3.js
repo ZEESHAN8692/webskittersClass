@@ -15,12 +15,12 @@
 // console.log(f)
 
 
-// let a=[1,2,3,4,5,6,7,8,9,10]
+let a=[1,2,3,4,5,6,7,8,9,10]
 
-// let b= a.splice(3,0,8)
+let b= a.splice(3,0,8)
 // for delete 
-// let c= a.splice(1,3,'Z')
-// console.log(a)
+let c= a.splice(1,3,'Z')
+console.log(a)
 // ------------------------------------------------
 
 // slice function 
