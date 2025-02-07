@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Zeeshan Khan </h1>
+    <button id="start">Start </button>
+    <button id="stop">Stop </button>
+
+    <br><br>
+    <div id="insert">
+
+    </div>
+
+    <script>
+        let insert = document.querySelector('#insert')
+        window.addEventListener('keydown', (e)=>{
+            insert.innerHTML=`
+            <table>
+        <tr>
+            <th>Key</th>
+            <th>Key Code</th>
+            <th>Code</th>
+        </tr>
+        <tr>
+            <td>
+                ${e.key===" " ? "Space":e.key}
+            </td>
+            <td>
+                ${e.keyCode}
+            </td>
+            <td>
+                ${e.code}
+            </td>
+
+        </tr>
+    </table>
+            `
+        
+            
+        })
+
+
+        // =====================================
+        
+        // let startChange;
+        // const rendomColor=()=>{
+        //     const hex = "0123456789ABCDEF"
+        //     let color = "#"
+        //     for(let i= 0; i<6; i++){
+        //         color += hex[Math.floor(Math.random()*16)]
+
+        //     }
+        //     return color
+
+        // }
+        // const startColorChange=()=>{
+        //     if(!startChange){
+        //         startChange =  setInterval(()=>{
+        //     document.body.style.backgroundColor = rendomColor()
+
+        //     },1000)
+        //     }
+
+        // }
+        // const stopColorChange=()=>{
+        //     clearInterval(startChange)
+        //     startChange= null
+        //     console.log("stoped")
+
+        // }
+        
+        // document.querySelector('#start').addEventListener('click', startColorChange)
+        // document.querySelector('#stop').addEventListener('click', stopColorChange)
+
+
+
+
+        //==========================================
+        // function Hello(){
+        //     let Print;
+        // const stoptPrint=()=>{
+        //     clearInterval(Print)
+        //     console.log("stopped")
+        // }
+
+        // const starttPrint=()=>{
+        //     const PrintName = () => {
+        //     console.log("Zeeshan Khan", Date.now())
+            
+        //     }
+        //      Print = setInterval(PrintName, 2000)
+
+        // }
+
+        // document.querySelector("#stop").addEventListener('click', stoptPrint)
+        // document.querySelector("#start").addEventListener('click', starttPrint)
+        // }
+        // Hello()
+       
+
+
+
+        //============================================
+        // setTimeout(()=>{
+        //     console.log("Zeeshan Khan ")
+        // },3000)
+        // function changeName(){
+        // document.querySelector('h1').innerHTML="Hello Zeeshan Khan "
+
+        // }
+        // const Changeme = setTimeout(changeName,4000)
+
+        // document.querySelector('#stop').addEventListener('click', function(){
+        //     clearTimeout(Changeme)
+        //     console.log("Stoped")
+        // })
+
+        // setTimeout(()=>{
+        // document.querySelector('h1').innerHTML="Hello Zeeshan Khan "
+        // },3000)
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

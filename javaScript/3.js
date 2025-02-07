@@ -15,12 +15,12 @@
 // console.log(f)
 
 
-let a=[1,2,3,4,5,6,7,8,9,10]
+// let a=[1,2,3,4,5,6,7,8,9,10]
 
-let b= a.splice(3,0,8)
-// for delete 
-let c= a.splice(1,3,'Z')
-console.log(a)
+// let b= a.splice(3,0,8)
+// // for delete 
+// let c= a.splice(1,3,'Z')
+// console.log(a)
 // ------------------------------------------------
 
 // slice function 
@@ -47,6 +47,6 @@ console.log(a)
 // splice function 
 //   is function me kisi index ke beech kisi value ko add kar sakte  hai ya delete  karte sake hai 
 
-// let a =[1,2,3,4,5,6,7,8,9,10]
-// let b = a.splice(2,1,10)
-// console.log(a)
+let a =[1,2,3,4,5,6,7,8,9,10]
+let b = a.splice(2,1,10)
+console.log(a)

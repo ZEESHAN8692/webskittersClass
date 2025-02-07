@@ -18,16 +18,17 @@
 // }, {});
 // console.log(b);
 
-let a = ["apple", "apple", "cherry", "date", "banana"];
 
-function hello(acc, cur) {
-  if (!acc.includes(cur)) {
-    acc.push(cur);
-  }
-  return acc;
-}
-let b = a.reduce(hello, []);
-console.log(b);
+// let a = ["apple", "apple", "cherry", "date", "banana"];
+
+// function hello(acc, cur) {
+//   if (!acc.includes(cur)) {
+//     acc.push(cur);
+//   }
+//   return acc;
+// }
+// let b = a.reduce(hello, []);
+// console.log(b);
 
 // function remove(item) {
 //   const unic = [];
