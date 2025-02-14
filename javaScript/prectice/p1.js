@@ -1,12 +1,12 @@
-// array in 5 opject name address , a.leanght 5, reduce , loop
+// array in 5 opject name address , a.leanght lessthen 5, using reduce , using loop
 
-// let a = [
-//     { name: "Raj", address: "Kolkata" },
-//     { name: "SK", address: "Dehli" },
-//     { name: "Sita", address: "Bareilly" },
-//     { name: "Rahul", address: "cota" },
-//     { name: "Raju", address: "Rajasthan" },
-//   ];
+let a = [
+    { name: "Raj", address: "Kolkata" },
+    { name: "SK", address: "Dehli" },
+    { name: "Sita", address: "Bareilly" },
+    { name: "Rahul", address: "cota" },
+    { name: "Raju", address: "Rajasthan" },
+  ];
 
 // for (const i of a) {
 //   if (i.address.length < 5) {
@@ -21,6 +21,15 @@
 //     }
 //   }
 //   console.log(b);
+
+let b = a.reduce((acc, cur)=>{
+    if(cur.name.length <5){
+        acc.push(cur.name)
+    }
+    return acc
+
+},[])
+console.log(b)
 
 //--------------------------------------------
 
