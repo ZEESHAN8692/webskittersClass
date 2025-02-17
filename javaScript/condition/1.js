@@ -1,12 +1,10 @@
-
 // ternary Operator
 
 // let user = 1; // if 0 user logout if 1 user login
 
 // let userIs = user === 1 ? "User is Login ":"User NOT Login ";
 
-// console.log(userIs); 
-
+// console.log(userIs);
 
 // let user;
 // user = "Zeeshan khan "
@@ -17,14 +15,26 @@
 // switch satement
 
 // comparession : ===
-let user =2;
-switch(user){
-    case 1:
-        console.log("User is login");
-        break;
-    case 2:
-        console.log("User is logout");
-        break;
-    default:
-        console.log("Wrong input");
-}   
+// let user =2;
+// switch(user){
+//     case 1:
+//         console.log("User is login");
+//         break;
+//     case 2:
+//         console.log("User is logout");
+//         break;
+//     default:
+//         console.log("Wrong input");
+// }
+
+// let week = "sunday";
+// switch (week) {
+//   case "Monday":
+//     console.log(" Day is Monday");
+//     break;
+//   case "sunday":
+//     console.log("Day is Sunday");
+//     break;
+//   default:
+//     console.log("Wrong Case");
+// }

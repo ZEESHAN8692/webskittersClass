@@ -100,3 +100,71 @@
 // }).catch((error) => {
 //   console.log(error);
 // });
+
+// splice
+
+// a = [1, 2, 3, 4, 5, 6];
+
+// a.splice(1, 0, "Z");
+
+// a.splice(2, 1, "z");
+// console.log(a);
+
+// a.splice(2, 1);
+// console.log(a);
+// function sum() {
+//   console.log(arguments[0]);
+// }
+// sum(1, 2, 3);
+
+// const a = (function (a, b) {
+//   console.log(a + b);
+// })(10, 20);
+
+// console.log(
+//   (function (a, b) {
+//     return a + b;
+//   })(10, 20)
+// );
+
+// function Name(Hel) {
+//   Hel();
+// }
+// Name(NameTWo);
+
+// function NameTWo() {
+//   console.log("This is Call Back Function ");
+// }
+
+// function Hello(num) {
+//   return function ValueFun(value) {
+//     return num + value;
+//   };
+// }
+
+// const a = Hello(10);
+// const b = a(10);
+// console.log(b);
+
+// const firstFun = function (number) {
+//   return number * 2;
+// };
+
+// const secondFun = function (firstFun, value) {
+//   return firstFun(value);
+// };
+
+// const a = secondFun(firstFun, 10);
+// console.log(a);
+
+let total = 0;
+
+const Hello = function (value) {
+  total += value;
+  return total;
+};
+
+console.log(Hello(10));
+console.log(Hello(10));
+console.log(Hello(10));
+console.log(Hello(10));
