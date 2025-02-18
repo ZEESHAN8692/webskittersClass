@@ -13,6 +13,19 @@
 
 // Write a function to find the first non-repeating character in a string.
 
+// const Hello = (str) => {
+//   let b = str.split("");
+//   let c = b.reduce((acc, cur) => {
+//     acc[cur] = (acc[cur] || 0) + 1;
+//     return acc;
+//   }, {});
+
+//   let e = b.filter((item) => c[item] === 2);
+//   console.log(e[0]);
+// };
+
+// Hello("ZEESHAN");
+
 // JavaScript program to find the index of the first
 // non repeating character using nested loop
 
@@ -168,98 +181,3 @@
 // console.log(Hello(10));
 // console.log(Hello(10));
 // console.log(Hello(10));
-
-// let a = "I am a Good Good Boy";
-
-// let b = a.split(" ");
-// let c = b.reduce((acc, cur) => {
-//   acc[cur] = cur.length;
-//   return acc;
-// }, {});
-// console.log(c);
-
-// let count = 1;
-// let d = b.reduce((acc, cur) => {
-//   acc[cur]=(acc[cur]||0)+1
-//   return acc;
-// }, {});
-
-// console.log(d);
-
-// let arr = [1, 2, 3, 4, 5, 6];
-// let sum = 0;
-// arr.forEach((item) => {
-//   sum += item;
-// });
-// console.log(sum);
-
-// let sum2 = 0;
-// for (let i = 0; i < arr.length; i++) {
-//   sum2 += arr[i];
-// }
-
-// console.log(sum2);
-// let hello = 0;
-// let name1 = "I am Good Boy Boy";
-// let b = name1.split(" ");
-// let c = b.reduce((acc, cur) => {
-//   acc[cur] = (acc[cur] || 0) + 1;
-
-//   return acc;
-// }, {});
-
-// let filter=b.filter((item)=>c[item]===1)
-
-// console.log(filter.join(" "))
-
-///-------------------------------------------------------
-
-// let arrr = [
-//   {
-//     id: 1,
-//     name: "Zeeshan",
-//     Address: "Barilly",
-//   },
-//   {
-//     id: 2,
-//     name: "Suman",
-//     Address: "Barilly 2",
-//   },
-// ];
-
-// let arrr2 = arrr.map((item) => {
-//   if (item.id === 1) {
-//     return { ...item, name: "Rajeeb", age: 25, gender: "Male" };
-//   }
-//   return item;
-// });
-
-// console.log(arrr2);
-
-//---------------------------------------
-
-// async function fun1() {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       resolve(" ");
-//       console.log("first ");
-//     }, 2000);
-//   });
-// }
-
-// async function fun2() {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       resolve(" ");
-//       console.log("Second ");
-//     }, 2000);
-//   });
-// }
-
-// fun1().then((res) => {
-//   console.log(res);
-//   fun2().then((res) => {
-//     console.log(res);
-//   });
-// });
-
