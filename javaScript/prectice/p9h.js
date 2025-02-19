@@ -32,6 +32,7 @@
 //   sum2 += arr[i];
 // }
 // console.log(sum2);
+
 // Display Only Single Silgle Sting
 
 // let name1 = "I am Good Boy Boy Boy";
@@ -245,7 +246,7 @@
 
 //------------------------------------------------------------
 
-// add proper in one Object
+// add property in one Object
 
 // let a = {
 //   id: 1,
@@ -259,7 +260,8 @@
 //---------------------------------------------------------------------
 
 // take array use reduce for loop foreach for off for in find sum of all elements in array
-let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // Reduce
 
 // let b = array.reduce((acc, cur) => {
@@ -430,6 +432,8 @@ let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // 18)Implement a function that takes a variable number of string arguments and returns an array
 // containing only the strings with a length greater than a specified value using the rest
 
+const fun = () => {};
+fun();
 //-------------------------------------------------------------
 
 // 19)Edit in array of object  property without changing original array of object.
@@ -746,23 +750,230 @@ let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 // Object Transformation: Given an array of objects with properties name and age, use map to create an array with the names only.
 
+// let arr = [
+//   {
+//     id: 1,
+//     name: "Zeeshan",
+//     age: 23,
+//   },
+
+// ];
+
+// let b = arr.map((item) => {
+//   return item.name;
+// });
+// console.log(b);
+//----------------------------------------------------
+
 // filter:
 // Filter Even Numbers: Given an array of numbers, use filter to return an array of all even numbers.
 
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let b = arr.map((item) => {
+//   return item % 2 === 0 ? `Even Number ${item}` : `Odd Number = ${item}`;
+// });
+// console.log(b);
+//-------------------------------------------------------------
+
 // Words Longer than 4 Characters: Given an array of strings, use filter to return all words that have more than 4 characters.
+
+// let str = ["apple", "orange", "date", "Banana"];
+// let filter = str.filter((item) => {
+//   return item.length > 4;
+// });
+// console.log(filter);
+//---------------------------------------------------------------------
 
 // Filter Objects by Age: Given an array of objects with name and age, use filter to return all objects where the age is greater than 18.
 
+// let age = [
+//   {
+//     name: "zeeshan",
+//     age: 15,
+//   },
+//   {
+//     name: "zeeshan Raza",
+//     age: 25,
+//   },
+//   {
+//     name: "zeeshan khan",
+//     age: 22,
+//   },
+// ];
+
+// let b = age.filter((item) => {
+//   return item.age > 18;
+// });
+
+// console.log(b);
+
+//-------------------------------------------------------
+
 // Non-negative Numbers: Given an array of numbers, use filter to return only the non-negative numbers (i.e., numbers greater than or equal to 0).
+
+//----------------------------------------------
 
 // Filter Strings Containing ‘a’: Given an array of strings, use filter to return all strings that contain the letter 'a'.
 
+// let a = ["apple", "ball", "hell", "hut"];
+// let b = a.filter((item) => {
+//   return item.includes("a");
+// });
+// console.log(b);
+//------------------------------------------
+
 // Sum of All Elements: Given an array of numbers, use reduce to calculate the sum of all the elements.
+
+// let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let sum = 0;
+// let b = a.filter((item) => {
+//   return (sum += item);
+// });
+// console.log(sum);
+
+// let c = a.reduce((acc, cur) => {
+//   return acc + cur;
+// }, 0);
+// console.log(c);
+
+//----------------------------------
 
 // Product of All Elements: Given an array of numbers, use reduce to find the product of all the elements.
 
+// let arr = [1, 3, 4, 5];
+// let b = arr.reduce((acc, cur) => {
+//   return acc * cur;
+// }, 1);
+// console.log(b);
+//--------------------------------------------
+
 // Find Maximum Number: Given an array of numbers, use reduce to find the maximum number.
 
+// let arr = [32, 34, 6, 78, 9];
+// let b = arr.reduce((acc, cur) => {
+//   if (cur > acc) {
+//     acc = cur;
+//   }
+//   return acc;
+// }, 0);
+// console.log(b);
+//-------------------------------------------------
+
 // Concatenate Strings: Given an array of strings, use reduce to concatenate them into a single string.
+// let a = ["Hello", " zeeshan"];
+// let b = a.reduce((acc, cur) => {
+//   return acc.concat(cur);
+// });
+// console.log(b);
+//--------------------------------------------------
 
 // Count Occurrences: Given an array of strings, use reduce to count the number of times each word appears.
+
+// let a = ["apple", "apple", "zeeshan", "khan"];
+// let b = a.reduce((acc, cur) => {
+//   acc[cur] = (acc[cur] || 0) + 1;
+//   return acc;
+// }, {});
+// console.log(b);
+//-------------------------------------------------------
+
+// Display max leangth str
+
+// let a = ["apple", "zeeshan khan", "kjjcbdjkcbjkc"];
+// let b = [];
+// for (let i = 0; i < a.length; i++) {
+//   if (a[i].length > b.length) {
+//     b = a[i];
+//   }
+// }
+
+// console.log(b);
+
+//----------------------------------------------
+// calculate of aria of triangle
+
+// let base = 10;
+// let height = 20;
+// console.log(0.5 * base * height);
+
+//-----------------------------------
+// // display sinngle value in
+
+// let a = "I am a Boy Boy Boy";
+
+// let b = a.split(" ");
+// let c = b.reduce((acc, cur) => {
+//   acc[cur] = (acc[cur] || 0) + 1;
+//   return acc;
+// }, {});
+// let d = b.filter((item) => {
+//   return c[item] <= 1;
+// });
+// console.log(d.join(" "));
+//-----------------------------
+// 2- 5  Table
+
+// for (let i = 2; i <= 5; i++) {
+//   console.log(`Table ${i}`);
+//   for (let j = 1; j <= 10; j++) {
+//     console.log(`${i} x ${j} = ${i * j}`);
+//   }
+// }
+
+//-------------------------------------------------------
+// Given two arrays, find their common elements.
+
+// arr1 = [1, 2, 3, 4, 5, 6, 6, 2];
+// arr2 = [7, 8, 9, 1, 2, 4, 2];
+
+// let b = arr1.filter((item) => {
+//   return arr2.includes(item);
+// });
+// console.log(b);
+
+//------------------------------------------------------
+
+// Find common elements, but ensure the result has no duplicates
+// arr1 = [1, 2, 3, 4, 5, 5, 6, 2];
+// arr2 = [7, 8, 91, 2, 5, 5];
+
+// let c = arr1.filter((item) => {
+//   return arr2.includes(item);
+// });
+
+// console.log(new Set(c));
+
+// let c = [...new Set(arr1.filter((item) => arr2.includes(item)))];
+// console.log(c);
+
+//--------------------------------------------------
+
+// Question: Find elements that are unique to each array (not common).
+
+// let arr1 = [1, 2, 3, 4, 5];
+// let arr2 = [5, 6, 8, 4, 5];
+// let b = arr1.filter((item) => !arr2.includes(item));
+// let c = arr2.filter((item) => !arr1.includes(item));
+// let unique = [...b, ...c];
+// console.log(unique);
+
+//------------------------------------------------------
+// Question: Combine two arrays and remove duplicates.
+
+// let arr1 = [1, 2, 3, 4, 5];
+// let arr2 = [5, 6, 8, 4, 5];
+
+// let mainArr = [...arr1, ...arr2];
+// let rDuplicate = mainArr.reduce((acc, cur) => {
+//   if (!acc.includes(cur)) {
+//     acc.push(cur);
+//   }
+//   return acc;
+// }, []);
+// console.log(rDuplicate);
+
+// let rDup = new Set(mainArr);
+// console.log(rDup);
+
+//----------------------------------------------------------------
+
