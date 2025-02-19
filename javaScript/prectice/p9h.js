@@ -964,6 +964,7 @@ fun();
 // let arr2 = [5, 6, 8, 4, 5];
 
 // let mainArr = [...arr1, ...arr2];
+
 // let rDuplicate = mainArr.reduce((acc, cur) => {
 //   if (!acc.includes(cur)) {
 //     acc.push(cur);
@@ -971,9 +972,78 @@ fun();
 //   return acc;
 // }, []);
 // console.log(rDuplicate);
-
+// ++++++++++++++++
 // let rDup = new Set(mainArr);
+// console.log(rDup);
+// ++++++++++++++
+// let rDup = [...new Set([...arr1, ...arr2])];
 // console.log(rDup);
 
 //----------------------------------------------------------------
 
+// Question: Find common elements using Set for better performance
+
+// let arr1 = [2, 1, 4, 6, 3];
+// let arr2 = [1, 7, 8, 3, 2];
+// let set = new Set(arr1);
+// let b = arr2.filter((item) => set.has(item));
+// console.log(b);
+
+//---------------------------------------------
+
+// Question: Find elements in arr1 that are not in arr2.
+
+// let arr1 = [2, 1, 5, 3, 3,9];
+// let arr2 = [1, 7, 8, 3, 2];
+// let a = arr1.filter((item) => !arr2.includes(item));
+// console.log(a);
+
+// -------------------------------------------------------
+
+// Question: Find elements that are in either array but not in both.
+
+// let arr1 = [2, 1, 5, 3, 3, 9, 10];
+// let arr2 = [1, 7, 8, 3, 2, 10];
+
+// let a = arr1.filter((item) => !arr2.includes(item));
+// let b = arr2.filter((item) => !arr1.includes(item));
+
+// let f = [...a, ...b];
+// console.log(f);
+
+//-------------------------------------------------------------------
+
+// Question: Find common elements in three arrays.
+
+// let arr1 = [2, 1, 5, 3, 3, 9, 10];
+// let arr2 = [1, 7, 8, 3, 2, 10];
+// let arr3 = [1, 3, 5, 7, 11, 4, 57];
+
+// let a = arr1.filter((item) => arr2.includes(item) && arr3.includes(item));
+// console.log(a);
+
+//------------------------------------------------------
+
+// Question: Check if two arrays have no common elements
+
+// let arr1 = [1, 2, 3];
+// let arr2 = [4, 5, 6];
+
+// let c = arr1.filter((item) => !arr2.includes(item));
+// let d = arr2.filter((item) => !arr1.includes(item));
+
+// let b = arr1.every((item) => !arr2.includes(item));
+// console.log(b);
+
+//-----------------------------------------------------------
+
+// Question: Count the number of common elements between two arrays.
+
+// let arr1 = [1, 2, 3];
+// let arr2 = [4, 5, 6];
+
+// let a = arr1.filter((item) => !arr2.includes(item));
+// console.log(a.length);
+
+
+//------------------------------------------------
