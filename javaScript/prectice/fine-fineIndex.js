@@ -13,10 +13,10 @@ let obj = [
 //     console.log(item);
 //   });
 // }
-// let b = a.find((age) => {
-//   return age >= 18;
-// });
-// console.log(b);
+let b = a.find((age) => {
+  return age >= 18;
+});
+console.log(b);
 
 // findIndex
 

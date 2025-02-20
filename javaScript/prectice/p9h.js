@@ -148,7 +148,7 @@
 //     return acc;
 //   }, {});
 
-//   let e = b.filter((item) => c[item] === 2);
+//   let e = b.filter((item) => c[item] === 1);
 //   console.log(e[0]);
 // };
 
@@ -240,6 +240,7 @@
 //-------------------------------------------------------------------
 
 // ek array without push mathod , value add karna hai
+
 // let arr = [1, 2, 3, 4, 5, 6, 7];
 // let b = [...arr, 10];
 // console.log(b);
@@ -394,8 +395,13 @@
 //----------------------------------------------------
 
 // 14)Write a function that accepts any number of arguments and returns their sum using the rest parameter.
+
 // const Fun = (...rest) => {
-//   console.log(rest);
+//   let sum = 0;
+//   for (const i of rest) {
+//     sum += i;
+//   }
+//   console.log(sum);
 // };
 // Fun(1, 2, 3, 4);
 //-----------------------------------------------------------------------
@@ -432,8 +438,9 @@
 // 18)Implement a function that takes a variable number of string arguments and returns an array
 // containing only the strings with a length greater than a specified value using the rest
 
-const fun = () => {};
-fun();
+// const fun = () => {};
+// fun();
+
 //-------------------------------------------------------------
 
 // 19)Edit in array of object  property without changing original array of object.
@@ -526,6 +533,7 @@ fun();
 //---------------------------------------------
 
 // Write a JavaScript function that merges two arrays and removes all duplicate elements.
+
 // const Hello = () => {
 //   let arr1 = [1, 2, 3, 4, 5];
 //   let arr2 = [5, 6, 6, 7, 8, 8];
@@ -782,6 +790,7 @@ fun();
 //   return item.length > 4;
 // });
 // console.log(filter);
+
 //---------------------------------------------------------------------
 
 // Filter Objects by Age: Given an array of objects with name and age, use filter to return all objects where the age is greater than 18.
@@ -865,7 +874,7 @@ fun();
 //   return acc.concat(cur);
 // });
 // console.log(b);
-//--------------------------------------------------
+// --------------------------------------------------
 
 // Count Occurrences: Given an array of strings, use reduce to count the number of times each word appears.
 
@@ -906,6 +915,7 @@ fun();
 //   acc[cur] = (acc[cur] || 0) + 1;
 //   return acc;
 // }, {});
+
 // let d = b.filter((item) => {
 //   return c[item] <= 1;
 // });
@@ -934,6 +944,7 @@ fun();
 //------------------------------------------------------
 
 // Find common elements, but ensure the result has no duplicates
+
 // arr1 = [1, 2, 3, 4, 5, 5, 6, 2];
 // arr2 = [7, 8, 91, 2, 5, 5];
 
@@ -1039,11 +1050,10 @@ fun();
 
 // Question: Count the number of common elements between two arrays.
 
-// let arr1 = [1, 2, 3];
-// let arr2 = [4, 5, 6];
+// let arr1 = [1, 2, 3, 6, 5];
+// let arr2 = [4, 5, 6, 6, 5];
 
-// let a = arr1.filter((item) => !arr2.includes(item));
+// let a = arr1.filter((item) => arr2.includes(item));
 // console.log(a.length);
-
 
 //------------------------------------------------

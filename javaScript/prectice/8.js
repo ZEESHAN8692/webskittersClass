@@ -181,3 +181,15 @@
 // console.log(Hello(10));
 // console.log(Hello(10));
 // console.log(Hello(10));
+
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// for (const i of a) {
+//   console.log(i);
+//   if (i == 3) {
+//     break;
+//   }
+// }
+
+a.forEach((item) => {
+  console.log(item);
+});
