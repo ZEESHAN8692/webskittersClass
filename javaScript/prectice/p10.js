@@ -86,6 +86,14 @@
 // };
 // console.log(capitstr("hello my name is zeeshan"));
 
+// const Hello = (str) => {
+//   return str
+//     .map((item) => item.charAt(0).toUpperCase() + item.slice(1))
+//     .join(" ");
+// };
+// let string = "hello my name is zeeshan";
+// console.log(Hello(string.split(" ")));
+
 //---------------------------------------------
 
 // 7. How do you check if a string contains only numbers?
@@ -102,6 +110,19 @@
 //   }
 // });
 // console.log(num);
+
+// const Hello = (str) => {
+//   let b = str.split(" ");
+//   let c = [];
+//   b.forEach((item) => {
+//     let number = item.match(/\d+/);
+//     if (number) {
+//       c.push(number[0]);
+//     }
+//   });
+//   return c;
+// };
+// console.log(Hello("jkas32kjbb 543h6 346 ks8 suj "));
 
 // const extract = (str) => {
 //   let number = str.split(" ");
@@ -138,6 +159,7 @@
 // ### Objects
 
 // 11. How do you find the difference between two objects in JavaScript?
+
 // let obj1 = {
 //   name: "zeehan",
 //   age: 25,
@@ -145,10 +167,10 @@
 // let obj2 = {
 //   name: "zeehan",
 //   age: 25,
-//   gender: "Male",
 // };
-// let b = obj1.filter((item) => !obj2.includes(item));
-// console.log(b);
+
+// console.log(JSON.stringify(obj1));
+
 //--------------------------------------------------------
 
 // 12. How do you convert an object into an array of key-value pairs?
@@ -607,11 +629,15 @@
 
 // --------------------------------------------------------
 
-let aar = [1, 2, 3, 4, 5, 6];
-// aar[aar.length] = 10;
-// console.log(aar);
+// check string , konsa leter kitni baar aaya hai
+// let a = "hello my name is zeeshan khan";
+// let b = {};
+// for (const i of a) {
+//   if (b[i]) {
+//     b[i] += 1;
+//   } else {
+//     b[i] = 1;
+//   }
+// }
 
-function name1(...params) {
-  console.log(params);
-}
-name1([1,2,3,4], [1,2,3,4,5]);
+// console.log(b);
