@@ -2,7 +2,7 @@
 //1. length
 let a = "My Name is Zeeshan";
 let aa = "   My Name is Zeeshan  ";
-let b = a.length;
+// let b = a.length;
 let c = a.toUpperCase();
 let d = a.toLowerCase();
 let e = a.includes("is");
@@ -19,4 +19,4 @@ let o = a.charCodeAt(0); // ye keyboard ki key ka code deta hai
 let p = String.fromCharCode(70); // ye key code ka key deta hai
 let q = a.repeat(2); // ye jo string hoti hai repeat karta rahta hai jitni bolo
 let r = a.substring(0, 5); //  ye last index ko count nahi karta hai
-console.log(j);
+console.log(c);
