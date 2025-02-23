@@ -31,6 +31,7 @@
 //   );
 // });
 // console.log(fltr);
+
 //------------------------------------------------------------
 
 // 3. How do you check if two arrays are equal in JavaScript?
@@ -62,9 +63,26 @@
 // console.log(arr.includes(9)); // check karta hai ki value array ke ander hai ya nahi
 
 // console.log(arr.indexOf(3));    /// ye value ka index check karta hai
+//------------------------------------
 
 // 5. How do you convert an array of objects into a single object using `.reduce()`?
 
+// let arr = ["my", "name", "zeeshan"];
+// let b = arr.reduce((acc, cur) => {
+//   acc[cur] = cur;
+//   return acc;
+// }, {});
+// console.log(b);
+
+// let b = {};
+// for (let i = 0; i < arr.length; i++) {
+//   if (b[i]) {
+//     b += i;
+//   } else {
+//     b[i] = arr[i];
+//   }
+// }
+// console.log(b);
 //--------------------------------------------------------
 
 // 6. How do you capitalize the first letter of each word in a string?
@@ -183,6 +201,8 @@
 // let b = Object.entries(obj1);
 // console.log(b);
 
+//------------------------------------------
+
 // 13. How do you merge multiple objects dynamically?
 
 // let obj1 = { name: "John" };
@@ -243,6 +263,7 @@
 // }
 
 // testAwait();
+
 //-----------------------------------------------------------------
 
 // 17. How do you implement a delay in JavaScript using `Promise`?
@@ -391,6 +412,7 @@
 // const person = { name: "John", age: 30 };
 // const arr = [...Object.values(person)];
 // console.log(arr);
+
 //-------------------------------------------------------------
 
 // 25. How do you combine multiple objects with nested properties using the spread operator?
@@ -500,10 +522,10 @@
 // 33. What is the difference between `for…of` and `for…in` loops?
 
 // const person = {
-//     name: "John",
-//     age: 30,
-//     city: "New York"
-//   };
+//   name: "John",
+//   age: 30,
+//   city: "New York",
+// };
 
 //   for (let key in person) {
 //     console.log(key);  // Logs the keys: name, age, city

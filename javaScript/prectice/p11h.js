@@ -22,6 +22,7 @@
 // console.log(c);
 
 // callback
+
 function sum(c, b) {
   console.log(c + b);
 }
