@@ -179,6 +179,44 @@
 // }
 // console.log(b);
 
+//
 
+// sum of negative number
 
-///
+// let a = [1, 2, 3, -9, 10, -5, -6];
+// let b = a
+//   .filter((item) => item < 0)
+//   .reduce((acc, cur) => {
+//     return acc + cur;
+//   }, 0);
+
+// console.log(b);
+
+//------------------------------
+
+// let a = "abc#$%123";
+
+// let string = [];
+// let spacialChar = [];
+// let number = [];
+// for (const i of a) {
+//   if (i.match(/\d+/)) {
+//     number.push(i);
+//   } else if (i.match(/[a-zA-Z]/)) {
+//     string.push(i);
+//   } else spacialChar.push(i);
+// }
+// console.log(string);
+// console.log(spacialChar);
+// console.log(number);
+
+//------------------------
+
+// let a = "abc#$%123";
+// let spc = [];
+// for (const i of a) {
+//   if (i.match(/[^a-zA-Z0-9]/)) {
+//     spc.push(i);
+//   }
+// }
+// console.log(spc);
