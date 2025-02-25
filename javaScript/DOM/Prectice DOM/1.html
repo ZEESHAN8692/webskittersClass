@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 600px;
+        height: 400px;
+        border: 5px solid purple;
+        border-radius: 20px;
+        margin: auto;
+        padding: 10px;
+      }
+      #name,
+      #title,
+      #des {
+        text-align: center;
+      }
+      .btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="name"></h1>
+      <h3 id="title"></h3>
+      <p id="des"></p>
+    </div>
+    <div class="btn">
+      <button type="submit" onclick="showDetails()">Show Details</button>
+    </div>
+    <script>
+      function showDetails() {
+        document.getElementById("name").innerHTML = "Zeeshan Khan";
+        document.getElementById("title").innerHTML =
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. In, soluta.";
+        document.getElementById("des").innerHTML = `
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus molestiae est modi libero aspernatur? Rerum voluptatum consectetur eius eaque recusandae porro optio at facilis, et sunt ad reprehenderit nostrum beatae.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus molestiae est modi libero aspernatur? Rerum voluptatum consectetur eius eaque recusandae porro optio at facilis, et sunt ad reprehenderit nostrum beatae.
+        `;
+      }
+    </script>
+  </body>
+</html>
