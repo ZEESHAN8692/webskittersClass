@@ -9,5 +9,7 @@
 2. document.getElementsByClassName("")
 3. document.getElemensByTagName("")
 
+# Click Event
 
-
+1. onclick = Single click Event
+2. ondblclick = dubble Click Event
