@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h2 id="title"></h2>
+      <br />
+      <p id="des"></p>
+    </div>
+    <script>
+      async function API(params) {
+        try {
+          const respons = await fetch(
+            "https://jsonplaceholder.typicode.com/posts"
+          );
+          const result = await respons.json();
+          return result;
+        } catch (error) {
+          console.log(`Error :- ${error}`);
+        }
+      }
+
+      API().then((res) => {
+        for (const i of res) {
+          //   console.log(i);
+          let { title, body } = i;
+          //   console.log(title);
+          document.getElementById("title").innerHTML = title;
+          document.getElementById("des").innerHTML = body;
+        }
+      });
+    </script>
+  </body>
+</html>
