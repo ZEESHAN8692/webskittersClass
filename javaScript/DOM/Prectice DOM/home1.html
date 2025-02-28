@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="nameHeading" style="color: purple"></h1>
+    <button type="submit" onclick="toggleBtn()">Click Toggle Name</button>
+
+    <script>
+      let Toggle1 = false;
+      function toggleBtn() {
+        Toggle1 = !Toggle1;
+        document.getElementById("nameHeading").innerText = Toggle1
+          ? "Zeeshan"
+          : "Sneha";
+      }
+    </script>
+  </body>
+</html>

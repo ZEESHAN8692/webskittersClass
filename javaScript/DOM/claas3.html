@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #ulList li {
+        color: purple;
+        font-size: larger;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="Name" id="inputTag" />
+    <button onclick="EnterName()">Click!</button>
+    <br /><br />
+    <ul id="ulList"></ul>
+
+    <script>
+      function EnterName() {
+        const input = document.getElementById("inputTag").value;
+        let li = document.createElement("li");
+        li.appendChild(document.createTextNode(input));
+
+        document.getElementById("ulList").appendChild(li);
+      }
+    </script>
+  </body>
+</html>
