@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+      button {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+      }
+      #red {
+        background-color: red;
+      }
+      #yellow {
+        background-color: yellow;
+      }
+      #purple {
+        background-color: purple;
+      }
+      #blue {
+        background-color: blue;
+      }
+      #green {
+        background-color: green;
+      }
+      #grey {
+        background-color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <button id="red"></button>
+      <button id="yellow"></button>
+      <button id="purple"></button>
+      <button id="blue"></button>
+      <button id="green"></button>
+      <button id="grey"></button>
+    </div>
+    <script>
+      const body = document.querySelector("body");
+      const buttons = document.querySelectorAll("button");
+      buttons.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          if (e.target.id === "red") {
+            body.style.backgroundColor = e.target.id;
+          }
+          if (e.target.id === "yellow") {
+            body.style.backgroundColor = e.target.id;
+          }
+          if (e.target.id === "purple") {
+            body.style.backgroundColor = e.target.id;
+          }
+          if (e.target.id === "blue") {
+            body.style.backgroundColor = e.target.id;
+          }
+          if (e.target.id === "green") {
+            body.style.backgroundColor = e.target.id;
+          }
+          if (e.target.id === "grey") {
+            body.style.backgroundColor = e.target.id;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
