@@ -33,6 +33,9 @@
       #grey {
         background-color: grey;
       }
+      #white {
+        background-color: white;
+      }
     </style>
   </head>
   <body>
@@ -43,6 +46,7 @@
       <button id="blue"></button>
       <button id="green"></button>
       <button id="grey"></button>
+      <button id="white"></button>
     </div>
     <script>
       const body = document.querySelector("body");
@@ -65,6 +69,9 @@
             body.style.backgroundColor = e.target.id;
           }
           if (e.target.id === "grey") {
+            body.style.backgroundColor = e.target.id;
+          }
+          if (e.target.id === "white") {
             body.style.backgroundColor = e.target.id;
           }
         });
