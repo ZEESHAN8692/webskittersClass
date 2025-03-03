@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <div>
+      <ul id="image">
+        <li>
+          <img
+            src="https://cdn.download.ams.birds.cornell.edu/api/v1/asset/297388681/1200"
+            alt=""
+            width="200px"
+            id="owl"
+          />
+        </li>
+        <li>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnUttGrplQu0DKNPmSsefLSRRmt9QPG8HY8Q&s"
+            alt=""
+            width="200px"
+            id="lion"
+          />
+        </li>
+        <li><a href="https://www.google.com/" id="google">Google</a></li>
+      </ul>
+    </div>
+    <script>
+      // document.getElementById("owl").onclick = function () {
+      //   alert("owl clicked");
+      // };
+
+      //   document.getElementById("lion").addEventListener(
+      //     "click",
+      //     function (e) {
+      //       console.log(e);
+      //       // alert("lion clicked");
+      //     },
+      //     //eventPropagation
+      //     false
+      //   );
+
+      document.getElementById("image").addEventListener(
+        "click",
+        function (e) {
+          console.log("click inside ul");
+        },
+        false
+      );
+      document.getElementById("lion").addEventListener(
+        "click",
+        function (e) {
+          e.stopPropagation();
+          console.log("lion clicked");
+        },
+        false
+      );
+      document.getElementById("google").addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log("goole Clicked ");
+      });
+    </script>
+  </body>
+</html>

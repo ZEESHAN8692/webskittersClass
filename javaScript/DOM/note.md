@@ -38,3 +38,12 @@ same like class
 1. nextElementSibling - ye child ke next child ko select(print) karta hai
 
 1. childNodes
+
+# Events
+1. stopPropagation() -- ye bubling ko rokta hai 
+2. preventDefault() -- action ko band kar deta hai 
+
+
+1. type , timestamp , defaultPrevented , target , toElement , srcElement , currentTarget , clintX , clintY , screenX , screenY , 
+altKey , ctrKey , shiftKey , keyCode
+
