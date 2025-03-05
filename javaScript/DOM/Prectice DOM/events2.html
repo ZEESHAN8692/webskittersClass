@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events2</title>
+  </head>
+  <body>
+    <div>
+      <ul id="image">
+        <li>
+          <img
+            src="https://cdn.download.ams.birds.cornell.edu/api/v1/asset/297388681/1200"
+            alt=""
+            width="200px"
+            id="owl"
+          />
+        </li>
+        <li>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnUttGrplQu0DKNPmSsefLSRRmt9QPG8HY8Q&s"
+            alt=""
+            width="200px"
+            id="lion"
+          />
+        </li>
+        <li>
+          <img
+            src="https://img.freepik.com/premium-photo/colorful-parrots-bird-nature-background-red-blue-marcaw-branches_926199-3622677.jpg"
+            alt=""
+            width="200px"
+            id="parret"
+          />
+        </li>
+        <li><a href="https://www.google.com/" id="google">Google</a></li>
+      </ul>
+    </div>
+    <script>
+      document.querySelector("#image").addEventListener(
+        "click",
+        function (e) {
+          // console.log(e.target.tagName);
+          // console.log(e.target.parentNode);
+          if (e.target.tagName === "IMG") {
+            let clickImg = e.target.parentNode;
+            clickImg.remove();
+          }
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
