@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage</title>
+  </head>
+  <body>
+    <h1>Local Storage</h1>
+    <br />
+    <div id="main">
+      <label for="name"> Name </label>
+      <input type="text" placeholder="Type your Name" id="name" />
+      <br /><br />
+      <button id="save">Save</button>
+      <button id="clear">Clear</button>
+      <br /><br />
+      <p id="display"></p>
+    </div>
+    <script>
+      const inpurName = document.getElementById("name");
+      const saveBtn = document.getElementById("save");
+      const clearBtn = document.getElementById("clear");
+      const displayData = document.getElementById("display");
+
+      saveBtn.addEventListener("click", () => {
+        const name = inpurName.value;
+        if (name) {
+          localStorage.setItem("name", name);
+
+          displaybtn = document.createElement("button");
+          let txt = document.createTextNode("Display btn");
+          displaybtn.id = "btn";
+          displaybtn.appendChild(txt);
+          document.getElementById("main").appendChild(displaybtn);
+          document.getElementById("btn").addEventListener("click", () => {
+            let a = localStorage.getItem("name");
+            console.log(a);
+            displayData.textContent = a;
+          });
+          console.log(document.getElementById("btn").innerHTML);
+        } else {
+          alert("please enter your name ");
+        }
+      });
+
+      clearBtn.addEventListener("click", () => {
+        const name = inpurName.value;
+        if (name) {
+          let b = localStorage.removeItem("name");
+          displayData.innerHTML = "";
+          alert("item remove");
+        }
+      });
+    </script>
+  </body>
+</html>
