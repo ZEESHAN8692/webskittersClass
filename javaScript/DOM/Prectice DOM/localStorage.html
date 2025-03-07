@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main {
+        display: flex;
+        justify-content: center;
+      }
+      #form {
+        padding: 20px;
+        background-color: rgb(209, 167, 209);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div id="form">
+        <label for="name">Name</label>
+        <input type="text" id="name" />
+        <br /><br />
+        <label for="email">Name</label>
+        <input type="email" id="email" />
+        <br /><br />
+        <button type="submit" id="btn">Submit Data</button>
+      </div>
+    </div>
+    <br /><br />
+
+    <div>
+        <h2 id="h2"></h2>
+      </div>
+    <script>
+      document.getElementById("btn").addEventListener("click", (e) => {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+
+        localStorage.setItem("n1", name);
+        localStorage.setItem("e1", email);
+
+        document.getElementById(
+          "h2"
+        ).innerHTML = `Name = ${localStorage.getItem(
+          "n1"
+        )} and Email= ${localStorage.getItem("e1")}`;
+      });
+    </script>
+  </body>
+</html>
