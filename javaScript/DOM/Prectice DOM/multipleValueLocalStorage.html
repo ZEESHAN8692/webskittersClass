@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      #product {
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
+        width: 95%;
+        margin: auto;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body style="background-color: rgb(235, 220, 235)">
+    <h1 style="text-align: center">localStorage Data Display</h1>
+    <br />
+    <div id="product"></div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let product = [
+        {
+          id: 1,
+          productName: "Best Shirt for Girl.",
+          discription:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum veniam id velit deserunt pariatur animi.",
+          productImage:
+            "https://static.cilory.com/716291-thickbox_default/bishop-sleeves-pre-winter-tartan-checkered-flannel-shirt.jpg.webp",
+        },
+        {
+          id: 2,
+          productName: "Best Shirt for Girl.",
+          discription:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum veniam id velit deserunt pariatur animi.",
+          productImage:
+            "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/21498972/2023/1/31/37125642-3f79-4e48-a1fa-250000af68721675153480910StyleQuotientWomenSmartFormalShirt1.jpg",
+        },
+        {
+          id: 3,
+          productName: "Best Shirt for Girl.",
+          discription:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum veniam id velit deserunt pariatur animi.",
+          productImage:
+            "https://rukminim2.flixcart.com/image/750/900/xif0q/shirt/m/m/p/xxl-d7117mshirts-demirner-original-imag9ghrxxaffged-bb.jpeg?q=20&crop=false",
+        },
+        {
+          id: 4,
+          productName: "Best Shirt for Women",
+          discription:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum veniam id velit deserunt pariatur animi.",
+          productImage:
+            "https://www.amydus.com/cdn/shop/files/8_6c3cb4d5-d587-4da7-a0c8-62736fff6de6_1000x.jpg?v=1740031285",
+        },
+        {
+          id: 5,
+          productName: "Best Shir for Girl",
+          discription:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum veniam id velit deserunt pariatur animi.",
+          productImage:
+            "https://m.media-amazon.com/images/I/71Dn5UXWuJL._AC_UY1100_.jpg",
+        },
+        {
+          id: 6,
+          productName: "Best Shir for Girl",
+          discription:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum veniam id velit deserunt pariatur animi.",
+          productImage:
+            "https://www.jiomart.com/images/product/original/rv8uwxxdpx/buynewtrend-solid-white-rayon-half-sleeve-women-formal-shirt-product-images-rv8uwxxdpx-0-202303221123.jpg?im=Resize=(1000,1000)",
+        },
+        {
+          id: 7,
+          productName: "Best Shir for Girl",
+          discription:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum veniam id velit deserunt pariatur animi.",
+          productImage:
+            "https://rukminim2.flixcart.com/image/850/1000/xif0q/shirt/o/r/a/l-329tk256-selvia-original-imaghughgf3j2bya.jpeg?q=90&crop=false",
+        },
+        {
+          id: 8,
+          productName: "Best Shir for Girl",
+          discription:
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum veniam id velit deserunt pariatur animi.",
+          productImage:
+            "https://rukminim2.flixcart.com/image/850/1000/xif0q/shirt/q/j/f/xl-j7132rrups-jollity-original-imag9vy4v3zd6x5f.jpeg?q=90&crop=false",
+        },
+      ];
+
+      localStorage.setItem("productData", JSON.stringify(product));
+      let data = JSON.parse(localStorage.getItem("productData"));
+      let pDiv = document.getElementById("product");
+      data.map((item) => {
+        pDiv.innerHTML += `
+                  <div class="card " style="width: 18rem">
+            <img src="${item.productImage}" class="card-img-top" alt="..." height="330px"/>
+            <div class="card-body">
+              <h5 class="card-title">${item.productName}</h5>
+              <p class="card-text">
+                ${item.discription}
+              </p>
+              <a href="#" class="btn btn-warning">Add To Cart</a>
+            </div>
+          </div>
+
+            `;
+      });
+    </script>
+  </body>
+</html>
