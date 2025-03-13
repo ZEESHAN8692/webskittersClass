@@ -37,6 +37,9 @@ class Hello {
   printLoop() {
     for (const i of this.aarOfObject) {
       console.log(i);
+      for (const j in i) {
+        console.log(`Key = ${j} and Value =${i[j]}`);
+      }
     }
   }
 }
