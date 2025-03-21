@@ -64,13 +64,13 @@
 // }
 // console.log(a==="hello"?"Hello My Name is Zeeshan":"Not  Name ")
 //------loops------------
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "Hello"];
-for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
-}
-arr.forEach((item) => {
-    console.log(item);
-});
-for (const i of arr) {
-    console.log(i);
-}
+// let arr:(number|string)[]=[1,2,3,4,5,6,7,8,9,10,"Hello"]
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i])
+// }
+// arr.forEach((item)=>{
+//     console.log(item)
+// })
+// for (const i of arr) {
+//     console.log(i)
+// }
