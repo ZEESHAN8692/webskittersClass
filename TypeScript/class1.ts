@@ -1,7 +1,7 @@
-let a:(number | string)[]=[1,2,3,4,5,6,7,8,9,10,"Zeeshan"]
-console.log(a)
-a.splice(2,0,"Anis")
-console.log(a)
+// let a:(number | string)[]=[1,2,3,4,5,6,7,8,9,10,"Zeeshan"]
+// console.log(a)
+// a.splice(2,0,"Anis")
+// console.log(a)
 
 
 

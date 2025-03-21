@@ -68,9 +68,41 @@
 // for (let i = 0; i < arr.length; i++) {
 //     console.log(arr[i])
 // }
-// arr.forEach((item)=>{
+// arr.forEach((item:(number|string))=>{
 //     console.log(item)
 // })
 // for (const i of arr) {
 //     console.log(i)
 // }
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let b= arr.map((item:number|any)=>{
+//     return item*2
+// })
+// console.log(b)
+// let c:number = arr.reduce((acc:number|any,cur:number|any)=>{
+//     return acc+cur
+// },0)
+// console.log(c)
+// let d = arr.find((item:number|any)=>{
+//     return item >5
+// })
+// console.log(d)
+// Object 
+// interface objType{
+//     name:string,
+//     age:number
+//     login: boolean,
+// }
+// let obj:objType={
+//     name:"Zeeshan",
+//     age:25,
+//     login:true
+// }
+// console.log(obj)
+// let ArObj:objType[]=[
+//     {name:"Zeeshan",age:25,login:true},
+//     {name:"Zeeshan",age:25,login:true},
+//     {name:"Zeeshan",age:25,login:true},
+//     {name:"Zeeshan",age:25,login:true},
+// ]
+// console.log(ArObj)
