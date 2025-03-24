@@ -150,10 +150,22 @@
 //--------------------------------------------------------
 
 // 11.	Write a JavaScript function that accepts a number as a parameter and checks whether it is prime or not?
-// const Prime=(num)=>{
-//     if(num%3)
-// }
-// Prime(22)
+const Prime = (num) => {
+  if (num <= 1) {
+    return false;
+  }
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+if (Prime(2) === true) {
+  console.log(`${Prime(22)} Prime Number`);
+} else {
+  console.log(`${Prime(22)} Not Prime Number`);
+}
 
 //---------------------------------------------------------
 
@@ -424,27 +436,27 @@
 
 // 29.	 Write a JavaScript function to sort the following array of objects by title value.
 
-function sortByTitle(arr) {
-  return arr.sort((a, b) => {
-      if (a.title < b.title) {
-          return -1;
-      }
-      if (a.title > b.title) {
-          return 1;
-      }
-      return 0;  
-  });
-}
+// function sortByTitle(arr) {
+//   return arr.sort((a, b) => {
+//       if (a.title < b.title) {
+//           return -1;
+//       }
+//       if (a.title > b.title) {
+//           return 1;
+//       }
+//       return 0;
+//   });
+// }
 
-let books = [
-  { id: 1, title: "The Great Gatsby", author: "F. Scott Fitzgerald" },
-  { id: 2, title: "Moby Dick", author: "Herman Melville" },
-  { id: 3, title: "1984", author: "George Orwell" },
-  { id: 4, title: "To Kill a Mockingbird", author: "Harper Lee" }
-];
+// let books = [
+//   { id: 1, title: "The Great Gatsby", author: "F. Scott Fitzgerald" },
+//   { id: 2, title: "Moby Dick", author: "Herman Melville" },
+//   { id: 3, title: "1984", author: "George Orwell" },
+//   { id: 4, title: "To Kill a Mockingbird", author: "Harper Lee" }
+// ];
 
-let sortedBooks = sortByTitle(books);
-console.log(sortedBooks);
+// let sortedBooks = sortByTitle(books);
+// console.log(sortedBooks);
 //--------------------------------------------------------------
 
 // 30.	Write a JavaScript function that merges two arrays and removes all duplicate elements.
@@ -453,12 +465,121 @@ console.log(sortedBooks);
 // var array2 = [2, 30, 1];
 // console.log(merge_array(array1, array2));
 // [3, 2, 30, 1]
-// 32.	53. Write a JavaScript program to reverse the order of characters in the string.
+
+// const array = (array1, array2) => {
+//   let newArr = [...array1, ...array2];
+
+//   let b = newArr.reduce((acc, cur) => {
+//     if (!acc.includes(cur)) {
+//       acc.push(cur);
+//     }
+//     return acc;
+//   }, []);
+//   return b;
+// };
+// let array1 = [1, 2, 3];
+// let array2 = [2, 30, 1];
+// console.log(array(array1, array2));
+
+//-----------------------------------------------------------
+
+// 32.	Write a JavaScript program to reverse the order of characters in the string.
+// const hello7 = (str) => {
+//   let b = str.split("").reverse().join("");
+//   // console.log(b);
+//   return b;
+// };
+// let a = hello7("Hello Zeeshan");
+// console.log(a);
+
+//-----------------------------------------------------------------
+
 // 33.	Write a JavaScript program to redirect to a specified URL
+// question solved in html file --
+//--------------------------------------------------
+
 // 34.	Write a JavaScript program to convert an asynchronous function to return a promise.
+// const asynchronous = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("Promise Resolved");
+//     }, 2000);
+//   });
+// };
+// asynchronous().then((resolvePromise) => {
+//   console.log(resolvePromise);
+// });
+
+//--------------------------------------------------------
+
 // 35.	Write a JavaScript program that returns the singular or plural form of the word based on the input number.
+
+// const helo = (number, word) => {
+//   if (number === 1) {
+//     return `${number} ${word} - singular`;
+//   } else {
+//     return `${number} ${word} - plural`;
+//   }
+// };
+// console.log(helo(1, "apple"));
+
+//---------------------------------------------
+
 // 36.	 Write a JavaScript program to perform left-to-right function composition for asynchronous functions.
+
+//---------------------------------------------
+
 // 37.	 Write a JavaScript program to get the minimum value of an array, after mapping each element to a value using the provided function
+// const hello = (arr, func) => {
+//   let a = arr.map(func);
+//   return Math.min(...a);
+// };
+// const Square = (num) => num * num;
+// let arr = [4, 2, 3, 1, 5, 6];
+// let a = hello(arr, Square);
+// console.log(a);
+
+//-------------------------------------------------
 // 38.	 Write a JavaScript program to create an object from the specified object, where all keys are in lowercase
+// const hello = (obj) => {
+//   let newObj = {};
+//   for (const key in obj) {
+//     newObj[key.toLowerCase()] = obj[key];
+//   }
+//   console.log(newObj);
+// };
+// let obj = {
+//   NAME: "ZEESHAN",
+//   GENDER: "MALE",
+//   ADDRESS: "BAREILLY",
+// };
+// hello(obj);
+
+//-------------------------------------------------
+
 // 39.	Write a JavaScript program to check if the given argument is a string.
+// const hello = (value) => {
+//   if (typeof value === "string") {
+//     console.log(`${value} typeof is String`);
+//   } else {
+//     console.log(`${value} typeof is not String`);
+//   }
+// };
+// hello("zeeshan");
+
 // 40.	Write a JavaScript program to check if the provided integer is a prime number or is not
+
+// const hello = (num) => {
+//   if (num <= 1) {
+//     return false;
+//   }
+//   for (let i = 2; i < num; i++) {
+//     if (num % i === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+// console.log(hello(8));
+
+//---------------------------------------------------------------
