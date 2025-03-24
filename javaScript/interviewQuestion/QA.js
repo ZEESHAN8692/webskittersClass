@@ -354,6 +354,19 @@ if (Prime(2) === true) {
 //---------------------------------------------------------------------
 
 // 24.	Write a JavaScript program to find the leap years in a given range of years.
+
+// const leapYear = (startYear, endYear) => {
+//   let LeapYear = [];
+//   for (let i = startYear; i < endYear; i++) {
+//     if (i % 4 === 0 && i % 100 !== 0 && i % 400 !== 0) LeapYear.push(i);
+//   }
+//   return LeapYear;
+// };
+// let startYear = 2000;
+// let endYear = 2025;
+// let a = leapYear(startYear, endYear);
+
+// console.log(`Leap years between ${startYear} and ${endYear} :`, a);
 //-------------------------------------------------------------------------------
 
 // 25.	Write a JavaScript program to perform a binary search.
