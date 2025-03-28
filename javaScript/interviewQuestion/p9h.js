@@ -438,8 +438,12 @@
 // 18)Implement a function that takes a variable number of string arguments and returns an array
 // containing only the strings with a length greater than a specified value using the rest
 
-// const fun = () => {};
-// fun();
+const fun = (...arr) => {
+  let specifiedValue = 4;
+  let b = arr.filter((item) => item.length > specifiedValue);
+  console.log(b);
+};
+fun("apple", "banana", "date", "hel", "orange");
 
 //-------------------------------------------------------------
 
