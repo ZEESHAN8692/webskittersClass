@@ -1,11 +1,16 @@
-// export function hello() {
-//   console.log("Hello Zeeshan ");
-// }
+// Named exports
+export const add = (a, b) => {
+  return a + b;
+};
 
-const obj = {
+export const subtract = (a, b) => {
+  return a - b;
+};
+
+export default {
   name: "Zeeshan",
   age: 23,
   gender: "male",
 };
 
-export default obj;
+// export default obj;

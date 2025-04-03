@@ -59,6 +59,83 @@
 // console.log(aa);
 // console.log(bb);
 
-const a = Promise.reject("hello Promise Resolved");
+// const a = Promise.reject("hello Promise Resolved");
 
-a.then((res) => console.log(res)).catch((err) => console.log(err));
+// a.then((res) => console.log(res)).catch((err) => console.log(err));
+
+// class Car {
+//   constructor(make, model) {
+//     this.make = make;
+//     this.model = model;
+//   }
+
+//   display() {
+//     console.log(`Car Model:- ${this.model} and Card Make ${this.make}`);
+//   }
+// }
+// let shift = new Car("India", 2000);
+// shift.display();
+
+// class Vehicle {
+//     constructor(make) {
+//       this.make = make;
+//     }
+//   }
+//   class Car extends Vehicle {
+//     constructor(make, model) {
+//       super(make);  // Parent class ka constructor call karte hain
+//       this.model = model;
+//     }
+//   }
+
+// let newCar = new Car("India","Fartuner")
+
+// Call
+
+//------------------------------------------------------------------
+// Q What are call , apply and bind method in js ?
+
+// "Call", "Apply", aur "Bind" JavaScript mein functions ke saath kaam karne ke tareeke hain jo yeh control karte hain ki function ko kaise invoke kiya jaaye aur kis context mein woh execute ho.
+
+// function helo(massege) {
+//   console.log(`${massege} ${this.name}`);
+// }
+// const purson = { name: "zeeshan" };
+// helo.call(purson, "Hello");
+// helo.apply(purson, ["Ashfak"]);
+// let greetpurson = helo.bind(purson);
+// greetpurson("Anaiza");
+
+// let obj = {
+//   name: "zeeshan",
+//   age: 23,
+//   gender: "male",
+//   address: "Bareilly",
+// };
+// let obj1 = {
+//   name: "zeeshan",
+//   age: 23,
+//   gender: "male",
+//   address: "Uttar Pradesh",
+// };
+// let final = {
+//   ...obj,
+//   ...obj1,
+// };
+// (final.address = obj.address), obj1.address;
+// console.log(final);
+
+let arr = [
+  ["name", "John"],
+  ["age", 30],
+  ["city", "New York"],
+];
+let obj = {
+  name: "zeeshan",
+  age: 23,
+  gender: "Male",
+};
+// let b = arr.flat();
+// let b = Object.values(obj);
+let b = Object.keys(obj);
+console.log(b);

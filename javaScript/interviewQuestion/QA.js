@@ -596,3 +596,43 @@
 // console.log(hello(8));
 
 //---------------------------------------------------------------
+
+// Left-to-right function composition for async functions
+
+// Ek helper function jo asynchronous functions ko compose karega
+const composeAsync = (...fns) => {
+    return (initialValue) => {
+      return fns.reduce((promise, fn) => {
+        return promise.then(fn); // Har function ko promise ke roop mein chain karte hain
+      }, Promise.resolve(initialValue)); // Initial value ke saath promise start karte hain
+    };
+  };
+  
+  // Sample asynchronous functions
+  const add2 = async (x) => {
+    console.log(`Adding 2 to ${x}`);
+    return x + 2;
+  };
+  
+  const multiply3 = async (x) => {
+    console.log(`Multiplying ${x} by 3`);
+    return x * 3;
+  };
+  
+  const subtract1 = async (x) => {
+    console.log(`Subtracting 1 from ${x}`);
+    return x - 1;
+  };
+  
+
+
+
+  
+  // Compose functions left-to-right
+  const composedFunction = composeAsync(add2, multiply3, subtract1);
+  
+  // Initial value ke saath composed function ko call karein
+  composedFunction(5).then(result => {
+    console.log(`Final Result: ${result}`);  // Final result print hoga
+  });
+  

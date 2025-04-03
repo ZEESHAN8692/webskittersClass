@@ -1,3 +1,9 @@
+// import obj, { add, subtract } from "./im.js";
+// console.log(add(50, 50));
+// console.log(subtract(50, 30));
+
+// console.log(obj.name);
+
 // let a = 10
 // console.log(a+10);
 
@@ -147,3 +153,35 @@
 //   obj[v] = v;
 // }
 // console.log(obj);
+
+// let obj = {
+//   name: "deepika",
+//   age: 23,
+//   gender: "female",
+// };
+
+// // let key = Object.keys(obj);
+// // let value = Object.values(obj);
+
+// // console.log(key);
+// // console.log(value);
+
+// let arr = Object.entries(obj);
+// let arra = arr.flat();
+// console.log(arra);
+
+
+
+// class Car {
+//   constructor(model, make) {
+//     this.model = model;
+//     this.make = make;
+//   }
+
+//   displayInr() {
+//     console.log(`Model = ${this.model} and Make in ${this.make}`);
+//   }
+// }
+
+// let myCar = new Car("fartuner", "India");
+// myCar.displayInr();
