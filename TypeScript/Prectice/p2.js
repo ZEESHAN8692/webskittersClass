@@ -25,6 +25,6 @@
 //     return a*b
 // }
 // console.log(hello3(1,2,2))
-let union;
-union = "Hello World";
-console.log("HELLO", union);
+// let union: string|number
+//  union = "Hello World"
+// console.log("HELLO",union)
