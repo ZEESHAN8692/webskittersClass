@@ -125,17 +125,71 @@
 // (final.address = obj.address), obj1.address;
 // console.log(final);
 
-let arr = [
-  ["name", "John"],
-  ["age", 30],
-  ["city", "New York"],
-];
-let obj = {
-  name: "zeeshan",
-  age: 23,
-  gender: "Male",
-};
-// let b = arr.flat();
-// let b = Object.values(obj);
-let b = Object.keys(obj);
+// let arr = [
+//   ["name", "John"],
+//   ["age", 30],
+//   ["city", "New York"],
+// ];
+// let obj = {
+//   name: "zeeshan",
+//   age: 23,
+//   gender: "Male",
+// };
+// // let b = arr.flat();
+// // let b = Object.values(obj);
+// let b = Object.keys(obj);
+// console.log(b);
+
+// let obj = { id: 2, name: "Anees", address: "bareilly" };
+// let obj1 = { age: 25, address: "UP" };
+// let b = {
+//   ...obj,
+//   ...obj1,
+//   address: `${obj.address} ${obj1.address}`,
+// };
+// console.log(b);
+
+// let day = 7;
+// let dayname;
+
+// switch (day) {
+//   case 1:
+//     dayname = "Monday";
+//     break;
+//   case 2:
+//     dayname = "Tuesday";
+//     break;
+
+//   case 3:
+//     dayname = "Wednesday";
+//     break;
+//   case 4:
+//     dayname = "Thursday";
+//     break;
+//   case 5:
+//     dayname = "Fryday";
+//     break;
+//   case 6:
+//     dayname = "Seturday";
+//     break;
+//   case 7:
+//     dayname = "Sunday";
+//     break;
+//   default:
+//     dayname = "Invlid Value";
+// }
+
+// console.log(dayname);
+
+// let age = 20;
+// if (age >= 18) {
+//   console.log("age for Vote");
+// } else {
+//   console.log("age not for Vote");
+// }
+
+// console.log(age >= 18 ? "age for Vote" : "age not for Vote");
+
+let a = ["z", "a", "l", "i", "r"];
+let b = a.sort((a, b) => a.repeat(b));
 console.log(b);

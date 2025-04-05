@@ -170,8 +170,6 @@
 // let arra = arr.flat();
 // console.log(arra);
 
-
-
 // class Car {
 //   constructor(model, make) {
 //     this.model = model;
@@ -185,3 +183,26 @@
 
 // let myCar = new Car("fartuner", "India");
 // myCar.displayInr();
+
+// let obj = [
+//   {
+//     id: 1,
+//     name: "Zeeshn",
+//   },
+//   {
+//     id: 2,
+//     name: "Suman",
+//   },
+//   {
+//     id: 3,
+//     name: "Rajeeb",
+//   },
+// ];
+
+// let b = obj.map((item) => {
+//   if (item.id === 2) {
+//     return { ...item, name: "Anees" };
+//   }
+//   return item;
+// });
+// console.log(b);
