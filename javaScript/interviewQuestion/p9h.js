@@ -43,7 +43,7 @@
 //   return acc;
 // }, {});
 
-// let filter = b.filter((item) => c[item] === 1);
+// let filter = b.filter((item) => c[item] !== 1);
 
 // console.log(filter);
 
@@ -438,12 +438,12 @@
 // 18)Implement a function that takes a variable number of string arguments and returns an array
 // containing only the strings with a length greater than a specified value using the rest
 
-const fun = (...arr) => {
-  let specifiedValue = 4;
-  let b = arr.filter((item) => item.length > specifiedValue);
-  console.log(b);
-};
-fun("apple", "banana", "date", "hel", "orange");
+// const fun = (...arr) => {
+//   let specifiedValue = 4;
+//   let b = arr.filter((item) => item.length > specifiedValue);
+//   console.log(b);
+// };
+// fun("apple", "banana", "date", "hel", "orange");
 
 //-------------------------------------------------------------
 
@@ -498,14 +498,15 @@ fun("apple", "banana", "date", "hel", "orange");
 // Sample array : [NaN, 0, 15, false, -22, '',undefined, 47, null]
 // Expected result : [15, -22, 47]
 
-// let Sample = [NaN, 0, 15, false, -22, "", undefined, 47, null];
-// const hello = () => {
-//   let b = Sample.filter((item) => {
-//     return item != NaN && item != 0 && item !=false && item !=" " && item !=null && item;
-//   });
-//   console.log(b);
-// };
-// hello();
+let Sample = [NaN, 0, 15, false, -22, "", undefined, 47, null];
+const hello = () => {
+  let b = Sample.filter((item) => {
+    // return item != NaN && item != 0 && item !=false && item !=" " && item !=null && item;
+    return item;
+  });
+  console.log(b);
+};
+hello();
 
 //-------------------------------------------
 

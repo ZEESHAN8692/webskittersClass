@@ -94,14 +94,23 @@
 // console.log(counting.four)
 // console.log(counting.five)
 // string enum 
-var STATUS;
-(function (STATUS) {
-    STATUS["active"] = "ACTIVE";
-    STATUS["pending"] = "PENDING";
-    STATUS["inactive"] = "INACTIVE";
-})(STATUS || (STATUS = {}));
+// enum STATUS{
+//   active='ACTIVE',
+//   pending="PENDING",
+//   inactive ="INACTIVE"
+// }
 // console.log(STATUS.active)
-function printStatus(a) {
-    console.log(`The status = ${a}`);
-}
-printStatus(STATUS.active);
+// function printStatus(a:STATUS) {
+//   console.log(`The status = ${a}`)
+// }
+// printStatus(STATUS.active)
+// function hello<T>(a:T):T{
+//     return a
+// }
+// console.log(hello("zeeshan"))
+// console.log(hello(25))
+// console.log(hello([1,2,3,4]))
+// console.log(hello({name:"zeeshan"}))
+// console.log(hello(()=>{
+//     console.log("hello")
+// })())

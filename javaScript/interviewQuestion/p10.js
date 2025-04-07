@@ -67,6 +67,16 @@
 
 // 5. How do you convert an array of objects into a single object using `.reduce()`?
 
+// let arr = [
+//   { name: "zeeshan", age: 25 },
+//   { city: "Karachi", country: "Pakistan" },
+//   { job: "Developer" },
+// ];
+// let b = arr.reduce((acc, cur) => {
+//   return { ...acc, ...cur };
+// }, {});
+// console.log(b);
+
 // let arr = ["my", "name", "zeeshan"];
 // let b = arr.reduce((acc, cur) => {
 //   acc[cur] = cur;
@@ -218,7 +228,6 @@
 //-------------------------------------------------------
 
 // 14. How do you prevent modification of an object in JavaScript?
-
 // Object ki Modification ko rokne ke liye freeze ka use kar sakte hai
 
 // let obj = {
@@ -652,6 +661,7 @@
 // --------------------------------------------------------
 
 // check string , konsa leter kitni baar aaya hai
+
 // let a = "hello my name is zeeshan khan";
 // let b = {};
 // for (const i of a) {

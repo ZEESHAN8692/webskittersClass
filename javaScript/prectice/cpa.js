@@ -23,8 +23,7 @@
 //     })
 // })
 
-
-// Promise 
+// Promise
 
 // const promiseOne = ()=>{
 //     return new Promise((resolve , reject )=>{
@@ -40,7 +39,6 @@
 //     },4000)
 // }
 
-
 // console.log("Getting Data 1");
 // promiseOne().then((res)=>{
 //     console.log("Getting Data 2" );
@@ -50,75 +48,71 @@
 //     console.log(res)
 
 //     })
-    
+
 // })
 
 // promise Chain
 
+function getData(data) {
+    return new Promise((resolve , reject)=>{
+        setTimeout(() => {
+            console.log(`Geted Data is = ${data}`)
+            resolve("success")
+        }, 2000)
 
-// function getData(data) {
-//     return new Promise((resolve , reject)=>{
-//         setTimeout(() => {
-//             console.log(`Geted Data is = ${data}`)
-//             resolve("success")
-//         }, 2000)
+    })
 
-//     })
-   
-// }
-// console.log("Geting Data 1 ")
-// getData(1).then((res)=>{
-// console.log("Geting Data 2 ")
+}
+console.log("Geting Data 1 ")
+getData(1).then((res)=>{
+console.log("Geting Data 2 ")
 
-//     return getData(2)
-// }).then((res)=>{
-// console.log("Geting Data 3 ")
+    return getData(2)
+}).then((res)=>{
+console.log("Geting Data 3 ")
 
-//     return getData(3)
-// })
-// .then((res)=>{
-// console.log("Geting Data 4 ")
+    return getData(3)
+})
+.then((res)=>{
+console.log("Geting Data 4 ")
 
-//     return getData(4)
-// })
-// .then((res)=>{
+    return getData(4)
+})
+.then((res)=>{
 
-//     console.log(res)
-// })
+    console.log(res)
+})
 
 // Async Await
 
-// function api(getdata){
-//     return new Promise((resolve , reject )=>{
-//         setTimeout(()=>{
-//             console.log("Get Weather Data ",getdata)
-//             resolve("success")
-//         }, 1000)
-//     })
+// function api(getdata) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("Get Weather Data ", getdata);
+//       resolve("success");
+//     }, 1000);
+//   });
 // }
 
-// async function result(){
-//     console.log("getting data 1....")
-//     await api(10) 
-//     console.log("getting data 2....")
-//     await api(20)  
-//     console.log("getting data 3....")
-//     await api(30)  
-//     .then((res)=>console.log(res))
-
+// async function result() {
+//   console.log("getting data 1....");
+//   await api(10);
+//   console.log("getting data 2....");
+//   await api(20);
+//   console.log("getting data 3....");
+//   await api(30).then((res) => console.log(res));
 // }
-// result()
-
+// result();
 
 // IIFI  (Immediately Invoked Function Expression)
 
 // (async function (){
 //     console.log("getting data 1....")
-//     await api(10) 
+//     await api(10)
 //     console.log("getting data 2....")
-//     await api(20)  
+//     await api(20)
 //     console.log("getting data 3....")
-//     await api(30)  
+//     await api(30)
 //     .then((res)=>console.log(res))
 
 // })()
