@@ -1,13 +1,29 @@
 "use strict";
-var count;
-(function (count) {
-    count[count["one"] = 1] = "one";
-    count[count["two"] = 2] = "two";
-    count[count["three"] = 3] = "three";
-    count[count["four"] = 4] = "four";
-    count[count["five"] = 5] = "five";
-})(count || (count = {}));
-console.log(count.one);
-console.log(count.two);
-console.log(count.four);
-console.log(count.five);
+// function logger(constroctor:Function){
+//     console.log(`logger create of class : ${constroctor.name}`)
+// }
+// @logger
+// class peaple {
+//     constructor(public name:string){}
+// }
+// let p = new peaple("Zeeshan")
+// console.log(p)
+// function loger (constroctor:Function){
+//     console.log(`loger create  class : ${constroctor.name}`)
+// }
+// @loger
+// class names{
+//     constructor(name:string){console.log(name)}
+// }
+// let c = new names("Ayra")
+const API = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Successful resolve ");
+            // reject("Error : Somthing Wrong ")
+        });
+    });
+};
+API()
+    .then((data) => console.log(data));
+// .then((erorr)=>console.log(erorr))
