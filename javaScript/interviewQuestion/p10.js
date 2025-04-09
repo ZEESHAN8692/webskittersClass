@@ -242,12 +242,16 @@
 
 // 15. How do you remove a key from an object without mutating the original object?
 
-// let newObj = {
-//   name: "Zeeshan",
-//   age: 23,
-//   gender: "Male",
-// };
+let newObj = {
+  name: "Zeeshan",
+  age: 23,
+  gender: "Male",
+};
 
+// let obj = { ...newObj };
+// delete obj.age;
+// console.log(obj);
+// console.log(newObj);
 // console.log(newObj);
 // delete newObj.age;
 // console.log(newObj);
@@ -460,12 +464,14 @@
 // console.log(pure(10));
 
 // impure function
-
+// let total = 0;
 // const impure = (num) => {
-//   return (num += 10);
+//   return (total += num);
 // };
 // console.log(impure(10));
-//----------------------------------------------
+// console.log(impure(10));
+// console.log(impure(10));
+// ----------------------------------------------
 
 // 27. How does JavaScript handle function hoisting?
 

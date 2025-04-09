@@ -1,6 +1,6 @@
 // string Mathods
 //1. length
-// let a = "My Name is Zeeshan";
+let a = "My Name is Zeeshan";
 // let aa = "   My Name is Zeeshan  ";
 // // let b = a.length;
 // let c = a.toUpperCase();
@@ -19,18 +19,18 @@
 // let p = String.fromCharCode(70); // ye key code ka key deta hai
 // let q = a.repeat(2); // ye jo string hoti hai repeat karta rahta hai jitni bolo
 // let r = a.substring(0, 5); //  ye last index ko count nahi karta hai
-// console.log(c);
+// console.log(n);
 
 // callback
 
-function sum(c, b) {
-  console.log(c + b);
-}
-function sum2(c, b) {
-  console.log(c * b);
-}
-function calculate(a, b, sumcalback) {
-  sumcalback(a, b);
-}
+// function sum(c, b) {
+//   console.log(c + b);
+// }
+// function sum2(c, b) {
+//   console.log(c * b);
+// }
+// function calculate(a, b, sumcalback) {
+//   sumcalback(a, b);
+// }
 
-calculate(10, 20, sum2);
+// calculate(10, 20, sum2);

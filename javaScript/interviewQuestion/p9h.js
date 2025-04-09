@@ -149,7 +149,7 @@
 //   }, {});
 
 //   let e = b.filter((item) => c[item] === 1);
-//   console.log(e[0]);
+//   console.log(e);
 // };
 
 // Hello("ZEESHAN");
@@ -498,15 +498,15 @@
 // Sample array : [NaN, 0, 15, false, -22, '',undefined, 47, null]
 // Expected result : [15, -22, 47]
 
-let Sample = [NaN, 0, 15, false, -22, "", undefined, 47, null];
-const hello = () => {
-  let b = Sample.filter((item) => {
-    // return item != NaN && item != 0 && item !=false && item !=" " && item !=null && item;
-    return item;
-  });
-  console.log(b);
-};
-hello();
+// let Sample = [NaN, 0, 15, false, -22, "", undefined, 47, null];
+// const hello = () => {
+//   let b = Sample.filter((item) => {
+//     // return item != NaN && item != 0 && item !=false && item !=" " && item !=null && item;
+//     return item;
+//   });
+//   console.log(b);
+// };
+// hello();
 
 //-------------------------------------------
 
@@ -543,7 +543,7 @@ hello();
 //   let arr1 = [1, 2, 3, 4, 5];
 //   let arr2 = [5, 6, 6, 7, 8, 8];
 //   let MergeArr = [...arr1, ...arr2];
-//   // let final = new Set(MergeArr);
+//   // let final = [...new Set(MergeArr)]
 //   // console.log(final);
 
 //   let b = MergeArr.reduce((acc, cur) => {
@@ -709,7 +709,7 @@ hello();
 // Sum of Numbers: Using a loop, calculate the sum of all numbers from 1 to 200.
 
 // let sum = 0;
-// for (let i = 0; i <= 100; i++) {
+// for (let i = 1; i <= 200; i++) {
 //   sum += i;
 // }
 // console.log(sum);
@@ -825,6 +825,10 @@ hello();
 
 // Non-negative Numbers: Given an array of numbers, use filter to return only the non-negative numbers (i.e., numbers greater than or equal to 0).
 
+// let arr = [0, 12, 3, 4, -20, -30, 40];
+// let b = arr.filter((item) => item >= 0);
+// console.log(b);
+
 //----------------------------------------------
 
 // Filter Strings Containing ‘a’: Given an array of strings, use filter to return all strings that contain the letter 'a'.
@@ -857,7 +861,7 @@ hello();
 // let arr = [1, 3, 4, 5];
 // let b = arr.reduce((acc, cur) => {
 //   return acc * cur;
-// }, 1);
+// }, 0);
 // console.log(b);
 //--------------------------------------------
 
@@ -989,7 +993,7 @@ hello();
 // }, []);
 // console.log(rDuplicate);
 // ++++++++++++++++
-// let rDup = new Set(mainArr);
+// let rDup = [...new Set(mainArr)];
 // console.log(rDup);
 // ++++++++++++++
 // let rDup = [...new Set([...arr1, ...arr2])];

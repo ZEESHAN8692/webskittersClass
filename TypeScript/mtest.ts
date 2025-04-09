@@ -20,17 +20,32 @@
 // }
 // let c = new names("Ayra")
 
-const API=():Promise<string>=>{
-    return new Promise((resolve, reject)=>{
-setTimeout(()=>{
-    resolve("Successful resolve ")
+// const API=():Promise<string>=>{
+//     return new Promise((resolve, reject)=>{
+// setTimeout(()=>{
+//     resolve("Successful resolve ")
 
-    // reject("Error : Somthing Wrong ")
-})
+//     // reject("Error : Somthing Wrong ")
+// })
  
      
-    })
-}
-API()
-.then((data)=>console.log(data))
-// .then((erorr)=>console.log(erorr))
+//     })
+// }
+// API()
+// .then((data)=>console.log(data))
+// // .then((erorr)=>console.log(erorr))
+
+function MyDecorator(constructor: Function) {
+    console.log("Class Decorator called");
+    console.log(constructor);
+  }
+  
+  @MyDecorator
+  class MyClass {
+    constructor() {
+      console.log("MyClass instance created");
+    }
+  }
+  
+  const obj = new MyClass();
+  
