@@ -2,7 +2,7 @@ import React from "react";
 const Zeeshan = () => {
   return React.createElement(
     "div",
-    { class: "outer" },
+    { className: "outer" },
     React.createElement(
       "div",
       { id: "inner" },

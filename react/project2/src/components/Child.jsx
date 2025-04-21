@@ -1,11 +1,16 @@
 import React from "react";
 
 const Child = (props) => {
-  console.log(props.data);
   return (
-    <div>
-      <h1>Child Components and Data = {props.data} </h1>
-    </div>
+    <>
+      <div>
+        <h1 className="text-4xl text-center font-bold text-blue-700">
+          String Data
+        </h1>
+        <h2 className="text-center text-2xl">Data :- {props.data} </h2>
+        <p className="text-center">------------------------------</p>
+      </div>
+    </>
   );
 };
 
