@@ -7,8 +7,12 @@ const Aarray = (props) => {
         Aarry Data Data
       </h1>
       <ul>
-        {props.arrData.map((item) => {
-          return <li className="text-center text-2xl">{item}</li>;
+        {props.arrData.map((item, index) => {
+          return (
+            <li className="text-center text-2xl" key={index}>
+              {item}
+            </li>
+          );
         })}
       </ul>
       <p className="text-center">------------------------------</p>

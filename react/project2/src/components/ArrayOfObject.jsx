@@ -23,7 +23,7 @@ const ArrayOfObject = (props) => {
           <tbody>
             {props.arrOfObjData.map((item) => {
               return (
-                <tr>
+                <tr key={item.Id}>
                   <td className="border px-4 py-2">{item.Id}</td>
                   <td className="border px-4 py-2">{item.Name}</td>
                   <td className="border px-4 py-2">{item.Class}</td>
