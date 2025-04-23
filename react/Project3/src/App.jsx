@@ -1,9 +1,12 @@
 import "./App.css";
+import UseEffect from "./components/UseEffect";
 
 function App() {
   return (
     <>
-      <h1>Hello </h1>
+      <h1>Useeffect </h1>
+      <br />
+      <UseEffect />
     </>
   );
 }
