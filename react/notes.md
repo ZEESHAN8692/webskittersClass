@@ -5,6 +5,17 @@ npm create vite@latest my-react-app -- --template react
 
 # Install Bootstarp in react
 
-1. npm install bootstrap
-2. import 'bootstrap/dist/css/bootstrap.min.css';
-3. import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+# React Router
+
+1. Install React Rourt Dom -- npm install react-router-dom
+2. import {BrouserRouter} from ' react-router-dom '
+3. go to main.jsx > wrap ScrictMode
+
+```javascript
+<BrowserRouter>
+  <StrictMode>
+    <App />
+  </StrictMode>
+</BrowserRouter>
+```
+
