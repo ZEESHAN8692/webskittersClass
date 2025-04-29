@@ -8,6 +8,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 const Header = () => {
   const data1 = "Zeeshan Khan";
   const word = "Hello";
+  const DataId = "This is All Product Page";
   return (
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -27,8 +28,11 @@ const Header = () => {
               <Nav.Link as={Link} to="/contact">
                 Contact
               </Nav.Link>
-              <Nav.Link as={Link} to="/product">
+              <Nav.Link as={Link} to={`/product`}>
                 Product
+              </Nav.Link>
+              <Nav.Link as={Link} to="/galery">
+                Galery
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

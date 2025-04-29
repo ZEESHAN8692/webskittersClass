@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Product = () => {
+  const data = useParams();
+  console.log(data);
   return (
     <div>
       <h1>All Products </h1>

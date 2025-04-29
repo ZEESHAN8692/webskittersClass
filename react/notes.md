@@ -42,3 +42,34 @@ npm create vite@latest my-react-app -- --template react
 ```
 
 6. You can create Layout file and Header and Footer then use in Routing File
+
+## Hooks
+
+# useParams -- find the Url Value
+
+1. Store Value in Link
+
+```javascript
+  const data  = "Hello"
+  const data1  = "Zeeshan Khan"
+  <Link to={`/about/:${data}/${data2}`}>
+```
+
+2. go to Routing Page
+
+```javascript
+   <Route Path="/about/:data1/:data2" element={<About/>}>
+```
+
+3. go to About.jsx page
+
+```javascript
+import { useParams } from "react-router-dom";
+
+const { data1, data2 } = useParams();
+return (
+  <h1>
+    {data1} {data2}
+  </h1>
+);
+```
