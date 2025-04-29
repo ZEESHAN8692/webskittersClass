@@ -9,6 +9,7 @@ import Product from "../Pages/Product/Product";
 import ProductDetails from "../Pages/Product/Details/ProductDetails";
 import Galery from "../Pages/Galery/Galery";
 import Photoes from "../Pages/Galery/Photoes/Photoes";
+import UseState from "../Pages/UseState/UseState";
 const Routing = () => {
   return (
     <>
@@ -21,6 +22,7 @@ const Routing = () => {
         <Route path="/product/details" element={<ProductDetails />} />
         <Route path="/galery" element={<Galery />} />
         <Route path="/galery/photes/" element={<Photoes />} />
+        <Route path="/usestate" element={<UseState />} />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>

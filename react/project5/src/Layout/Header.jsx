@@ -34,6 +34,9 @@ const Header = () => {
               <Nav.Link as={Link} to="/galery">
                 Galery
               </Nav.Link>
+              <Nav.Link as={Link} to="/usestate">
+                useState
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
