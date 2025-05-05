@@ -11,6 +11,7 @@ import Galery from "../Pages/Galery/Galery";
 import Photoes from "../Pages/Galery/Photoes/Photoes";
 import UseState from "../Pages/UseState/UseState";
 import MyForm from "../Pages/MyForm/MyForm";
+import HForm from "../Pages/HForm/HForm";
 
 const Routing = () => {
   return (
@@ -26,6 +27,7 @@ const Routing = () => {
         <Route path="/galery/photes/" element={<Photoes />} />
         <Route path="/usestate" element={<UseState />} />
         <Route path="/myform" element={<MyForm />} />
+        <Route path="/hform" element={<HForm />} />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
