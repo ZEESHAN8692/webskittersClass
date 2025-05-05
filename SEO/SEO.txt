@@ -1,0 +1,108 @@
+<!-- ✅ SEO Tags -->
+  <title>Page Title Here</title>
+  <meta name="description" content="This is a short description of the page for search engines." />
+  <meta name="keywords" content="keyword1, keyword2, keyword3" />
+  <meta name="author" content="Your Name or Company" />
+  <link rel="canonical" href="https://www.example.com/page-url" />
+
+
+  <!-- ✅ Open Graph Tags (for Facebook, LinkedIn, etc.) -->
+  <meta property="og:title" content="Page Title Here" />
+  <meta property="og:description" content="This is the description used in social shares." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.example.com/page-url" />
+  <meta property="og:image" content="https://www.example.com/image.jpg" />
+  <meta property="og:site_name" content="Your Website Name" />
+
+  <!-- ✅ Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Page Title Here" />
+  <meta name="twitter:description" content="This is the description for Twitter card." />
+  <meta name="twitter:image" content="https://www.example.com/image.jpg" />
+  <meta name="twitter:site" content="@yourtwitterhandle" />
+  
+   <!-- ✅ Twitter Card Tags -->
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="rating" content="general" />
+  <meta name="distribution" content="global" />
+  
+  
+  
+  
+  -------------------------------------------------------------------
+  🔹 1. Your React Component (e.g., PortfolioSchema.js)
+  
+  
+  import React from 'react';
+
+const PortfolioSchema = () => {
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://rajeevkumarportfolio.vercel.app/#rajeevkumar",
+    "name": "Rajeev Kumar Saw",
+    "url": "https://rajeevkumarportfolio.vercel.app/",
+    "image": "https://rajeevkumarportfolio.vercel.app/assets/profile.jpg",
+    "jobTitle": "MERN Stack Developer & JavaScript Expert",
+    "description": "A skilled MERN Stack developer and JavaScript expert specializing in modern, scalable, and high-performance web applications.",
+    "sameAs": [
+      "https://github.com/rajeev00005",
+      "https://www.linkedin.com/in/rajeevkumarsaw",
+      "https://www.facebook.com/profile.php?id=100006843511349"
+    ],
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Webskitters Academy: Best IT Training Institute in Kolkata, India"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance",
+      "url": "https://rajeevkumarportfolio.vercel.app/"
+    },
+    "knowsAbout": [
+      "MERN Stack",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Web Development"
+    ]
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+    />
+  );
+};
+
+export default PortfolioSchema;
+
+
+-----------------------------------------------------
+
+2. Use it in your main page (e.g., App.js or Home.js)
+jsx
+Copy
+Edit
+import React from 'react';
+import PortfolioSchema from './PortfolioSchema';
+
+function App() {
+  return (
+    <div>
+      <PortfolioSchema />
+      {/* baaki aapka content */}
+    </div>
+  );
+}
+
+export default App;
+
+----------------------------
+check 
+
+https://search.google.com/test/rich-results

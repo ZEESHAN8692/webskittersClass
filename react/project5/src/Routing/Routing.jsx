@@ -10,6 +10,8 @@ import ProductDetails from "../Pages/Product/Details/ProductDetails";
 import Galery from "../Pages/Galery/Galery";
 import Photoes from "../Pages/Galery/Photoes/Photoes";
 import UseState from "../Pages/UseState/UseState";
+import MyForm from "../Pages/MyForm/MyForm";
+
 const Routing = () => {
   return (
     <>
@@ -23,6 +25,7 @@ const Routing = () => {
         <Route path="/galery" element={<Galery />} />
         <Route path="/galery/photes/" element={<Photoes />} />
         <Route path="/usestate" element={<UseState />} />
+        <Route path="/myform" element={<MyForm />} />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
