@@ -44,6 +44,9 @@ const Header = () => {
               <Nav.Link as={Link} to="/hform">
                 HW Form
               </Nav.Link>
+              <Nav.Link as={Link} to="/fullform">
+                Full Form
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

@@ -9,14 +9,44 @@ const HForm = () => {
     city: "",
     state: "",
     zipcode: "",
+    error: {
+      email: "",
+      password: "",
+    },
   });
+  const [img, setImg] = useState();
+  const [mulImg, setMulImg] = useState();
   const changeHandleValue = (e) => {
     const { name, value } = e.target;
-    setInputValue({ ...inputValue, [name]: value });
+    // console.log(e.target.name, e.target.value);
+    let err = { ...inputValue.error };
+    switch (name) {
+      case "email":
+        err.email = value.length < 3 ? "min length 3 char" : "";
+        break;
+      case "password":
+        err.password = value.length < 7 ? "min length 7 char" : "";
+        break;
+    }
+    setInputValue({ ...inputValue, [name]: value, error: err });
   };
+  // console.log(inputValue.error);
+
+  const imgHandle = (e) => {
+    // console.log(e.target.files[0]);
+    setImg(e.target.files[0]);
+  };
+
+  const multipleImgHandle = (e) => {
+    // console.log(e.target.files);
+    setMulImg(e.target.files);
+  };
+
   const submitHandle = (e) => {
     e.preventDefault();
-    console.log(inputValue);
+    console.log("Form Value : ", inputValue);
+    console.log("Single Image : ", img);
+    console.log("All Images : ", mulImg);
   };
   return (
     <>
@@ -34,6 +64,9 @@ const HForm = () => {
               placeholder="zeeshan@gmail.com"
               onChange={changeHandleValue}
             />
+            {inputValue.error.email.length > 0 ? (
+              <p>{inputValue.error.email}</p>
+            ) : null}
           </div>
           <div className="col-md-6">
             <label htmlFor="inputPassword4" className="form-label">
@@ -47,6 +80,9 @@ const HForm = () => {
               placeholder="Zeeshan@123"
               onChange={changeHandleValue}
             />
+            {inputValue.error.password.length > 0 ? (
+              <p>{inputValue.error.password}</p>
+            ) : null}
           </div>
           <div className="col-12">
             <label htmlFor="inputAddress" className="form-label">
@@ -74,6 +110,35 @@ const HForm = () => {
               onChange={changeHandleValue}
             />
           </div>
+          <div className="col-12">
+            <label htmlFor="inputFile" className="form-label">
+              Upload Image
+            </label>
+            <input
+              type="file"
+              className="form-control"
+              id="inputFile"
+              placeholder="Apartment, studio, or floor"
+              name="inputFile"
+              onChange={imgHandle}
+            />
+          </div>
+
+          <div className="col-12">
+            <label htmlFor="inputFile" className="form-label">
+              Upload Multiple Images
+            </label>
+            <input
+              type="file"
+              className="form-control"
+              id="inputFile"
+              placeholder="Apartment, studio, or floor"
+              name="inputFile"
+              onChange={multipleImgHandle}
+              multiple
+            />
+          </div>
+
           <div className="col-md-6">
             <label htmlFor="inputCity" className="form-label">
               City
