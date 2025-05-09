@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Swal from "sweetalert2";
 
 const FullForm = () => {
   const [inputVal, setInputVal] = useState({
@@ -76,8 +77,62 @@ const FullForm = () => {
       agree: agree === true ? "Terms Agree Selected" : "",
       student: checkStudent === true ? "Student" : "Not Student",
     };
+    const { fname, lname, username, city, state, zip, password, error } =
+      inputVal;
+    if (
+      !fname ||
+      !lname ||
+      !username ||
+      !city ||
+      !state ||
+      !zip ||
+      !password ||
+      !singleImg ||
+      !multipleImg ||
+      !agree
+    ) {
+      Swal.fire("Error", "Please fill all fields and agree to terms.", "error");
+      return;
+    }
+
+    if (
+      error.fname ||
+      error.lname ||
+      error.username ||
+      error.city ||
+      error.zip ||
+      error.password
+    ) {
+      Swal.fire("Error", "Please fix validation errors.", "error");
+      return;
+    }
 
     console.log(allData);
+
+    Swal.fire("Success", "Form submitted successfully!", "success");
+
+    setInputVal({
+      fname: "",
+      lname: "",
+      username: "",
+      city: "",
+      state: "",
+      zip: "",
+      password: "",
+      error: {
+        fname: "",
+        lname: "",
+        username: "",
+        city: "",
+        zip: "",
+        password: "",
+      },
+    });
+
+    setSingleImg(null);
+    setMultipleImg(null);
+    // setAgree(false);
+    setCheckStudent(false);
     // console.log(inputVal);
     // console.log(singleImg);
     // // console.log(multipleImg[0]);
