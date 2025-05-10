@@ -29,7 +29,7 @@
   
   
   
-  
+logo\programming.png
   -------------------------------------------------------------------
   🔹 1. Your React Component (e.g., PortfolioSchema.js)
   
@@ -106,3 +106,27 @@ export default App;
 check 
 
 https://search.google.com/test/rich-results
+
+
+zeeshan-khan-full-stack-dev-portfolio
+
+
+
+Email - ^([a-z0-9.-]+)@([a-z]{5,12}).([a-z.]{2,20})$
+Password - ^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{4,12}$
+
+
+[
+  {
+    "id": 1,
+    "title": "E-Commerce Website",
+    "description": "Full-stack e-commerce platform with advanced features and secure payment integration.",
+    "image": "ProjectImage/1.png",
+    "liveDemo": "https://example.com/demo1",
+    "sourceCode": "https://github.com/username/project1",
+    "technologies": ["React.js", "Node.js", "MongoDB", "Stripe Payment"]
+  }
+]
+
+
+https://flowbite-react.com/
