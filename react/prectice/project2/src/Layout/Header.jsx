@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  let data = "zeeshan khan";
+  let data1 = "Hello";
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -28,8 +30,18 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/about">
+                <Link className="nav-link" to={`/about/${data}/${data1}`}>
                   About
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={`/state`}>
+                  useState
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={`/form`}>
+                  My Form
                 </Link>
               </li>
             </ul>

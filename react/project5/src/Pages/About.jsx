@@ -7,7 +7,7 @@ const About = () => {
     <div>
       <h1>About Page</h1>
       <br />
-      <h1>
+    <h1>
         {data2} {data1}
       </h1>
     </div>

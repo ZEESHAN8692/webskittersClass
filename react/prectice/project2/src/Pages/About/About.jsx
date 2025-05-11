@@ -1,5 +1,6 @@
 import React from "react";
 import AboutChild from "../../Components/AboutChild";
+import { useParams } from "react-router-dom";
 
 const About = () => {
   let arrayOfObj = [
@@ -40,10 +41,14 @@ const About = () => {
       Photo: "https://loremfaces.net/96/id/3.jpg",
     },
   ];
+  const { data, data1 } = useParams();
   return (
     <>
       <h1 className="text-center">About Us</h1>
       <AboutChild arrayOfObj={arrayOfObj} />
+      <h1>
+        {data1} {data}
+      </h1>
     </>
   );
 };
