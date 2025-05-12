@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+import axios from "axios";
+import Base_Url from "../../Api/Base_url";
+import { UserEnd } from "../../Api/end_point";
 
 const FullForm = () => {
   const [inputVal, setInputVal] = useState({
@@ -24,6 +27,7 @@ const FullForm = () => {
   const [multipleImg, setMultipleImg] = useState();
   const [agree, setAgree] = useState(false);
   const [checkStudent, setCheckStudent] = useState(false);
+  const ApiUrl = Base_Url + UserEnd;
 
   const changeHandle = (e) => {
     let { name, value } = e.target;
@@ -87,8 +91,8 @@ const FullForm = () => {
       !state ||
       !zip ||
       !password ||
-      !singleImg ||
-      !multipleImg ||
+      // !singleImg ||
+      // !multipleImg ||
       !agree
     ) {
       Swal.fire("Error", "Please fill all fields and agree to terms.", "error");
@@ -107,9 +111,24 @@ const FullForm = () => {
       return;
     }
 
-    console.log(allData);
+    // console.log(allData);
+    const data = {
+      name: inputVal.fname,
+      lastname: inputVal.lname,
+      useState: inputVal.username,
+    };
+    axios
+      .post(ApiUrl, data)
+      .then((res) => {
+        alert("Form submitted successfully!");
+        console.log(res);
+      })
+      .catch((error) => {
+        alert("Form Not Submit ");
+        console.log(error);
+      });
 
-    Swal.fire("Success", "Form submitted successfully!", "success");
+    // Swal.fire("Success", "Form submitted successfully!", "success");
 
     setInputVal({
       fname: "",
