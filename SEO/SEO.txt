@@ -116,17 +116,16 @@ Email - ^([a-z0-9.-]+)@([a-z]{5,12}).([a-z.]{2,20})$
 Password - ^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{4,12}$
 
 
-[
-  {
-    "id": 1,
-    "title": "E-Commerce Website",
-    "description": "Full-stack e-commerce platform with advanced features and secure payment integration.",
-    "image": "ProjectImage/1.png",
-    "liveDemo": "https://example.com/demo1",
-    "sourceCode": "https://github.com/username/project1",
-    "technologies": ["React.js", "Node.js", "MongoDB", "Stripe Payment"]
-  }
-]
 
 
-https://flowbite-react.com/
+gemini Api key - AIzaSyAz0eTomOxfYLA8_FkJf6VgHMg3Axd0Yvc
+
+
+db.enqueryforms.inserOne({
+	name:"Zeeshan",
+	email:"zeeshan@gmail.com",
+	phone:9568046912,
+	subject:"This Test Subject",
+	message:"This is test message",
+	
+})
