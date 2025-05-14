@@ -1,5 +1,7 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <>
@@ -34,21 +36,6 @@ const Header = () => {
               <li className="nav-item">
                 <Link className="nav-link" to="/contact">
                   Contact
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/comp1">
-                  Comp1
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/user">
-                  User
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/products">
-                  Products
                 </Link>
               </li>
             </ul>

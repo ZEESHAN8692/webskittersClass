@@ -8,6 +8,8 @@ import Comp1 from "../Pages/Comp1";
 import Comp2 from "../Pages/Comp2";
 import User from "../Pages/User";
 import Details from "../Pages/Details";
+import Products from "../Pages/Products";
+import SingleProduct from "../Pages/SingleProduct";
 
 const Routing = () => {
   return (
@@ -19,6 +21,9 @@ const Routing = () => {
       <Route path="/comp2" element={<Comp2 />} />
       <Route path="/user" element={<User />} />
       <Route path="/details/:id" element={<Details />} />
+      <Route path="/products" element={<Products />} />
+      <Route path="/single-product/:id" element={<SingleProduct />} />
+
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

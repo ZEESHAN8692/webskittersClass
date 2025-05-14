@@ -35,7 +35,7 @@ const User = () => {
                   With supporting text below as a natural lead-in to additional
                   content.
                 </p> */}
-                <Link to={`/details/${data.id}`} class="btn btn-primary">
+                <Link to={`/details/${data.id}`} className="btn btn-primary">
                   Show More
                 </Link>
               </div>

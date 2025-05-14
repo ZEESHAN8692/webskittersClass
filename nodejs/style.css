@@ -4,16 +4,13 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url("https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/071b30f176475d929ec650fa/20885be397c42d4f1be4a18195db08842.png");
-  background-size: cover;
+  font-family: "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-.mainImg {
+
+.imageDiv {
   display: flex;
-  justify-content: space-between;
-}
-.sizeDiv {
-  background-color: rgb(170, 171, 173);
-  height: 250px;
-  width: 500px;
-  z-index: 1000;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  align-items: center;
 }
