@@ -18,7 +18,6 @@
 // }, {});
 // console.log(b);
 
-
 // let a = ["apple", "apple", "cherry", "date", "banana"];
 
 // function hello(acc, cur) {
@@ -62,3 +61,22 @@
 //   return acc;
 // }, []);
 // console.log(b);
+
+let arr = ["apple", "banana", "cherry", "cherry"];
+let b = arr.reduce((acc, cur) => {
+  acc[cur] = (acc[cur] || 0) + 1;
+  return acc;
+}, {});
+console.log(b);
+
+let d = arr.reduce((acc, cur) => {
+  if (cur.includes("apple")) {
+    acc.push(cur);
+  }
+  return acc;
+}, []);
+console.log(d);
+
+for (const i of arr) {
+  console.log(i);
+}
