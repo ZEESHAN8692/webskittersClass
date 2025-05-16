@@ -16,7 +16,7 @@ const User = () => {
 
   useEffect(() => {
     getData();
-  }, [apiData]);
+  }, [setApiData]);
   return (
     <>
       <br />
@@ -43,6 +43,7 @@ const User = () => {
           </div>
         ))}
       </div>
+      <br />
     </>
   );
 };

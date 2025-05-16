@@ -20,6 +20,7 @@ const SingleProduct = () => {
   console.log(data);
   return (
     <>
+     
       <div className="container mt-5">
         <div className="row">
           {/* Product Images */}
