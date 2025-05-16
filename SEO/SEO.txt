@@ -29,7 +29,7 @@
   
   
   
-logo\programming.png
+
   -------------------------------------------------------------------
   🔹 1. Your React Component (e.g., PortfolioSchema.js)
   
@@ -84,26 +84,7 @@ export default PortfolioSchema;
 
 -----------------------------------------------------
 
-2. Use it in your main page (e.g., App.js or Home.js)
-jsx
-Copy
-Edit
-import React from 'react';
-import PortfolioSchema from './PortfolioSchema';
 
-function App() {
-  return (
-    <div>
-      <PortfolioSchema />
-      {/* baaki aapka content */}
-    </div>
-  );
-}
-
-export default App;
-
-----------------------------
-check 
 
 https://search.google.com/test/rich-results
 
@@ -121,7 +102,7 @@ Password - ^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{4,12}$
 gemini Api key - AIzaSyAz0eTomOxfYLA8_FkJf6VgHMg3Axd0Yvc
 
 
-db.enqueryforms.inserOne({
+db.enqueryforms.insertOne({
 	name:"Zeeshan",
 	email:"zeeshan@gmail.com",
 	phone:9568046912,
@@ -129,3 +110,18 @@ db.enqueryforms.inserOne({
 	message:"This is test message",
 	
 })
+
+cotagory - https://fakestoreapi.in/api/products/category
+cotagorybise - https://fakestoreapi.in/api/products/category?type=mobile
+singleProduct - https://fakestoreapi.in/api/products/2
+All Product - https://fakestoreapi.in/api/products
+
+
+    let finalData = {
+      name: inputValue.name,
+      name: inputValue.email,
+      name: inputValue.phone,
+      name: inputValue.subject,
+      name: inputValue.message,
+    };
+    setLoading(true);
