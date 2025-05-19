@@ -1,0 +1,33 @@
+{
+  "user": [
+    {
+      "id": "ac1",
+      "name": "zeeshan",
+      "age": "23",
+      "gender": "Male",
+      "address": "Bareilly"
+    },
+    {
+      "id": "970f",
+      "name": "Raven Bates",
+      "age": "",
+      "gender": "Linda Rush",
+      "address": "Voluptatem sint sol"
+    },
+    {
+      "id": "b1d1",
+      "name": "Catherine Flores",
+      "age": "",
+      "gender": "Dolan Franco",
+      "address": "Recusandae Et omnis"
+    },
+    {
+      "id": "8a83",
+      "name": "Leo Wyatt",
+      "age": "",
+      "gender": "Camille Douglas",
+      "address": "In illo aute adipisc"
+    }
+  ],
+  "product": []
+}
