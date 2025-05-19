@@ -394,6 +394,8 @@
 // array2 = [3,5,6,7,8,13];
 // Expected Output :
 // [4, 5, 8, 10, 12, 13]
+// Expected Output :
+// [4, 5, 8, 10, 12, 13]
 
 // function Hello2(array1, array2) {
 //   let sum = [];
