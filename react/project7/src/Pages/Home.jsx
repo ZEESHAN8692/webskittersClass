@@ -8,6 +8,7 @@ const Home = () => {
   const [category, setCategory] = useState([]);
   const [allProduct, setAallProduct] = useState([]);
 
+
   const apiUrl = base_url + product_end + "/" + category_end;
   const apiUrlAll = base_url + product_end;
   const getData = () => {
@@ -39,15 +40,17 @@ const Home = () => {
 
   return (
     <>
-      <ul className="nav nav-pills">
-        {category?.map((cat, index) => (
-          <li className="nav-item" key={index}>
-            <Link className="nav-link tabsCate" to={`category/${cat}`}>
-              {cat}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div className="d-flex justify-content-center">
+        <ul className="nav nav-pills">
+          {category?.map((cat, index) => (
+            <li className="nav-item border my-2" key={index}>
+              <Link className="nav-link tabsCate " to={`category/${cat}`}>
+                {cat}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
       <br />
 
       <h1 className="text-center">All Products </h1>
