@@ -8,25 +8,11 @@
       "address": "Bareilly"
     },
     {
-      "id": "970f",
-      "name": "Raven Bates",
-      "age": "",
-      "gender": "Linda Rush",
-      "address": "Voluptatem sint sol"
-    },
-    {
       "id": "b1d1",
-      "name": "Catherine Flores",
-      "age": "",
+      "name": "Catherine Khan",
+      "age": "21",
       "gender": "Dolan Franco",
       "address": "Recusandae Et omnis"
-    },
-    {
-      "id": "8a83",
-      "name": "Leo Wyatt",
-      "age": "",
-      "gender": "Camille Douglas",
-      "address": "In illo aute adipisc"
     },
     {
       "id": "44d6",
@@ -40,29 +26,7 @@
       }
     },
     {
-      "id": "d33e",
-      "name": "Malik Dillon",
-      "age": "46",
-      "gender": "Ut qui ipsam aute qu",
-      "address": "Laborum Reprehender",
-      "error": {
-        "name": "",
-        "age": ""
-      }
-    },
-    {
       "id": "6ae3",
-      "name": "Isabelle Harrell",
-      "age": "80",
-      "gender": "Similique corrupti ",
-      "address": "Molestiae quo vitae ",
-      "error": {
-        "name": "",
-        "age": ""
-      }
-    },
-    {
-      "id": "cc10",
       "name": "Isabelle Harrell",
       "age": "80",
       "gender": "Similique corrupti ",

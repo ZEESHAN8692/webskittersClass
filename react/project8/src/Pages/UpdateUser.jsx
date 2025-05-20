@@ -18,42 +18,34 @@ export const UpdateUser = () => {
   };
   useEffect(() => {
     getSingleUser();
-  }, [setData]);
+  }, [setData, id]);
 
-  const [input, setInput] = useState({
-    name: "",
-    age: "",
-    gender: "",
-    address: "",
-    error: {
-      name: "",
-      age: "",
-    },
-  });
   const inputHandle = (e) => {
     const { name, value } = e.target;
-    let err = { ...input.error };
-    switch (name) {
-      case "name":
-        err.name = value.length < 4 ? "Name must be at least 4 characters" : "";
-        break;
-      case "age":
-        err.age = value < 18 ? "Age must be at least 18" : "";
-        break;
-      default:
-        break;
-    }
+    // let err = { ...input.error };
+    // switch (name) {
+    //   case "name":
+    //     err.name = value.length < 4 ? "Name must be at least 4 characters" : "";
+    //     break;
+    //   case "age":
+    //     err.age = value < 18 ? "Age must be at least 18" : "";
+    //     break;
+    //   default:
+    //     break;
+    // }
 
-    setInput({ ...input, [name]: value, error: err });
+    setData({ ...data, [name]: value });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    // axios
-    //   .post(apiUrl, input)
-    //   .then(() => alert("submit successfull"))
-    //   .catch((err) => console.log("Error", err));
 
-    console.log(input);
+    axios
+      .patch(apiUrl, data)
+      .then(() => {
+        alert("Ueser Update Successfully ");
+        navigater("/");
+      })
+      .then((err) => console.log(err));
   };
   return (
     <>
@@ -75,9 +67,9 @@ export const UpdateUser = () => {
               required
               value={data.name}
             />
-            {input.error.name && (
+            {/* {input.error.name && (
               <small style={{ color: "red" }}>{input.error.name}</small>
-            )}
+            )} */}
           </div>
 
           <div className="mb-3">
@@ -94,9 +86,9 @@ export const UpdateUser = () => {
               required
               value={data.age}
             />
-            {input.error.age && (
+            {/* {input.error.age && (
               <small style={{ color: "red" }}>{input.error.age}</small>
-            )}
+            )} */}
           </div>
 
           <div className="mb-3">

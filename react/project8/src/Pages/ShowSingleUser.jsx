@@ -23,6 +23,22 @@ const ShowSingleUser = () => {
   const forHome = () => {
     navigater("/");
   };
+  const handleEdit = (id) => {
+    navigater(`/update-user/${id}`);
+  };
+
+  function deleteUser(id) {
+    const deleteUerApi = base_url + user_end + "/" + id;
+    axios
+      .delete(deleteUerApi)
+      .then(() => {
+        alert("Data Delete Successfull");
+        navigater("/");
+      })
+      .catch((err) => {
+        console.log("Error", err);
+      });
+  }
   return (
     <>
       <div className="container mt-4">
@@ -49,8 +65,18 @@ const ShowSingleUser = () => {
               <button className="btn btn-warning btn-sm" onClick={forHome}>
                 Home
               </button>
-              <button className="btn btn-warning btn-sm">Edit</button>
-              <button className="btn btn-danger btn-sm">Delete</button>
+              <button
+                className="btn btn-warning btn-sm"
+                onClick={() => handleEdit(id)}
+              >
+                Edit
+              </button>
+              <button
+                className="btn btn-danger btn-sm"
+                onClick={() => deleteUser(id)}
+              >
+                Delete
+              </button>
             </div>
           </div>
         </div>

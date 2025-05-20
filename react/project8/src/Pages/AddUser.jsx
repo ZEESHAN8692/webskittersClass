@@ -36,8 +36,14 @@ export const AddUser = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    const inputData = {
+      name: input.name,
+      age: input.age,
+      gender: input.gender,
+      address: input.address,
+    };
     axios
-      .post(apiUrl, input)
+      .post(apiUrl, inputData)
       .then(() => {
         alert("submit successfull");
         navigater("/");

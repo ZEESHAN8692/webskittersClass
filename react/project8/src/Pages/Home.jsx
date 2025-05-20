@@ -13,7 +13,7 @@ const Home = () => {
   };
   useEffect(() => {
     getUserData();
-  }, [setData]);
+  }, [setData, deleteUser]);
 
   const addUser = () => {
     navigater("/add-user");
@@ -24,6 +24,17 @@ const Home = () => {
   const updateUser = (id) => {
     navigater(`/update-user/${id}`);
   };
+  function deleteUser(id) {
+    const deleteUerApi = base_url + user_end + "/" + id;
+    axios
+      .delete(deleteUerApi)
+      .then(() => {
+        alert("Data Delete Successfull");
+      })
+      .catch((err) => {
+        console.log("Error", err);
+      });
+  }
   return (
     <>
       <h2 className="text-center mt-5">User List</h2>
@@ -68,7 +79,12 @@ const Home = () => {
                     >
                       Update
                     </button>
-                    <button className="btn btn-danger btn-sm">Delete</button>
+                    <button
+                      className="btn btn-danger btn-sm"
+                      onClick={() => deleteUser(user.id)}
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               );
