@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [data, setData] = useState([]);
+  const [tableFilter, setTableFilter] = useState("");
   const apiUrl = base_url + user_end;
   const navigater = useNavigate();
   const getUserData = () => {
@@ -13,7 +14,7 @@ const Home = () => {
   };
   useEffect(() => {
     getUserData();
-  }, [setData, deleteUser]);
+  }, [setData, deleteUser, setTableFilter]);
 
   const addUser = () => {
     navigater("/add-user");
@@ -35,15 +36,48 @@ const Home = () => {
         console.log("Error", err);
       });
   }
+
+  function handleFilter(e) {
+    setTableFilter(e.target.value);
+    console.log(tableFilter);
+  }
+
+  const sortedData = [...data].sort((a, b) => {
+    if (tableFilter === "1") {
+      return a.name.localeCompare(b.name);
+    } else if (tableFilter === "2") {
+      return a.address.localeCompare(b.address);
+    } else if (tableFilter === "3") {
+      a.age - b.age;
+    }
+    return 0;
+  });
   return (
     <>
       <h2 className="text-center mt-5">User List</h2>
 
       <div className="container">
-        <div className="mb-3 text-end">
-          <button className="btn btn-success" onClick={addUser}>
-            + Add User
-          </button>
+        <div className="mb-3 d-flex justify-content-between">
+          <div>
+            <select
+              id="disabledSelect"
+              className="form-select"
+              style={{ width: "200px" }}
+              onChange={handleFilter}
+              name="filter"
+              value={tableFilter}
+            >
+              <option value="">Filter</option>
+              <option value="1">Name - A to Z </option>
+              <option value="2">Address - A to Z</option>
+              <option value="3">Age - 1 to 100 </option>
+            </select>
+          </div>
+          <div>
+            <button className="btn btn-success" onClick={addUser}>
+              + Add User
+            </button>
+          </div>
         </div>
 
         <table className="table table-bordered table-striped">
@@ -58,7 +92,7 @@ const Home = () => {
             </tr>
           </thead>
           <tbody>
-            {data.map((user, i) => {
+            {sortedData.map((user, i) => {
               return (
                 <tr key={user.id}>
                   <td>{i + 1}</td>
