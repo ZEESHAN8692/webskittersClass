@@ -1,6 +1,6 @@
 class LoginController {
   async loginPage(req, res) {
-    res.send("<h1>Login Page </h1>");
+    res.render("login", { title: "Login Page" });
   }
 }
 

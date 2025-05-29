@@ -5,6 +5,7 @@ import PageNotFound from "../Pages/PageNotFound";
 import Home from "../Pages/Home";
 import LoginForm from "../Pages/LoginForm";
 import Dashboard from "../Pages/Dashboard";
+import Profile from "../Pages/Profile";
 
 export const Routing = () => {
   return (
@@ -13,6 +14,7 @@ export const Routing = () => {
       <Route path="/" element={<Home />} />
       <Route path="/login-form" element={<LoginForm />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/profile" element={<Profile />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

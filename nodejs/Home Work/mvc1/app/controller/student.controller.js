@@ -1,6 +1,6 @@
 class StudentController {
   async studentPage(req, res) {
-    res.send("<h1>Student Page </h1>");
+    res.render("student", { title: "Student Page" });
   }
 }
 

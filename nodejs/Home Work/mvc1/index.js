@@ -18,6 +18,8 @@ app.use(productRoute);
 app.use(serviceRoute);
 app.use(loginRoute);
 app.use(registerRoute);
+app.set("view engine", "ejs");
+app.set("views", "views");
 
 const PORT = 1000;
 app.listen(PORT, () => {

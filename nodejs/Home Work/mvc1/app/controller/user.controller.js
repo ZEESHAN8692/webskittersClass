@@ -1,6 +1,6 @@
 class UserController {
   async userPage(req, res) {
-    res.send("<h1>User Page </h1>");
+    res.render("user", { title: "User Page" });
   }
 }
 

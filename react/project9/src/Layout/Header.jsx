@@ -5,9 +5,19 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const path = useLocation();
+  const navigater = useNavigate();
+  const loginUser = sessionStorage.getItem("name");
+  const token = sessionStorage.getItem("token");
+
+  const handleLogout = () => {
+    window.confirm("Are you sure");
+    navigater("/login-form");
+    sessionStorage.clear("name");
+  };
   return (
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -20,25 +30,47 @@ const Header = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link as={Link} to="/">
+              <Nav.Link
+                as={Link}
+                to="/"
+                className={path.pathname === `/` ? "text-primary" : ""}
+              >
                 Home
               </Nav.Link>
-              <Nav.Link as={Link} to="/myform">
+              <Nav.Link
+                as={Link}
+                to="/profile"
+                className={path.pathname === `/profile` ? "text-primary" : ""}
+              >
+                Profile
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/myform"
+                className={path.pathname === `/myform` ? "text-primary" : ""}
+              >
                 Signup
               </Nav.Link>
-              <Nav.Link as={Link} to="/login-form">
+              <Nav.Link
+                as={Link}
+                to="/login-form"
+                className={
+                  path.pathname === `/login-form` ? "text-primary" : ""
+                }
+              >
                 Login
               </Nav.Link>
             </Nav>
-            <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="outline-success">Search</Button>
-            </Form>
+            {loginUser && (
+              <div style={{ marginRight: "20px" }}>
+                <h4>Hello , {loginUser}</h4>
+              </div>
+            )}
+            {token && (
+              <Button variant="outline-success" onClick={handleLogout}>
+                Loguut
+              </Button>
+            )}
           </Navbar.Collapse>
         </Container>
       </Navbar>

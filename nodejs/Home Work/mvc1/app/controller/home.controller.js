@@ -1,6 +1,9 @@
 class HomeController {
   async homePage(req, res) {
-    res.send("<h1>Home Page</h1>");
+    const respose = await fetch("https://jsonplaceholder.typicode.com/users");
+    const data = await respose.json();
+    console.log(data);
+    res.render("home", { title: "Home Page", apiData: data });
   }
 }
 
