@@ -46,6 +46,24 @@ const Header = () => {
               </Nav.Link>
               <Nav.Link
                 as={Link}
+                to="/product-create"
+                className={
+                  path.pathname === `/product-create` ? "text-primary" : ""
+                }
+              >
+                Product Create
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/product-list"
+                className={
+                  path.pathname === `/product-list` ? "text-primary" : ""
+                }
+              >
+                Product List
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
                 to="/myform"
                 className={path.pathname === `/myform` ? "text-primary" : ""}
               >
