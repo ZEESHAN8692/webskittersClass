@@ -4,6 +4,7 @@ import { profile_end } from "../../Api/end_point";
 import axios from "axios";
 
 const Profile = () => {
+
   const profileApiUrl = base_url + profile_end;
   const [data, setData] = useState({});
   console.log(data);
@@ -15,7 +16,7 @@ const Profile = () => {
       .get(profileApiUrl, {
         headers: {
           "x-access-token": sessionStorage.getItem("token"),
-          "Content-Type": "application/x-www-from-urlencoded",
+          "Content-Type": "application/form-data",
         },
       })
       .then((res) => {

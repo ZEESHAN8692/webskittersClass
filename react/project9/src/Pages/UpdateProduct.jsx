@@ -1,35 +1,59 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import base_url from "../../Api/base_url";
+import { product_single_end, product_update_end } from "../../Api/end_point";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import base_url from "../../Api/base_url";
-import { product_create_end } from "../../Api/end_point";
 
-const ProductCraeteApi = () => {
-  const apiUrl = base_url + product_create_end;
-  const [input, setInput] = useState({
-    title: "",
-    description: "",
-  });
+const UpdateProduct = () => {
+  const { id } = useParams();
+  const updateApiUrl = base_url + product_update_end;
+  const getSingleDataApi = base_url + product_single_end + id;
+  const [data, setData] = useState({});
   const [image, setImage] = useState({});
   const handleInput = (e) => {
     const { name, value } = e.target;
-    // console.log(value);
-    setInput({ ...input, [name]: value });
+    console.log(value);
+    setData({ ...data, [name]: value });
   };
   const handleImage = (e) => {
     setImage(e.target.files[0]);
-    // console.log(e.target.files[0]);
+    console.log(e.target.files[0]);
   };
+
+  const getSingleProduct = () => {
+    axios
+      .get(getSingleDataApi, {
+        headers: {
+          "x-access-token": sessionStorage.getItem("token"),
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          const { title, description } = res.data.data;
+
+          setData({ title: title, description: description });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
+    getSingleProduct();
+  }, []);
   const handleSub = (e) => {
     e.preventDefault();
 
-    const data = new FormData();
-    data.append("title", input.title);
-    data.append("description", input.description);
-    data.append("image", image);
+    const updateData = new FormData();
+    updateData.append("id", id);
+    updateData.append("title", data.title);
+    updateData.append("description", data.description);
+    updateData.append("image", image);
     axios
-      .post(apiUrl, data, {
+      .post(updateApiUrl, updateData, {
         headers: {
           "x-access-token": sessionStorage.getItem("token"),
           "Content-Type": "application/form-data",
@@ -37,18 +61,16 @@ const ProductCraeteApi = () => {
       })
       .then((res) => {
         if (res.status === 200) {
-          alert("Product Create Successfull");
-          navigator("/product-list");
+          alert("Update Product Successfull");
         } else {
           console.log(res);
         }
       });
   };
-
   return (
     <>
       <div className="container">
-        <h1 className="text-center">Product Create</h1>
+        <h1 className="text-center">Update Product</h1>
         <Form onSubmit={handleSub}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Title</Form.Label>
@@ -59,22 +81,24 @@ const ProductCraeteApi = () => {
               name="title"
               onChange={handleInput}
               required
+              value={data.title}
             />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Password</Form.Label>
+            <Form.Label>Description</Form.Label>
             <Form.Control
               type="text"
               placeholder="description"
               name="description"
               onChange={handleInput}
               required
+              value={data.description}
             />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Password</Form.Label>
+            <Form.Label>Image</Form.Label>
             <Form.Control
               type="file"
               placeholder="Enter image"
@@ -93,4 +117,4 @@ const ProductCraeteApi = () => {
   );
 };
 
-export default ProductCraeteApi;
+export default UpdateProduct;

@@ -2,13 +2,16 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import base_url from "../../Api/base_url";
 import { product_delete_end, product_list_end } from "../../Api/end_point";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 const ProductList = () => {
+  const navigater = useNavigate();
+
   const apiUrl = base_url + product_list_end;
   const deleteApi = base_url + product_delete_end;
   const [data, setData] = useState([]);
+
   useEffect(() => {
     axios
       .post(
@@ -20,7 +23,6 @@ const ProductList = () => {
         {
           headers: {
             "x-access-token": sessionStorage.getItem("token"),
-            // "Content-Type": "application/form-data",
           },
         }
       )
@@ -56,6 +58,9 @@ const ProductList = () => {
         console.log(err);
       });
   }
+  const handleSingleProduct = (id) => {
+    navigater(`/single-product/${id}`);
+  };
   return (
     <>
       <div className="d-flex justify-content-center">
@@ -73,18 +78,30 @@ const ProductList = () => {
                     className="card-img-top img-fluid"
                     alt="..."
                   />
-                  <div className="card-body">
+                  <div className="card-body ">
                     <h5 className="card-title">{title.slice(0, 30)}...</h5>
-                    <p className="card-text">{description.slice(0, 80)} ...</p>
-                    <Link to={`/product/${_id}`} className="btn btn-primary ">
-                      Buy Now
-                    </Link>
-                    <Button
-                      className="btn btn-primary"
-                      onClick={() => handleDelete(_id)}
-                    >
-                      Delete
-                    </Button>
+                    <p className="card-text">{description.slice(0, 100)} ...</p>
+                    <div className="d-flex gap-2">
+                      <Link
+                        to={`/update-product/${_id}`}
+                        className="btn btn-primary "
+                      >
+                        Update
+                      </Link>
+                      <Button
+                        className="btn btn-primary"
+                        onClick={() => handleDelete(_id)}
+                      >
+                        Delete
+                      </Button>
+
+                      <Button
+                        className="btn btn-primary"
+                        onClick={() => handleSingleProduct(_id)}
+                      >
+                        Show
+                      </Button>
+                    </div>
                   </div>
                 </div>
               );
