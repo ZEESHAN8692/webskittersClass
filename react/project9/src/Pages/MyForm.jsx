@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
 import MyFormCom from "../Components/MyFormCom";
-import { useNavigate } from "react-router-dom";
 
 const MyForm = () => {
   // const navigate = useNavigate();
