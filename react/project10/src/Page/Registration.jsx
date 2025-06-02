@@ -26,11 +26,12 @@ const Registration = () => {
 
   const handleSub = (e) => {
     e.preventDefault();
-
-    if (input.email === data.email) {
-      return alert("email alredy used");
-    } else if (input.username === data.username) {
-      return alert("username alredy used");
+    const emailExist = data.some((user) => user.email === input.email);
+    const userExist = data.some((user) => user.username === input.username);
+    if (emailExist) {
+      alert("Email Already Used");
+    } else if (userExist) {
+      alert("Username Already Used");
     } else {
       axios
         .post(apiurl, input)
@@ -43,6 +44,8 @@ const Registration = () => {
 
   return (
     <div className="container">
+      <br />
+      <h1 className="text-center">Registration Form </h1>
       <Form onSubmit={handleSub}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
