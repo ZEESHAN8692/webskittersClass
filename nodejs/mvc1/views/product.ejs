@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="text-white bg-black text-center" style="height: 60px">
+      Header
+    </header>
+    <h1 class="text-center">All Product</h1>
+    <div class="container">
+      <div class="row gap-5 justify-content-center">
+        <% product.forEach((prod)=>{ %>
+
+        <div class="card" style="width: 18rem">
+          <img src="<%=prod.img%>" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title"><%=prod.name%></h5>
+            <p>Price: <b><%=prod.price%></b></p>
+            <div class="d-flex align-items-center">
+              <div class="text-center">
+                <b>Size:</b>
+                <ul>
+                  <%prod.size.forEach((item)=>{%>
+                  <li><%=item%></li>
+                  <% }) %>
+                </ul>
+              </div>
+              <div class="text-center">
+                <b>Color:</b>
+                <ul>
+                  <%prod.color.forEach((item)=>{%>
+                  <p><%=item%></p>
+                  <% }) %>
+                </ul>
+              </div>
+              <div class="text-center">
+                <b>Category:</b>
+                <ul>
+                  <li><%= prod.category%></li>
+                </ul>
+                <b>Brand:</b>
+                <ul>
+                  <li><%= prod.brand%></li>
+                </ul>
+              </div>
+            </div>
+
+            <p class="card-text"><%=prod.description%></p>
+            <a href="#" class="btn btn-primary">Details</a>
+          </div>
+        </div>
+        <%}) %>
+      </div>
+    </div>
+
+    <footer class="text-white bg-black text-center" style="height: 60px">
+      Footer
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

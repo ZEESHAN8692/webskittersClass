@@ -68,13 +68,14 @@ const ProductList = () => {
           <div className="row justify-content-center gap-2 ">
             {data?.map((product) => {
               const { _id, title, description, image } = product;
-              //   const folderPath = "uploads/products/image/";
-              //   const productImage = base_url + folderPath + image;
+              const folderPath = "uploads/product/";
+              
+              const productImage = base_url + folderPath + image;
 
               return (
                 <div className="card" style={{ width: "18rem" }} key={_id}>
                   <img
-                    src={image}
+                    src={productImage}
                     className="card-img-top img-fluid"
                     alt="..."
                   />

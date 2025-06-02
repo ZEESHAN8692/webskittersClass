@@ -8,6 +8,8 @@ const SingleProduct = () => {
   const { id } = useParams();
   const [data, setData] = useState({});
   const getSingleDataApi = base_url + product_single_end + id;
+  const folderPath = "uploads/product/";
+  const productImage = base_url + folderPath + data.image;
   const getSingleProduct = () => {
     axios
       .get(getSingleDataApi, {
@@ -19,7 +21,6 @@ const SingleProduct = () => {
       .then((res) => {
         if (res.status === 200) {
           const { title, description, image } = res.data.data;
-
           setData({ title: title, description: description, image: image });
         }
       })
@@ -39,7 +40,7 @@ const SingleProduct = () => {
               <div className="card text-black">
                 <i className="fab fa-apple fa-lg pt-3 pb-1 px-3" />
                 <img
-                  src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/3.webp"
+                  src={productImage}
                   className="card-img-top"
                   alt="Apple Computer"
                 />
@@ -48,8 +49,6 @@ const SingleProduct = () => {
                     <h5 className="card-title">{data.title}</h5>
                     <p className="text-muted mb-4">{data.description}</p>
                   </div>
-                 
-                 
                 </div>
               </div>
             </div>

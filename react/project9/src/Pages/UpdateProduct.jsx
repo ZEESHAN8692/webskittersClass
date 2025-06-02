@@ -109,7 +109,7 @@ const UpdateProduct = () => {
           </Form.Group>
 
           <Button variant="primary" type="submit">
-            Login
+            Update Product
           </Button>
         </Form>
       </div>
