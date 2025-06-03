@@ -1,17 +1,17 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import base_url from "../../Api/base_url";
 import { product_single_end } from "../../Api/end_point";
+import axiosinstace from "../axiosInstance/axiosinstance";
+import base_url from "../Api/base_url";
 
 const SingleProduct = () => {
   const { id } = useParams();
   const [data, setData] = useState({});
-  const getSingleDataApi = base_url + product_single_end + id;
+  const getSingleDataApi = product_single_end + id;
   const folderPath = "uploads/product/";
   const productImage = base_url + folderPath + data.image;
   const getSingleProduct = () => {
-    axios
+    axiosinstace
       .get(getSingleDataApi, {
         headers: {
           "x-access-token": sessionStorage.getItem("token"),

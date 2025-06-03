@@ -1,13 +1,14 @@
-import axios from "axios";
+
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import base_url from "../../Api/base_url";
-import { signup_end } from "../../Api/end_point";
+
 import { useNavigate } from "react-router-dom";
+import { signup_end } from "../Api/end_point";
+import axiosinstace from "../axiosInstance/axiosinstance";
 
 const MyFormCom = () => {
-  const apiUrl = base_url + signup_end;
+  const apiUrl = signup_end;
   const navigater = useNavigate();
   const [input, setInput] = useState({
     first_name: "",
@@ -84,7 +85,7 @@ const MyFormCom = () => {
       data.append("password", input.password);
       data.append("profile_pic", image);
 
-      axios
+      axiosinstace
         .post(apiUrl, data, {
           headers: {
             "Content-Type": "application/form-data",

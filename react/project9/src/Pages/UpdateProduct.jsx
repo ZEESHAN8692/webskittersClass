@@ -1,15 +1,15 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import base_url from "../../Api/base_url";
-import { product_single_end, product_update_end } from "../../Api/end_point";
+
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { product_single_end, product_update_end } from "../Api/end_point";
+import axiosinstace from "../axiosInstance/axiosinstance";
 
 const UpdateProduct = () => {
   const { id } = useParams();
-  const updateApiUrl = base_url + product_update_end;
-  const getSingleDataApi = base_url + product_single_end + id;
+  const updateApiUrl = product_update_end;
+  const getSingleDataApi = product_single_end + id;
   const [data, setData] = useState({});
   const [image, setImage] = useState({});
   const handleInput = (e) => {
@@ -23,7 +23,7 @@ const UpdateProduct = () => {
   };
 
   const getSingleProduct = () => {
-    axios
+    axiosinstace
       .get(getSingleDataApi, {
         headers: {
           "x-access-token": sessionStorage.getItem("token"),
@@ -52,7 +52,7 @@ const UpdateProduct = () => {
     updateData.append("title", data.title);
     updateData.append("description", data.description);
     updateData.append("image", image);
-    axios
+    axiosinstace
       .post(updateApiUrl, updateData, {
         headers: {
           "x-access-token": sessionStorage.getItem("token"),

@@ -10,14 +10,14 @@ import ProductCreate from "../Pages/ProductCreate";
 import ProductList from "../Pages/ProductList";
 import UpdateProduct from "../Pages/UpdateProduct";
 import SingleProduct from "../Pages/SingleProduct";
-import ProtectedRoute from "../Components/ProtectedRoute"
+import ProtectedRoute from "../Components/ProtectedRoute";
 
 export const Routing = () => {
   return (
     <Routes>
       <Route path="myform" element={<MyForm />} />
 
-      <Route path="/login-form" element={<LoginForm />} />
+      <Route path="/login" element={<LoginForm />} />
       {/* <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/product-create" element={<ProductCreate />} />

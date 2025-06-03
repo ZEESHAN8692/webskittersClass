@@ -1,12 +1,11 @@
-import axios from "axios";
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import base_url from "../../Api/base_url";
-import { product_create_end } from "../../Api/end_point";
+import { product_create_end } from "../Api/end_point";
+import axiosinstace from "../axiosInstance/axiosinstance";
 
 const ProductCraeteApi = () => {
-  const apiUrl = base_url + product_create_end;
+  const apiUrl = product_create_end;
   const [input, setInput] = useState({
     title: "",
     description: "",
@@ -28,7 +27,7 @@ const ProductCraeteApi = () => {
     data.append("title", input.title);
     data.append("description", input.description);
     data.append("image", image);
-    axios
+    axiosinstace
       .post(apiUrl, data, {
         headers: {
           "x-access-token": sessionStorage.getItem("token"),

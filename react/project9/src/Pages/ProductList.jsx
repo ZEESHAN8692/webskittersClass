@@ -1,19 +1,22 @@
-import axios from "axios";
+// import axios from "axios";
 import React, { useEffect, useState } from "react";
-import base_url from "../../Api/base_url";
-import { product_delete_end, product_list_end } from "../../Api/end_point";
+
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import axiosinstace from "../axiosInstance/axiosinstance";
+import { product_delete_end, product_list_end } from "../Api/end_point";
+import base_url from "../Api/base_url";
 
 const ProductList = () => {
   const navigater = useNavigate();
 
-  const apiUrl = base_url + product_list_end;
-  const deleteApi = base_url + product_delete_end;
+  // const apiUrl = base_url + product_list_end;
+  const apiUrl = product_list_end;
+  const deleteApi = product_delete_end;
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios
+    axiosinstace
       .post(
         apiUrl,
         {
@@ -38,7 +41,7 @@ const ProductList = () => {
   }, []);
 
   function handleDelete(id) {
-    axios
+    axiosinstace
       .post(
         deleteApi,
         { id },
@@ -69,7 +72,7 @@ const ProductList = () => {
             {data?.map((product) => {
               const { _id, title, description, image } = product;
               const folderPath = "uploads/product/";
-              
+
               const productImage = base_url + folderPath + image;
 
               return (

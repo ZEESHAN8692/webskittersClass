@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
-import base_url from "../../Api/base_url";
-import { profile_end } from "../../Api/end_point";
-import axios from "axios";
+import base_url from "../Api/base_url";
+
+import axiosinstace from "../axiosInstance/axiosinstance";
+import { profile_end } from "../Api/end_point";
 
 const Profile = () => {
-
-  const profileApiUrl = base_url + profile_end;
+  const profileApiUrl = profile_end;
   const [data, setData] = useState({});
   console.log(data);
   const { first_name, last_name, email, profile_pic } = data;
   const folderPath = "uploads/user/profile_pic/";
   const image = base_url + folderPath + profile_pic;
   const getData = () => {
-    axios
+    axiosinstace
       .get(profileApiUrl, {
         headers: {
           "x-access-token": sessionStorage.getItem("token"),
