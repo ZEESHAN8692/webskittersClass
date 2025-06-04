@@ -3,8 +3,8 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router-dom";
 
-import { login_end } from "../../Api/end_point";
-import axiosInstance from "../../Api/axiosInstance";
+import { login_end } from "../Api/end_point";
+import axiosInstance from "../Api/axiosInstance";
 
 const LoginformCom = () => {
   const navigater = useNavigate();

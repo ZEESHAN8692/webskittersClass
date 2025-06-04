@@ -1,10 +1,9 @@
-
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { signup_end } from "../../Api/end_point";
+import { signup_end } from "../Api/end_point";
 import { useNavigate } from "react-router-dom";
-import axiosInstance from "../../Api/axiosInstance";
+import axiosInstance from "../Api/axiosInstance";
 
 const MyFormCom = () => {
   // const apiUrl = base_url + signup_end;
@@ -85,11 +84,7 @@ const MyFormCom = () => {
       data.append("profile_pic", image);
 
       axiosInstance
-        .post(signup_end, data, {
-          headers: {
-            "Content-Type": "application/form-data",
-          },
-        })
+        .post(signup_end, data)
         .then((res) => {
           if (res.status === 200) {
             alert("form Submit Successfully");

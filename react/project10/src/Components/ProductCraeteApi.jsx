@@ -1,13 +1,13 @@
-
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-import { product_create_end } from "../../Api/end_point";
-import axiosInstance from "../../Api/axiosInstance";
+import { product_create_end } from "../Api/end_point";
+import axiosInstance from "../Api/axiosInstance";
+import { useNavigate } from "react-router-dom";
 
 const ProductCraeteApi = () => {
-  // const apiUrl = base_url + product_create_end;
+  const navigate = useNavigate();
   const [input, setInput] = useState({
     title: "",
     description: "",
@@ -29,21 +29,14 @@ const ProductCraeteApi = () => {
     data.append("title", input.title);
     data.append("description", input.description);
     data.append("image", image);
-    axiosInstance
-      .post(product_create_end, data, {
-        headers: {
-          "x-access-token": sessionStorage.getItem("token"),
-          "Content-Type": "application/form-data",
-        },
-      })
-      .then((res) => {
-        if (res.status === 200) {
-          alert("Product Create Successfull");
-          navigator("/product-list");
-        } else {
-          console.log(res);
-        }
-      });
+    axiosInstance.post(product_create_end, data).then((res) => {
+      if (res.status === 200) {
+        alert("Product Create Successfull");
+        navigate("/product-list");
+      } else {
+        console.log(res);
+      }
+    });
   };
 
   return (
@@ -51,7 +44,7 @@ const ProductCraeteApi = () => {
       <div className="container">
         <h1 className="text-center">Product Create</h1>
         <Form onSubmit={handleSub}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className="mb-3" controlId="formBasicTitle">
             <Form.Label>Title</Form.Label>
 
             <Form.Control
@@ -63,8 +56,8 @@ const ProductCraeteApi = () => {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Password</Form.Label>
+          <Form.Group className="mb-3" controlId="formBasicDescription">
+            <Form.Label>Description</Form.Label>
             <Form.Control
               type="text"
               placeholder="description"
@@ -74,7 +67,7 @@ const ProductCraeteApi = () => {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="file"
@@ -86,7 +79,7 @@ const ProductCraeteApi = () => {
           </Form.Group>
 
           <Button variant="primary" type="submit">
-            Login
+            List Product
           </Button>
         </Form>
       </div>

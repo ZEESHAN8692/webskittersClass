@@ -1,10 +1,9 @@
-
 import React, { useEffect, useState } from "react";
-import base_url from "../../Api/base_url";
-import { product_delete_end, product_list_end } from "../../Api/end_point";
+import base_url from "../Api/base_url";
+import { product_delete_end, product_list_end } from "../Api/end_point";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import axiosInstance from "../../Api/axiosInstance";
+import axiosInstance from "../Api/axiosInstance";
 
 const ProductList = () => {
   const navigater = useNavigate();
@@ -15,18 +14,10 @@ const ProductList = () => {
 
   useEffect(() => {
     axiosInstance
-      .post(
-        product_list_end,
-        {
-          page: 1,
-          perpage: 5,
-        },
-        {
-          headers: {
-            "x-access-token": sessionStorage.getItem("token"),
-          },
-        }
-      )
+      .post(product_list_end, {
+        page: 1,
+        perpage: 5,
+      })
       .then((res) => {
         if (res.status === 200) {
           console.log(res);
@@ -70,7 +61,7 @@ const ProductList = () => {
             {data?.map((product) => {
               const { _id, title, description, image } = product;
               const folderPath = "uploads/product/";
-              
+
               const productImage = base_url + folderPath + image;
 
               return (

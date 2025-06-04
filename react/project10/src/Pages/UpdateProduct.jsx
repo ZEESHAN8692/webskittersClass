@@ -1,13 +1,13 @@
-
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-import { product_single_end, product_update_end } from "../../Api/end_point";
+import { product_single_end, product_update_end } from "../Api/end_point";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import axiosInstance from "../../Api/axiosInstance";
+import axiosInstance from "../Api/axiosInstance";
 
 const UpdateProduct = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const updateApiUrl = product_update_end;
   const getSingleDataApi = product_single_end + id;
@@ -25,12 +25,7 @@ const UpdateProduct = () => {
 
   const getSingleProduct = () => {
     axiosInstance
-      .get(getSingleDataApi, {
-        headers: {
-          "x-access-token": sessionStorage.getItem("token"),
-          "Content-Type": "application/json",
-        },
-      })
+      .get(getSingleDataApi)
       .then((res) => {
         if (res.status === 200) {
           const { title, description } = res.data.data;
@@ -53,41 +48,34 @@ const UpdateProduct = () => {
     updateData.append("title", data.title);
     updateData.append("description", data.description);
     updateData.append("image", image);
-    
-    axiosInstance
-      .post(updateApiUrl, updateData, {
-        headers: {
-          "x-access-token": sessionStorage.getItem("token"),
-          "Content-Type": "application/form-data",
-        },
-      })
-      .then((res) => {
-        if (res.status === 200) {
-          alert("Update Product Successful");
-        } else {
-          console.log(res);
-        }
-      });
+
+    axiosInstance.post(updateApiUrl, updateData).then((res) => {
+      if (res.status === 200) {
+        alert("Update Product Successful");
+        navigate("/product-list");
+      } else {
+        console.log(res);
+      }
+    });
   };
   return (
     <>
       <div className="container">
         <h1 className="text-center">Update Product</h1>
         <Form onSubmit={handleSub}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className="mb-3" controlId="formBasicTitle">
             <Form.Label>Title</Form.Label>
-
             <Form.Control
               type="text"
               placeholder="Product title"
               name="title"
               onChange={handleInput}
               required
-              value={data.title}
+              value={data.title || ""}
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className="mb-3" controlId="formBasicDescription">
             <Form.Label>Description</Form.Label>
             <Form.Control
               type="text"
@@ -95,18 +83,17 @@ const UpdateProduct = () => {
               name="description"
               onChange={handleInput}
               required
-              value={data.description}
+              value={data.description || ""}
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className="mb-3" controlId="formBasicImage">
             <Form.Label>Image</Form.Label>
             <Form.Control
               type="file"
               placeholder="Enter image"
               name="image"
               onChange={handleImage}
-              required
             />
           </Form.Group>
 
