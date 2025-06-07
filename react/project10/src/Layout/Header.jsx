@@ -37,53 +37,58 @@ const Header = () => {
               >
                 Home
               </Nav.Link>
-                {loginUser && (
-              <Nav.Link
-                as={Link}
-                to="/profile"
-                className={path.pathname === `/profile` ? "text-primary" : ""}
-              >
-                Profile
-              </Nav.Link>
-                )}
-                 {loginUser && (
-              <Nav.Link
-                as={Link}
-                to="/product-create"
-                className={
-                  path.pathname === `/product-create` ? "text-primary" : ""
-                }
-              >
-                Product Create
-              </Nav.Link>
-                 )}
-                   {loginUser && (
-              <Nav.Link
-                as={Link}
-                to="/product-list"
-                className={
-                  path.pathname === `/product-list` ? "text-primary" : ""
-                }
-              >
-                Product List
-              </Nav.Link>
-                   )}
-              <Nav.Link
-                as={Link}
-                to="/myform"
-                className={path.pathname === `/myform` ? "text-primary" : ""}
-              >
-                Signup
-              </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="/login-form"
-                className={
-                  path.pathname === `/login-form` ? "text-primary" : ""
-                }
-              >
-                Login
-              </Nav.Link>
+              {loginUser && (
+                <Nav.Link
+                  as={Link}
+                  to="/profile"
+                  className={path.pathname === `/profile` ? "text-primary" : ""}
+                >
+                  Profile
+                </Nav.Link>
+              )}
+              {loginUser && (
+                <Nav.Link
+                  as={Link}
+                  to="/product-create"
+                  className={
+                    path.pathname === `/product-create` ? "text-primary" : ""
+                  }
+                >
+                  Product Create
+                </Nav.Link>
+              )}
+              {loginUser && (
+                <Nav.Link
+                  as={Link}
+                  to="/product-list"
+                  className={
+                    path.pathname === `/product-list` ? "text-primary" : ""
+                  }
+                >
+                  Product List
+                </Nav.Link>
+              )}
+              {!token && (
+                <Nav.Link
+                  as={Link}
+                  to="/myform"
+                  className={path.pathname === `/myform` ? "text-primary" : ""}
+                >
+                  Signup
+                </Nav.Link>
+              )}
+
+              {!token && (
+                <Nav.Link
+                  as={Link}
+                  to="/login-form"
+                  className={
+                    path.pathname === `/login-form` ? "text-primary" : ""
+                  }
+                >
+                  Login
+                </Nav.Link>
+              )}
             </Nav>
             {loginUser && (
               <div style={{ marginRight: "20px" }}>

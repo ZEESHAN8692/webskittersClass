@@ -14,14 +14,14 @@ const extname = path.extname(filepath);
 const basename = path.basename(filepath);
 const dirname = path.dirname(filepath);
 
-console.log({
-  parsData,
-  resolvepath,
-  extname,
-  basename,
-  dirname,
-  seprator: path.sep,
-});
+// console.log({
+//   parsData,
+//   resolvepath,
+//   extname,
+//   basename,
+//   dirname,
+//   seprator: path.sep,
+// });
 
 // ---------------http and fs------------------
 
@@ -32,42 +32,42 @@ console.log({
 //   })
 //   .listen(3000);
 
-// http
-//   .createServer((req, res) => {
-//     // create file
+http
+  .createServer((req, res) => {
+    // create file
 
-//     // fs.appendFile("hello.txt", "Hello Zeeshan", (err) => {
-//     //   if (err) throw err;
-//     //   console.log("file create");
-//     // });
+    // fs.appendFile("hello.txt", "Hello Zeeshan", (err) => {
+    //   if (err) throw err;
+    //   console.log("file create");
+    // });
 
-//     // Reade file
+    // Reade file
 
-//     fs.readFile("hello.html", (err, data) => {
-//       res.writeHead(200, { "content-type": "text/html" });
-//       res.write(data);
-//       res.end();
-//     });
+    fs.readFile("hello.html", (err, data) => {
+      res.writeHead(200, { "content-type": "text/html" });
+      res.write(data);
+      res.end();
+    });
 
-//     // Update File
+    // Update File
 
-//     // fs.appendFile("hello.txt", "Hello Zeeshan Khan, How are you .", (err) => {
-//     //   if (err) throw err;
-//     //   console.log("file updated");
-//     // });
+    // fs.appendFile("hello.txt", "Hello Zeeshan Khan, How are you .", (err) => {
+    //   if (err) throw err;
+    //   console.log("file updated");
+    // });
 
-//     // Rename File
+    // Rename File
 
-//     // fs.rename("hello.txt", "hi.txt", (err) => {
-//     //   if (err) throw err;
-//     //   console.log("File Name Changed");
-//     // });
+    // fs.rename("hello.txt", "hi.txt", (err) => {
+    //   if (err) throw err;
+    //   console.log("File Name Changed");
+    // });
 
-//     // delete file
+    // delete file
 
-//     // fs.unlink("hi.txt", (err) => {
-//     //   if (err) throw err;
-//     //   console.log("File deleted");
-//     // });
-//   })
-//   .listen(5000);
+    // fs.unlink("hi.txt", (err) => {
+    //   if (err) throw err;
+    //   console.log("File deleted");
+    // });
+  })
+  .listen(5000);

@@ -10,7 +10,7 @@ import ProductCreate from "../Pages/ProductCreate";
 import ProductList from "../Pages/ProductList";
 import UpdateProduct from "../Pages/UpdateProduct";
 import SingleProduct from "../Pages/SingleProduct";
-import ProtectedRoute from "../Components/ProtectedRoute";
+
 
 export const Routing = () => {
   return (
