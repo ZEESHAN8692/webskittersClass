@@ -15,6 +15,7 @@ const Sidebar = () => {
   return (
     <>
       <ul className="bg-primary">
+        <h5 className="text-white">All Category</h5>
         {categoryList?.map((category, index) => (
           <Link to={`/category/${category}`} key={index}>
             <li className="text-white">{category}</li>
