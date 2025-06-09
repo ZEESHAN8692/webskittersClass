@@ -9,15 +9,22 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
+import Button from "react-bootstrap/Button";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [searchQuery, setSerachQuery] = useState("");
+  const [searchInput, setSearchInput] = useState("");
 
   const apiUrl = searchQuery ? product_search_end + searchQuery : products_end;
-  const handleSerch = (e) => {
-    setSerachQuery(e.target.value);
-    console.log(e.target.value);
+  const handleSearchChange = (e) => {
+    setSearchInput(e.target.value);
+    // console.log(e.target.value);
+  };
+
+  const handleSearchsubmit = (e) => {
+    e.preventDefault();
+    setSerachQuery(searchInput);
   };
 
   const handleSort = (sort) => {
@@ -41,34 +48,51 @@ const Home = () => {
   return (
     <>
       <Header />
-      <div className="d-flex justify-content-around">
-        <div>
-          <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-            <Dropdown.Item onClick={() => handleSort(1)}>
-              Alphabetical
-            </Dropdown.Item>
-            <Dropdown.Item onClick={() => handleSort(2)}>Price</Dropdown.Item>
-            <Dropdown.Item onClick={() => handleSort(3)}>Rating</Dropdown.Item>
-          </DropdownButton>
-        </div>
-        <div>
-          <Form.Group className="mb-3" controlId="formBasicSerch">
-            <Form.Control
-              type="text"
-              placeholder="Search Product"
-              name="serch"
-              onChange={handleSerch}
-            />
-          </Form.Group>
-        </div>
-      </div>
+
       <div className="container-fluid">
         <Row>
           <Col sm={2}>
             <Sidebar />
           </Col>
-          <Col sm={10}>
-            <div className="row gap-3">
+          <Col sm={10} className="justify-content-center">
+            <div className="d-flex justify-content-around">
+              <div>
+                <DropdownButton
+                  id="dropdown-basic-button"
+                  title="Sort Products"
+                >
+                  <Dropdown.Item onClick={() => handleSort(1)}>
+                    Alphabetical
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={() => handleSort(2)}>
+                    Price
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={() => handleSort(3)}>
+                    Rating
+                  </Dropdown.Item>
+                </DropdownButton>
+              </div>
+              <div>
+                <Form onSubmit={handleSearchsubmit}>
+                  <Form.Group
+                    className="mb-3 d-flex gap-2"
+                    controlId="formBasicSearch"
+                  >
+                    <Form.Control
+                      type="text"
+                      placeholder="Search Product"
+                      // value={searchInput}
+                      onChange={handleSearchChange}
+                    />
+
+                    <Button variant="primary" type="submit">
+                      Search
+                    </Button>
+                  </Form.Group>
+                </Form>
+              </div>
+            </div>
+            <div className="row justify-content-center gap-3">
               {products.map((product) => (
                 <CardCom key={product.id} product={product} />
               ))}

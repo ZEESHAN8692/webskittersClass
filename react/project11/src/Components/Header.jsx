@@ -8,19 +8,24 @@ import Sidebar from "./Sidebar";
 const Header = () => {
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" bg="primary">
         <Container>
-          <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand href="/" className="text-white">
+            Ecomerce
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
+              <Nav.Link href="/" className="text-white">
+                Home
+              </Nav.Link>
+              {/* <Nav.Link href="#link">Link</Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Sidebar />
+      <br />
+      <br />
     </>
   );
 };
