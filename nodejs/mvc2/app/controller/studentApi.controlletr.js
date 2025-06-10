@@ -27,6 +27,50 @@ class StudentApiController {
       });
     }
   }
+  async single(req, res) {
+    try {
+      const id = req.params.id;
+      const data = await Student.findById(id);
+      return res.status(200).json({
+        status: true,
+        message: "Data find success",
+        data: data,
+      });
+    } catch (error) {
+      res.status(500).json({
+        message: error,
+      });
+    }
+  }
+  async update(req, res) {
+    try {
+      const id = req.params.id;
+      const data = await Student.findByIdAndUpdate(id, req.body);
+      return res.status(200).json({
+        status: true,
+        message: "Data Update success",
+      });
+    } catch (error) {
+      res.status(500).json({
+        message: error,
+      });
+    }
+  }
+  async delete(req, res) {
+    try {
+      const id = req.params.id;
+      const data = await Student.findByIdAndDelete(id, req.body);
+      return res.status(200).json({
+        status: true,
+        message: "Data delete success",
+        data: data,
+      });
+    } catch (error) {
+      res.status(500).json({
+        message: error,
+      });
+    }
+  }
 }
 
 module.exports = new StudentApiController();

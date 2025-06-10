@@ -26,6 +26,52 @@ class TeacherApiController {
       });
     }
   }
+  async singleTeacher(req, res) {
+    try {
+      const id = req.params.id;
+      const data = await Teacher.findById(id);
+      return res.status(200).json({
+        status: true,
+        message: "Single data find success",
+        data: data,
+      });
+    } catch (error) {
+      res.status(500).json({
+        message: error,
+      });
+    }
+  }
+
+  async updateTeacher(req, res) {
+    try {
+      const id = req.params.id;
+      const data = await Teacher.findOneAndUpdate(id, req.body);
+      return res.status(200).json({
+        status: true,
+        message: "data update success",
+      });
+    } catch (error) {
+      res.status(500).json({
+        message: error,
+      });
+    }
+  }
+
+  async deleteTeacher(req, res) {
+    try {
+      const id = req.params.id;
+      const data = await Teacher.findByIdAndDelete(id);
+      return res.status(200).json({
+        status: true,
+        message: "data delete success",
+        data: data,
+      });
+    } catch (error) {
+      res.status(500).json({
+        message: error,
+      });
+    }
+  }
 }
 
 module.exports = new TeacherApiController();
