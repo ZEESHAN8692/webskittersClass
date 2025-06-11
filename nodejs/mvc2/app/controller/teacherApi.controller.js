@@ -45,7 +45,7 @@ class TeacherApiController {
   async updateTeacher(req, res) {
     try {
       const id = req.params.id;
-      const data = await Teacher.findOneAndUpdate(id, req.body);
+      const data = await Teacher.findByIdAndUpdate(id, req.body);
       return res.status(200).json({
         status: true,
         message: "data update success",

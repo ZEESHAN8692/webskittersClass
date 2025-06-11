@@ -27,6 +27,49 @@ class ManagerApiController {
       });
     }
   }
+
+  async singleManager(req, res) {
+    try {
+      const id = req.params.id;
+      const data = await Manager.findById(id);
+      res.status(200).json(data);
+    } catch (error) {
+      res.status(500).json({
+        message: error,
+      });
+    }
+  }
+
+  async updateManager(req, res) {
+    try {
+      const id = req.params.id;
+      const data = await Manager.findByIdAndUpdate(id, req.body);
+      return res.status(200).json({
+        status: true,
+        message: "Data update success",
+      });
+    } catch (error) {
+      res.status(500).json({
+        message: error,
+      });
+    }
+  }
+
+  async deletegetManager(req, res) {
+    try {
+      const id = req.params.id;
+      const data = await Manager.findByIdAndDelete(id);
+      return res.status(200).json({
+        status: true,
+        message: "Data Delete success",
+        data: data,
+      });
+    } catch (error) {
+      res.status(500).json({
+        message: error,
+      });
+    }
+  }
 }
 
 module.exports = new ManagerApiController();
