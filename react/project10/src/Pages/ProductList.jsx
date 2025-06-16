@@ -14,7 +14,8 @@ const ProductList = () => {
 
   useEffect(() => {
     axiosInstance
-      .post(product_list_end, {
+      .post(product_list_end, 
+        {
         page: 1,
         perpage: 5,
       })
