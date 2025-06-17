@@ -45,9 +45,7 @@ const Header = () => {
               <Nav.Link as={Link} to="/products">
                 Products
               </Nav.Link>
-              <Nav.Link as={Link} to="/products">
-                Products
-              </Nav.Link>
+              
             </Nav>
             {token && (
               <>
