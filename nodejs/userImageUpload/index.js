@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
-const productRoutes = require("./app/Routes/user.routes");
+const userRoutes = require("./app/Routes/user.routes");
+const productRoutes = require("./app/Routes/product.route");
 const Database = require("./app/config/database");
 const path = require("path");
 // Databse
@@ -13,6 +14,7 @@ app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 // Raoutes
+app.use("/api", userRoutes);
 app.use("/api", productRoutes);
 
 const PORT = process.env.PORT || 5000;

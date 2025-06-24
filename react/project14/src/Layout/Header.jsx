@@ -22,6 +22,12 @@ const Header = () => {
               <Nav.Link as={Link} to="/useRef">
                 useRef
               </Nav.Link>
+              <Nav.Link as={Link} to="/usecontext">
+                useContext
+              </Nav.Link>
+              <Nav.Link as={Link} to="/memo">
+                UseMemo
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
