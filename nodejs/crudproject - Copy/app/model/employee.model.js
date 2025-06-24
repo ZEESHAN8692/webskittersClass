@@ -21,11 +21,10 @@ const employeeSchema = new schema({
   },
   image: {
     type: String,
-    required: [true, "image is Require"],
   },
   isBlock: {
     type: Boolean,
-    required: [true, "isBlock is Require"],
+    
   },
 });
 

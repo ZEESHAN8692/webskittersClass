@@ -3,8 +3,11 @@ const Employee = require("../model/employee.model");
 class EmplyeeController {
   async createEmployee(req, res) {
     try {
-      const { name, email, phone, city, image, isBlock } = req.body;
-      const data = new Employee({ name, email, phone, city, image, isBlock });
+      const { name, email, phone, city, isBlock } = req.body;
+      const data = new Employee({ name, email, phone, city, isBlock });
+      if (req.file) {
+        data.image = req.file.path;
+      }
       const result = await data.save();
 
       return res.status(201).json({

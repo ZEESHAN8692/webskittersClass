@@ -3,9 +3,14 @@ const app = express();
 require("dotenv").config();
 const productRoutes = require("./app/Routes/crud.routes");
 const Database = require("./app/config/database");
+const path = require("path");
 // Databse
 Database();
+
+// Middleware
 app.use(express.json());
+app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
+app.use("/uploads", express.static(__dirname + "/uploads"));
 
 // Raoutes
 app.use("/api", productRoutes);
