@@ -28,6 +28,9 @@ const Header = () => {
               <Nav.Link as={Link} to="/memo">
                 UseMemo
               </Nav.Link>
+              <Nav.Link as={Link} to="/usecallback">
+                UseCallback
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

@@ -1,4 +1,6 @@
 const ProductModel = require("../model/product.model");
+const fs = require("fs");
+const path = require("path");
 
 class ProductController {
   async createProduct(req, res) {
@@ -54,8 +56,34 @@ class ProductController {
   async updateProduct(req, res) {
     try {
       const id = req.params.id;
+      const existingData = await ProductModel.findById(id);
 
-      const data = await ProductModel.findByIdAndUpdate(id, req.body);
+      const UpdateData = req.body;
+
+      if (existingData.images && existingData.images.length > 0) {
+        existingData.images.forEach((imgUrl) => {
+          const imagesPath = path.join(
+            __dirname,
+            "../../uploads/products",
+            path.basename(imgUrl)
+          );
+          fs.unlink(imagesPath, (err) => {
+            if (err) console.error("Image delete failed:", err);
+            console.log("Old image deleted:", imagesPath);
+          });
+        });
+
+        console.log(req.files);
+        const imageUrls = req.files?.map(
+          (file) => `${req.get("host")}/uploads/products/${file.filename}`
+        );
+        UpdateData.images = imageUrls;
+      }
+
+      const data = await ProductModel.findByIdAndUpdate(id, UpdateData, {
+        new: true,
+      });
+
       return res.json({
         status: true,
         message: "Data Update Success",
@@ -69,6 +97,19 @@ class ProductController {
     try {
       const id = req.params.id;
       const data = await ProductModel.findByIdAndDelete(id);
+      if (data && data.images && data.images.length > 0) {
+        data.images.forEach((imgUrl) => {
+          const imagePath = path.join(
+            __dirname,
+            "../../uploads/products",
+            path.basename(imgUrl)
+          );
+          fs.unlink(imagePath, (err) => {
+            if (err) throw err;
+            console.log("Images Delete Successfully");
+          });
+        });
+      }
       return res.json({
         status: true,
         message: "Data Delete Success",

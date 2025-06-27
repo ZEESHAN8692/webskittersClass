@@ -11,7 +11,11 @@ router.post(
   uploadProductsImages.array("images", 5),
   productController.createProduct
 );
-router.patch("/update-product/:id", productController.updateProduct);
+router.patch(
+  "/update-product/:id",
+  uploadProductsImages.array("images", 5),
+  productController.updateProduct
+);
 router.delete("/delete-product/:id", productController.deleteProduct);
 
 module.exports = router;

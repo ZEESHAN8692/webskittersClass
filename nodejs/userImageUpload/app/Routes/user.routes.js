@@ -11,7 +11,11 @@ router.post(
   uploadUserImage.single("image"),
   UserController.createUser
 );
-router.patch("/update-user/:id", UserController.updateUser);
+router.patch(
+  "/update-user/:id",
+  uploadUserImage.single("image"),
+  UserController.updateUser
+);
 router.delete("/delete-user/:id", UserController.deleteUser);
 
 module.exports = router;

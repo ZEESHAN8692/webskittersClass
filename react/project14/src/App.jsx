@@ -10,6 +10,7 @@ import B from "./pages/B";
 import C from "./pages/C";
 import UseContextFun from "./pages/UseContextComp";
 import Memo from "./pages/Memo.jsx/Memo";
+import CallBack from "./pages/CallBack";
 
 function App() {
   return (
@@ -22,9 +23,8 @@ function App() {
           <Route path="/useRef" element={<UseRef />} />
           <Route path="/usecontext" element={<UseContextFun />} />
           <Route path="/memo" element={<Memo />} />
-          {/* <Route path="/acomp" element={<A />} />
-          <Route path="/bcomp" element={<B />} /> */}
-          {/* <Route path="/ccomp" element={<C />} /> */}
+          <Route path="/usecallback" element={<CallBack />} />
+  
         </Routes>
       </BrowserRouter>
     </>
