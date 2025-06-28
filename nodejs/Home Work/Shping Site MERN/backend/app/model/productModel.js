@@ -7,12 +7,15 @@ const productSchema = new schema({
     type: String,
     require: [true, "title is require"],
   },
+  price: {
+    type: String,
+    require: [true, "Price is require"],
+  },
   slug: {
     type: String,
     unique: [true, "Slug is Unique mandatory"],
     lowercase: true,
   },
-
   colors: {
     type: Array,
     require: [true, "colors is require"],

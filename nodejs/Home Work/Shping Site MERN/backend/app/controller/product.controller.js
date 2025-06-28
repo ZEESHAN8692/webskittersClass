@@ -17,9 +17,10 @@ class ProductController {
   }
   async createProduct(req, res) {
     try {
-      const { title, colors, size, brand, description } = req.body;
+      const { title, price, colors, size, brand, description } = req.body;
       const data = new productModel({
         title,
+        price,
         slug: slugify(title),
         colors,
         size,
