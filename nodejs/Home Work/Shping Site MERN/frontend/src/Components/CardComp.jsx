@@ -2,19 +2,17 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
-import axiosInstance from "../Api/axionInstance/axiosInstance";
-import { delete_product_end } from "../Api/end_point";
-const CardComp = ({ data }) => {
+
+const CardComp = ({ data, deleteProduct }) => {
   const navigate = useNavigate();
   const singleProduct = (slug) => {
     navigate(`/single-product/${slug}`);
   };
 
-  const deleteProduct = (id) => {
-    axiosInstance.delete(delete_product_end + "/" + id).then((res) => {
-      alert(res.dada.message);
-    });
+  const handleUpdate = (id) => {
+    navigate(`/update-product/${id}`);
   };
+
   return (
     <>
       <Card style={{ width: "18rem" }}>
@@ -35,7 +33,9 @@ const CardComp = ({ data }) => {
             <Button variant="success" onClick={() => singleProduct(data.slug)}>
               Show
             </Button>
-            <Button variant="primary">Update</Button>
+            <Button variant="primary" onClick={() => handleUpdate(data._id)}>
+              Update
+            </Button>
             <Button variant="danger" onClick={() => deleteProduct(data._id)}>
               Delele
             </Button>

@@ -1,7 +1,12 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
-    <div>Header</div>
-  )
-}
+    <div className="headerDiv">
+      <Link to="/">
+        <h1 className="text-white decoration-none">Header</h1>
+      </Link>
+    </div>
+  );
+};

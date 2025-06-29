@@ -57,6 +57,20 @@ class ProductController {
       res.status(500).json({ status: false, message: error.message });
     }
   }
+
+  async findProductById(req, res) {
+    try {
+      const id = req.params.id;
+      const data = await productModel.findById(id);
+      return res.status(200).json({
+        status: true,
+        message: "Data Fetch successfully",
+        data: data,
+      });
+    } catch (error) {
+      res.status(500).json({ status: false, message: error.message });
+    }
+  }
   async updateProduct(req, res) {
     try {
       const id = req.params.id;
