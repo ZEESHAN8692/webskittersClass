@@ -78,17 +78,19 @@ class ProductController {
       const data = await productModel.findById(id);
 
       if (req.body && data && data.images && data.images.length > 0) {
-        data.images.forEach((imgUrl) => {
-          const imagesPath = path.join(
-            __dirname,
-            "../../uploads/products",
-            path.basename(imgUrl)
-          );
-          fs.unlink(imagesPath, (err) => {
-            if (err) console.log("Image Delete Field", err);
-            else console.log("Image Update Successfully");
+        if (data.images && data.images.length > 0) {
+          data.images.forEach((imgUrl) => {
+            const imagesPath = path.join(
+              __dirname,
+              "../../uploads/products",
+              path.basename(imgUrl)
+            );
+            fs.unlink(imagesPath, (err) => {
+              if (err) console.log("Image delete failed", err);
+              else console.log("Old image deleted");
+            });
           });
-        });
+        }
 
         const imageUrls = req.files.map(
           (file) => `${req.get("host")}/uploads/products/${file.filename}`

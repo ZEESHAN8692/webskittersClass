@@ -1,4 +1,4 @@
-// Home.jsx
+
 import React, { useEffect, useState } from "react";
 import {
   AppBar,
@@ -30,11 +30,10 @@ const Home = () => {
   const [allProducts, setAllProducts] = useState([]);
   const [search, setSearch] = useState("");
 
-  const [selectedSizes, setSelectedSizes] = useState([]);
+  const [selectedSize, setSelectedSize] = useState([]);
   const [selectedColors, setSelectedColors] = useState([]);
   const [selectedBrands, setSelectedBrands] = useState([]);
 
-  // const drawerWidth = 240;
 
   const handleDrawerToggle = () => {
     if (!isClosing) setMobileOpen(!mobileOpen);
@@ -82,9 +81,9 @@ const Home = () => {
     if (e) e.preventDefault();
     let filtered = [...allProducts];
 
-    if (selectedSizes.length > 0) {
+    if (selectedSize.length > 0) {
       filtered = filtered.filter((item) =>
-        item.sizes?.some((s) => selectedSizes.includes(s))
+        item.size?.some((s) => selectedSize.includes(s))
       );
     }
 
@@ -141,7 +140,11 @@ const Home = () => {
             />
           </div>
 
-          <Button variant="contained" conClick={handleCreate} className="add-button">
+          <Button
+            variant="contained"
+            onClick={handleCreate}
+            className="add-button"
+          >
             ADD PRODUCTS
           </Button>
         </Toolbar>
@@ -168,12 +171,12 @@ const Home = () => {
             <Form.Check
               type="checkbox"
               label="XL"
-              onChange={() => toggleFilter("XL", setSelectedSizes)}
+              onChange={() => toggleFilter("XL", setSelectedSize)}
             />
             <Form.Check
               type="checkbox"
               label="S"
-              onChange={() => toggleFilter("S", setSelectedSizes)}
+              onChange={() => toggleFilter("S", setSelectedSize)}
             />
             <h5 className="mt-3">Color</h5>
             <Form.Check
@@ -215,27 +218,27 @@ const Home = () => {
             <Form.Check
               type="checkbox"
               label="S"
-              onChange={() => toggleFilter("S", setSelectedSizes)}
+              onChange={() => toggleFilter("S", setSelectedSize)}
             />
             <Form.Check
               type="checkbox"
               label="M"
-              onChange={() => toggleFilter("M", setSelectedSizes)}
+              onChange={() => toggleFilter("M", setSelectedSize)}
             />
             <Form.Check
               type="checkbox"
               label="L"
-              onChange={() => toggleFilter("L", setSelectedSizes)}
+              onChange={() => toggleFilter("L", setSelectedSize)}
             />
             <Form.Check
               type="checkbox"
               label="XL"
-              onChange={() => toggleFilter("XL", setSelectedSizes)}
+              onChange={() => toggleFilter("XL", setSelectedSize)}
             />
             <Form.Check
               type="checkbox"
               label="XXL"
-              onChange={() => toggleFilter("XXL", setSelectedSizes)}
+              onChange={() => toggleFilter("XXL", setSelectedSize)}
             />
 
             <h5 className="mt-3">Color</h5>
@@ -263,7 +266,7 @@ const Home = () => {
             <Form.Check
               type="checkbox"
               label="Adidas"
-              onChange={() => toggleFilter("Adidas", setSelectedBrands)}
+              onChange={() => toggleFilter("Adidas", setSelectedBrands)}s
             />
             <Form.Check
               type="checkbox"
@@ -276,7 +279,7 @@ const Home = () => {
               onChange={() => toggleFilter("Puma", setSelectedBrands)}
             />
             <Form.Check
-              type="c"
+              type="checkbox"
               label="Zara"
               onChange={() => toggleFilter("Zara", setSelectedBrands)}
             />
@@ -292,7 +295,7 @@ const Home = () => {
       <Box component="main" className="main-content">
         <Toolbar />
         <Typography component="div">
-          <div className="row gap-2">
+          <div className="row gap-5 justify-content-center">
             {products.length > 0 ? (
               products.map((product, index) => (
                 <CardComp

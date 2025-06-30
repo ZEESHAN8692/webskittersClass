@@ -6,8 +6,10 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import axiosInstance from "../Api/axionInstance/axiosInstance";
 import { create_product_end } from "../Api/end_point";
+import { useNavigate } from "react-router-dom";
 
 const CreateProduct = () => {
+  const navigate = useNavigate();
   const { register, handleSubmit, reset } = useForm();
   const [colors, setColors] = useState([]);
   const [sizes, setSizes] = useState([]);
@@ -43,6 +45,7 @@ const CreateProduct = () => {
       reset();
       setColors([]);
       setSizes([]);
+      navigate("/");
     } catch (error) {
       console.error("Error:", error);
       alert("Failed to create product.");

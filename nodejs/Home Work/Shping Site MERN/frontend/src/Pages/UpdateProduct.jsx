@@ -9,15 +9,15 @@ import {
 } from "../Api/end_point";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useParams } from "react-router-dom"; // Assuming you use React Router
+import { useNavigate, useParams } from "react-router-dom"; 
 
 const UpdateProduct = () => {
-  const { id } = useParams(); // Get product ID from URL
+  const navigate = useNavigate();
+  const { id } = useParams(); 
   const { register, handleSubmit, reset } = useForm();
   const [colors, setColors] = useState([]);
-  const [sizes, setSizes] = useState([]);
+  const [size, setSize] = useState([]);
 
-  // Fetch single product and set form + local states
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -27,7 +27,7 @@ const UpdateProduct = () => {
         const product = response.data.data;
         console.log(product);
 
-        // Set form fields
+    
         reset({
           title: product.title,
           price: product.price,
@@ -35,9 +35,9 @@ const UpdateProduct = () => {
           brand: product.brand,
         });
 
-        // Set colors and sizes if they exist
+        
         setColors(product.colors || []);
-        setSizes(product.sizes || []);
+        setSize(product.size || []);
       } catch (error) {
         console.error("Failed to fetch product:", error);
         alert("Could not load product for editing.");
@@ -60,8 +60,8 @@ const UpdateProduct = () => {
         formData.append(`colors[${index}]`, color);
       });
 
-      sizes.forEach((size, index) => {
-        formData.append(`sizes[${index}]`, size);
+      size.forEach((size, index) => {
+        formData.append(`size[${index}]`, size);
       });
 
       if (data.images && data.images.length > 0) {
@@ -80,7 +80,8 @@ const UpdateProduct = () => {
 
       reset();
       setColors([]);
-      setSizes([]);
+      setSize([]);
+      navigate("/");
     } catch (error) {
       console.error("Error updating product:", error);
       alert("Failed to update product.");
@@ -95,10 +96,10 @@ const UpdateProduct = () => {
     }
   };
 
-  const handleSizesInput = (e) => {
+  const handleSizeInput = (e) => {
     if (e.key === "Enter" && e.target.value.trim()) {
       e.preventDefault();
-      setSizes([...sizes, e.target.value.trim()]);
+      setSize([...size, e.target.value.trim()]);
       e.target.value = "";
     }
   };
@@ -160,10 +161,10 @@ const UpdateProduct = () => {
             <Form.Control
               type="text"
               placeholder="Enter Product Size (Press Enter)"
-              onKeyDown={handleSizesInput}
+              onKeyDown={handleSizeInput}
             />
             <div className="mt-2">
-              {sizes.map((size, index) => (
+              {size.map((size, index) => (
                 <span key={index} className="badge bg-success me-1">
                   {size}
                 </span>
