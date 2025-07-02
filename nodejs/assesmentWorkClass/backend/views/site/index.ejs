@@ -1,11 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Hello Site</h1>
-  </body>
-</html>
+<%- include("./common/header.ejs") %>
+
+<!-- Carousel -->
+<div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img
+        src="https://themewagon.github.io/believe/images/slider-1.jpg"
+        class="d-block w-100"
+        alt="Slide 1"
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="https://themewagon.github.io/believe/images/slider-2.jpg"
+        class="d-block w-100"
+        alt="Slide 2"
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="https://themewagon.github.io/believe/images/slider-1.jpg"
+        class="d-block w-100"
+        alt="Slide 3"
+      />
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#mainCarousel"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#mainCarousel"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<!-- Product Cards -->
+
+<section class="container my-5">
+  <h2 class="text-center mb-4">Our Products</h2>
+  <div class="row g-4">
+    <!-- Product Card -->
+    <% if (products && products.length > 0) { %>
+      <% products.forEach((product) => {%>
+        <div class="col-md-4">
+          <div class="card bg-secondary text-white h-100">
+            <img
+              src="<%= product.images[0] %>"
+          class="card-img-top"
+          alt="Product"
+        />
+        <div class="card-body">
+          <h5 class="card-title"><%= product.title.slice(0, 20) %></h5>
+          <h5 class="card-title">₹<%= product.price %></h5>
+          <p class="card-text"><%= product.description.slice(0, 100) %></p>
+        </div>
+        <div class="card-footer bg-dark border-top-0">
+          <a
+            href="/single-product/<%= product.slug %>"
+            class="btn btn-outline-light w-100"
+            >Buy Now</a
+          >
+        </div>
+      </div>
+    </div>
+    <% }) %>
+    <% } else { %>
+      <div class="col-12">
+        <div class="alert alert-warning text-center" role="alert">
+          No products available at the moment.
+        </div>
+      </div>
+    <% } %>
+  </div>
+</section>
+
+<%- include("./common/footer.ejs") %>
