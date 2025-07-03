@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Filter</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 25%;
+      padding: 20px;
+      background-color: #f8f8f8;
+      border-right: 1px solid #ddd;
+    }
+    .product-area {
+      width: 75%;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .product-card {
+      border: 1px solid #ccc;
+      width: 200px;
+      padding: 10px;
+      text-align: center;
+    }
+    .product-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .highlight {
+      border: 2px solid green;
+      background-color: #f0fff0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar: Filters -->
+    <form method="GET" action="/get" class="sidebar">
+
+  <!--  Search Only -->
+  <div style="display: flex; gap: 5px; margin-bottom: 10px;">
+    <input 
+      type="text" 
+      name="search" 
+      placeholder="Search by product name"
+      value="<%= selected.search || '' %>" 
+      style="flex: 1;"
+    />
+    <button type="submit" name="searchBtn" value="1">Search</button>
+  </div>
+
+  <h3>Filter</h3>
+
+     
+      <!--  Brand -->
+      <h4>Brand</h4>
+      <% allBrands.forEach(brand => { %>
+        <label>
+          <input type="checkbox" name="brand" value="<%= brand %>" 
+            <%= (Array.isArray(selected.brand) && selected.brand.includes(brand)) || selected.brand === brand ? 'checked' : '' %> />
+          <%= brand %>
+        </label><br>
+      <% }) %>
+
+      <!--  Color -->
+      <h4>Color</h4>
+      <% allColors.forEach(color => { %>
+        <label>
+          <input type="checkbox" name="color" value="<%= color %>"
+            <%= (Array.isArray(selected.color) && selected.color.includes(color)) || selected.color === color ? 'checked' : '' %> />
+          <%= color %>
+        </label><br>
+      <% }) %>
+
+      <!--  Size -->
+      <h4>Size</h4>
+      <% allSizes.forEach(size => { %>
+        <label>
+          <input type="checkbox" name="size" value="<%= size %>"
+            <%= (Array.isArray(selected.size) && selected.size.includes(size)) || selected.size === size ? 'checked' : '' %> />
+          <%= size %>
+        </label><br>
+      <% }) %>
+
+      <!--  Price -->
+      <h4>Price (Max)</h4>
+      <input type="number" name="price" value="<%= selected.price || '' %>" placeholder="Enter max price" />
+
+      <br><br>
+      <button type="submit">Apply Filters</button>
+      
+    </form>
+
+    <!-- Product List -->
+    <div class="product-area">
+      <% products.forEach(p => { %>
+        <div class="product-card">
+          <img src="<%= p.image || 'https://via.placeholder.com/150' %>" alt="product" />
+          <h4><%= p.name %></h4>
+          <p><%= p.brand %> | <%= p.color %> | <%= p.size %></p>
+          <p>₹<%= p.price %></p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+</html>
