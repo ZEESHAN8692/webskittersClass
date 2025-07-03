@@ -1,0 +1,5 @@
+export const COUNER = {
+  INCREMENT: "INCREMENT",
+  DECREMENT: "DECREMENT",
+  RESET: "RESET",
+};
