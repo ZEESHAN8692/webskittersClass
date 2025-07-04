@@ -1,0 +1,42 @@
+<%- include('common/header.ejs') %>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Registration</h1>
+  <form
+    action="/registration"
+    method="POST"
+    class="mx-auto"
+    style="max-width: 400px"
+  >
+    <div class="mb-3">
+     
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        required
+        placeholder="Enter your email"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        required
+        placeholder="Enter your password"
+      />
+    </div>
+
+    <a href="/registration">if you have not registered <b>Register</b></a>
+    <br />
+    <button type="submit" class="btn btn-primary w-100">Login</button>
+  </form>
+</div>
+
+<%- include('common/footer.ejs') %>

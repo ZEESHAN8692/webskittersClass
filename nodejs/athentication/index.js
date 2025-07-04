@@ -3,7 +3,7 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 3030;
 const path = require("path");
-const csvRoute = require("./app/Routes/csv.route");
+const authenticationRoutes = require("./app/routes/athenticationRoutes");
 
 // Middleware to parse JSON and urlencoded data
 app.use(express.static(path.join(__dirname, "public")));
@@ -16,9 +16,7 @@ const dbcon = require("./app/config/database");
 dbcon();
 
 // Basic route
-app.get("/", (req, res) => {
-  res.render("home");
-});
+app.use("/", authenticationRoutes);
 
 // Start the server
 app.listen(PORT, () => {
