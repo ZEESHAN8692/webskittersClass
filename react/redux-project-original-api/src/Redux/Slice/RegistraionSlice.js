@@ -1,0 +1,43 @@
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { signup_end } from "../../Api/apiUrl";
+import axiosInstance from "../../Api/axiosInstace/axiosInstance";
+
+export const signupUser = createAsyncThunk(
+  "registration/signipUser",
+  async (data) => {
+    console.log("Data in signupUser", data);
+    const response = await axiosInstance.post(signup_end, data);
+    console.log("Signup Response ", response);
+    return response.data;
+  }
+);
+
+const initialState = {
+  user: {},
+  loading: false,
+  error: null,
+};
+
+const registrationSlice = createSlice({
+  name: "registration",
+  initialState: initialState,
+  extraReducers: (builder) => {
+    builder.addCase(signupUser.pending, (state, action) => {
+      state.loading = true;
+    });
+    builder.addCase(signupUser.fulfilled, (state, action) => {
+      console.log("Action for fulfilled", action);
+      state.loading = false;
+      state.user = action.payload;
+      state.error = null;
+    });
+    builder.addCase(signupUser.rejected, (state, action) => {
+      console.log("Action for rejected", action);
+      state.loading = false;
+      state.user = {};
+      state.error = action.error.message;
+    });
+  },
+});
+
+export default registrationSlice.reducer;

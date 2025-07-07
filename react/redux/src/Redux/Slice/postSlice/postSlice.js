@@ -13,6 +13,7 @@ const initial_value = {
   postsValue: [],
   error: null,
 };
+
 export const postSlice = createSlice({
   name: "posts",
   initialState: initial_value,

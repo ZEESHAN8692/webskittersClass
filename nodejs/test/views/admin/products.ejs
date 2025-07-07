@@ -1,0 +1,49 @@
+<%-include("./common/sidebaar.ejs")%>
+<!-- Content Area -->
+<div class="content">
+  <h2>Product Management</h2>
+  <br />
+  <a href="/admin/add-product" class="btn btn-primary">Add Product</a>
+  <br />
+  <table class="table table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>Sr.</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% products.forEach((product)=>{%>
+      <tr>
+        <td>1</td>
+        <td><%= product.name %></td>
+        <td>$<%= product.price %></td>
+        <td>
+          <img
+            src="<%= product.image %>"
+            alt="<%= product.name %>"
+            width="50"
+          />
+        </td>
+
+        <td>
+          <a
+            href="/edit-product/<%= product._id %>"
+            class="btn btn-sm btn-primary"
+            >Edit</a
+          >
+          <a
+            href="/delete-product/<%= product._id %>"
+            class="btn btn-sm btn-danger"
+            >Delete</a
+          >
+        </td>
+      </tr>
+      <%})%>
+    </tbody>
+  </table>
+</div>
+<%-include("./common/footer.ejs")%>
