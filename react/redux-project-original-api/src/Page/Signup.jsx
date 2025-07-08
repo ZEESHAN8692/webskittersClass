@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signupUser } from "../Redux/Slice/RegistraionSlice";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { loading, error, success } = useSelector(
     (state) => state.registration
@@ -34,12 +36,17 @@ const Signup = () => {
     console.log(DataTransfer);
     dispatch(signupUser(data));
   };
+  useEffect(() => {
+    if (success) {
+      alert("Regitration Create Success");
+      navigate("/login");
+    }
+  }, [success]);
 
   return (
     <>
       {loading && <div>Loading...</div>}
       {error && <div>Error: {error}</div>}
-      {success && <div>Registration successful!</div>}
       <form
         onSubmit={handleSubmit}
         className="mx-auto mt-5 p-4 border rounded shadow"
@@ -93,6 +100,7 @@ const Signup = () => {
           onChange={handleChange}
           className="form-control mb-3"
         />
+        <Link to="/login">If you already Accout</Link>
         <button type="submit" className="btn btn-primary">
           Register
         </button>

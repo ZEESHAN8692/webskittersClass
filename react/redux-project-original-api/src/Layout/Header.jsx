@@ -1,12 +1,19 @@
 import { Container } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-
+import Button from "react-bootstrap/Button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const path = useLocation();
-  const navigater = useNavigate();
+  const navigate = useNavigate();
+  const name = sessionStorage.getItem("name");
+  const token = sessionStorage.getItem("token");
+  const handleLogout = () => {
+    window.confirm("Are You Sure");
+    sessionStorage.clear();
+    navigate("/login");
+  };
 
   return (
     <>
@@ -27,6 +34,13 @@ const Header = () => {
               >
                 Home
               </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/profile"
+                className={path.pathname === `/profile` ? "text-primary" : ""}
+              >
+                Profile
+              </Nav.Link>
 
               <Nav.Link
                 as={Link}
@@ -35,6 +49,25 @@ const Header = () => {
               >
                 Signup
               </Nav.Link>
+
+              <Nav.Link
+                as={Link}
+                to="/login"
+                className={path.pathname === `/login` ? "text-primary" : ""}
+              >
+                Login
+              </Nav.Link>
+              <br />
+              {name && (
+                <div style={{ marginLeft: "100px", marginRight: "10px" }}>
+                  <h4>Welcome {name}</h4>
+                </div>
+              )}
+              {token && (
+                <Button variant="info" onClick={handleLogout}>
+                  Logout
+                </Button>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

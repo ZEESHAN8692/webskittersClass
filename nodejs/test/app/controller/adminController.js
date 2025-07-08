@@ -16,7 +16,7 @@ class AdminController {
   }
   async updateProducts(req, res) {
     const productId = req.params.id;
-    res.render("admin/update-product", { productId });
+    res.render("admin/update-product");
   }
 
   async addProduct(req, res) {

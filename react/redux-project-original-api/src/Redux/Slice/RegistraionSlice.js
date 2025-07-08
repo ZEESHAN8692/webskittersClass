@@ -15,6 +15,7 @@ export const signupUser = createAsyncThunk(
 const initialState = {
   user: {},
   loading: false,
+  success: false,
   error: null,
 };
 
@@ -30,12 +31,14 @@ const registrationSlice = createSlice({
       state.loading = false;
       state.user = action.payload;
       state.error = null;
+      state.success = true;
     });
     builder.addCase(signupUser.rejected, (state, action) => {
       console.log("Action for rejected", action);
       state.loading = false;
       state.user = {};
       state.error = action.error.message;
+      state.success = false;
     });
   },
 });

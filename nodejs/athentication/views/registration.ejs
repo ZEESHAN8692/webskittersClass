@@ -8,21 +8,20 @@
     class="mx-auto"
     style="max-width: 400px"
   >
+    <!-- Name -->
     <div class="mb-3">
-      <label for="username" class="form-label">USERNAME</label>
+      <label for="name" class="form-label">Name</label>
       <input
         type="text"
         class="form-control"
-        id="username"
-        name="username"
+        id="name"
+        name="name"
         required
-        placeholder="Enter your username"
+        placeholder="Enter Your Name"
       />
     </div>
-    <div class="mb-3">
-      <label for="name" class="form-label">Name</label>
-      <input type="text" class="form-control" id="name" name="name" required />
-    </div>
+
+    <!-- Email -->
     <div class="mb-3">
       <label for="email" class="form-label">Email address</label>
       <input
@@ -34,6 +33,55 @@
         placeholder="Enter your email"
       />
     </div>
+
+    <!-- Phone -->
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone</label>
+      <input
+        type="tel"
+        class="form-control"
+        id="phone"
+        name="phone"
+        required
+        placeholder="Enter your phone number"
+      />
+    </div>
+
+    <!-- Profile Picture URL -->
+    <div class="mb-3">
+      <label for="profile_pic" class="form-label">Profile Picture URL</label>
+      <input
+        type="file"
+        class="form-control"
+        id="profile_pic"
+        name="profile_pic"
+        required
+      />
+    </div>
+
+    <!-- isAdmin -->
+    <div class="mb-3 form-check">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="isAdmin"
+        name="isAdmin"
+      />
+      <label class="form-check-label" for="isAdmin">Register as Admin?</label>
+    </div>
+
+    <!-- isVerified -->
+    <div class="mb-3 form-check">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="isVerified"
+        name="isVerified"
+      />
+      <label class="form-check-label" for="isVerified">Account Verified?</label>
+    </div>
+
+    <!-- Password -->
     <div class="mb-3">
       <label for="password" class="form-label">Password</label>
       <input
@@ -46,8 +94,11 @@
       />
     </div>
 
-    <a href="/login">if Already Registered <b>Login</b></a>
+    <!-- Login Redirect -->
+    <a href="/login">If already registered, <b>Login</b></a>
     <br />
+
+    <!-- Submit Button -->
     <button type="submit" class="btn btn-primary w-100">Register</button>
   </form>
 </div>

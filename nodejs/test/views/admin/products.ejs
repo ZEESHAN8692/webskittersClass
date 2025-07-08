@@ -4,7 +4,7 @@
   <h2>Product Management</h2>
   <br />
   <a href="/admin/add-product" class="btn btn-primary">Add Product</a>
-  <br />
+  <br /><br />
   <table class="table table-striped">
     <thead class="table-dark">
       <tr>
@@ -16,9 +16,9 @@
       </tr>
     </thead>
     <tbody>
-      <% products.forEach((product)=>{%>
+      <% products.forEach((product, index)=>{%>
       <tr>
-        <td>1</td>
+        <td><%= index + 1 %></td>
         <td><%= product.name %></td>
         <td>$<%= product.price %></td>
         <td>
@@ -31,7 +31,7 @@
 
         <td>
           <a
-            href="/edit-product/<%= product._id %>"
+            href="/edit-products/<%= product._id %>"
             class="btn btn-sm btn-primary"
             >Edit</a
           >
