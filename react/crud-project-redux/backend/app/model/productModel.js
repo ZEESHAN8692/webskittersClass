@@ -16,14 +16,6 @@ const productSchema = new schema({
     unique: [true, "Slug is Unique mandatory"],
     lowercase: true,
   },
-  colors: {
-    type: Array,
-    require: [true, "colors is require"],
-  },
-  size: {
-    type: Array,
-    require: [true, "size is require"],
-  },
   brand: {
     type: String,
     require: [true, "brand is require"],

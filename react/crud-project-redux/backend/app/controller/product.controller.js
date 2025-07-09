@@ -17,13 +17,11 @@ class ProductController {
   }
   async createProduct(req, res) {
     try {
-      const { title, price, colors, size, brand, description } = req.body;
+      const { title, price, brand, description } = req.body;
       const data = new productModel({
         title,
         price,
         slug: slugify(title),
-        colors,
-        size,
         brand,
         description,
       });
@@ -37,8 +35,7 @@ class ProductController {
       return res.status(201).json({
         status: true,
         message: "Data Create Successfully",
-        data,
-        result,
+        data: result,
       });
     } catch (error) {
       res.status(500).json({ status: false, message: error.message });
