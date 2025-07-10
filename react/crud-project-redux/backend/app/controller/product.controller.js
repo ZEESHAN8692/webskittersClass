@@ -44,7 +44,7 @@ class ProductController {
   async singleProduct(req, res) {
     try {
       const slug = req.params.slug;
-      const data = await productModel.find({ slug });
+      const data = await productModel.findOne({ slug });
       return res.status(200).json({
         status: true,
         message: "Data Fetch successfully",

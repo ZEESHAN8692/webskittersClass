@@ -1,0 +1,99 @@
+<%- include('partials/head') %>
+<body class="bg-light">
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow p-4">
+          <h3 class="mb-4 text-center">User Registration</h3>
+          <form action="/register" method="POST">
+            <!-- name -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Full Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                name="name"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                name="email"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <!-- phone -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Phone</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="email"
+                name="phone"
+                aria-describedby="emailHelp"
+              />
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                required
+              />
+            </div>
+            <!--  -->
+            <div class="mb-3">
+              <label class="form-label">Is Admin</label>
+              <select class="form-select" name="isAdmin">
+                <option value="user" selected>User</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Is Verified</label>
+              <select class="form-select" name="isVerified">
+                <option value="false" selected>No</option>
+                <option value="true">Yes</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Profile Image</label>
+              <input
+                type="file"
+                class="form-control"
+                name="image"
+                accept="image/*"
+              />
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary w-100">
+              Register
+            </button>
+
+            <!-- Login Link -->
+            <p class="mt-3 text-center">
+              Already have an account?
+              <a href="/login">Login here</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (optional) -->
+  <%- include('partials/footer') %>
+</body>
