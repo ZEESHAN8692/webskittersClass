@@ -1,12 +1,21 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import ButtonComponents from "./Components/ButtonComponent";
-import Header from "./Components/Header";
+import Header from "./Layout/Header";
+import Home from "./Pages/Home";
+import Table from "./Pages/Table";
+
 function App() {
   return (
     <>
-      <Header />
-      <br />
-      <ButtonComponents />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/button" element={<ButtonComponents />} />
+          <Route path="/table" element={<Table />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

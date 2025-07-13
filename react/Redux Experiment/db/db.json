@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": "53ba",
+      "name": "Suman Das",
+      "brand": "Lenovo"
+    },
+    {
+      "id": "808c",
+      "name": "Zeeshan ",
+      "brand": "ZG"
+    },
+    {
+      "id": "bf81",
+      "name": "Keiko Shepherd",
+      "brand": "Ullamco quo pariatur"
+    },
+    {
+      "id": "89a0",
+      "name": "Britanni Allison",
+      "brand": "Mollitia molestiae t"
+    },
+    {
+      "id": "bef5",
+      "name": "Rama Delacruz",
+      "brand": "Quidem eius cum rati"
+    },
+    {
+      "id": "9a73",
+      "name": "Kirk Reeves",
+      "brand": "Perspiciatis autem "
+    },
+    {
+      "id": "0c39",
+      "name": "Phyllis Parker",
+      "brand": "Deserunt animi enim"
+    }
+  ]
+}
