@@ -47,6 +47,7 @@ class AuthenticationController {
       }
     } else {
       res.redirect("/login");
+      
     }
   }
 }
