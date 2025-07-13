@@ -19,6 +19,7 @@ class AuthenticationController {
     const isVerified = req.body.isVerified === "on";
 
     const profilePic = req.file ? req.file.path : "";
+    console.log(req.file);
     const hashedPassword = bcrypt.hashSync(password, 10);
 
     await userModel.create({
@@ -32,6 +33,21 @@ class AuthenticationController {
     });
 
     res.redirect("/login");
+  }
+
+  async login(req, res) {
+    const { email, password } = req.body;
+    const user = await userModel.findOne({ email });
+    if (user) {
+      const passwordMatch = bcrypt.compareSync(password, user.password);
+      if (passwordMatch) {
+        res.redirect("/dashboard");
+      } else {
+        res.redirect("/login");
+      }
+    } else {
+      res.redirect("/login");
+    }
   }
 }
 

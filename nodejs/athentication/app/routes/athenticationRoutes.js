@@ -13,5 +13,6 @@ router.post(
   upload.single("profile_pic"),
   athenticationController.postRegistration
 );
+router.post("/login", athenticationController.login);
 
 module.exports = router;
