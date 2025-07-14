@@ -1,5 +1,6 @@
 const userModel = require("../model/athenticationModel");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
+const { hashedPassword, comparePassword } = require("../middleware/authCheck");
 class AuthenticationController {
   async getHome(req, res) {
     res.render("home");
@@ -17,10 +18,17 @@ class AuthenticationController {
     const { name, email, phone, password } = req.body;
     const isAdmin = req.body.isAdmin === "on";
     const isVerified = req.body.isVerified === "on";
-
     const profilePic = req.file ? req.file.path : "";
-    console.log(req.file);
-    const hashedPassword = bcrypt.hashSync(password, 10);
+    // console.log(req.file);
+    if (!name && !email && !phone && !password && !isAdmin && !isVerified) {
+      return res.send("All fields are required");
+    }
+    const user = await userModel.findOne({ email });
+    if (user) {
+      return res.send("User already exists");
+    }
+
+    const hashedPassword = await hashedPassword(password);
 
     await userModel.create({
       name,
@@ -38,16 +46,18 @@ class AuthenticationController {
   async login(req, res) {
     const { email, password } = req.body;
     const user = await userModel.findOne({ email });
+    if (!user) {
+      return res.send("User not found");
+    }
     if (user) {
-      const passwordMatch = bcrypt.compareSync(password, user.password);
+      const passwordMatch = comparePassword(password, user.password);
       if (passwordMatch) {
         res.redirect("/dashboard");
       } else {
-        res.redirect("/login");
+        return res.send("Invalid password");
       }
     } else {
-      res.redirect("/login");
-      
+      res.send("User not found");
     }
   }
 }
