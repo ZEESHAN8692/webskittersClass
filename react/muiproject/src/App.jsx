@@ -4,6 +4,8 @@ import ButtonComponents from "./Components/ButtonComponent";
 import Header from "./Layout/Header";
 import Home from "./Pages/Home";
 import Table from "./Pages/Table";
+import About from "./Pages/About";
+import DrawerPage from "./Pages/DrawerPage";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/button" element={<ButtonComponents />} />
           <Route path="/table" element={<Table />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/drawer" element={<DrawerPage />} />
         </Routes>
       </BrowserRouter>
     </>

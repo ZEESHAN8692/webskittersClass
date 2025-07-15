@@ -32,27 +32,34 @@
               <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/dashboard">Dashboard</a>
+              <a class="nav-link active" aria-current="page" href="/dashboard"
+                >Dashboard</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/login">Login</a>
+              <a class="nav-link active" aria-current="page" href="/login"
+                >Login</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/registration">Registration</a>
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/registration"
+                >Registration</a
+              >
             </li>
           </ul>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+          <div class="d-flex">
+            <% if(data){ %>
+            <h5 style="margin-right: 20px">Welcome <%=data%></h5>
+            <a class="btn btn-outline-success" href="/logout"> Logout </a>
+            <% } else { %>
+            <a class="btn btn-outline-success" href="/login"> Login </a>
+            <% } %>
+          </div>
         </div>
       </div>
     </nav>
-
+  </body>
+</html>

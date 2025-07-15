@@ -2,6 +2,7 @@ const { hsahePassword, comparePassword } = require('../middleware/AuthCheck');
 const User=require('../model/UserModel')
 const jwt=require('jsonwebtoken')
 const bcrypt=require('bcryptjs')
+require("dotenv").config();
 class AuthApiController{
 
 
@@ -68,7 +69,7 @@ class AuthApiController{
                 _id: user._id,
                 name: user.name,
                 email: user.email
-            }, process.env.JWT_ACCESS_TOKEN_SECRET_KEY, { expiresIn: "2h" })
+            }, process.env.JWT_TOKEN_SECRET_KEY, { expiresIn: "2h" })
 
             res.status(200).json({
                 message: 'Login successful',
