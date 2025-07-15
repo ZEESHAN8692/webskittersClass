@@ -1,0 +1,16 @@
+$mainBgColor:#490648;
+$mainColor:#ffffff;
+$border: 3px solid yellow;
+$radius: 10px;
+
+@mixin flexFun{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+@mixin colorFun{
+    background-color: $mainBgColor;
+    color: $mainColor;
+    border: $border;
+}

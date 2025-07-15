@@ -75,6 +75,8 @@ class UserController {
 
         if (tokendata) {
           res.cookie("userToken", tokendata);
+        
+
           res.redirect("/dashboard");
         } else {
           console.log("login failed");

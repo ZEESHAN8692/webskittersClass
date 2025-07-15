@@ -1,0 +1,38 @@
+
+// .mainDiv{
+//     background-color: yellow;
+// }
+
+@import "../partials/common.scss";
+.mainDiv{
+    background-color: $mainBgColor;
+    color: $mainColor;
+    border: $border;
+    padding: 20px;
+    border-radius: $radius;
+    .innerDiv{
+        background-color: gold;
+        border-radius: $radius;
+        border: $border;
+        p{
+            padding: 20px;
+            border: $border;
+            background-color: $mainBgColor;
+            &:hover{
+                background-color: $mainColor;
+                color: $mainBgColor;
+                font-size: 20px+5;
+                border-radius: $radius*2*2;
+            }
+           
+        }
+    }
+ 
+}
+.secondDiv{
+    @include flexFun();
+    @include colorFun();
+    
+    }
+
+
