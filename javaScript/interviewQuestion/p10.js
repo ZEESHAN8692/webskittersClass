@@ -242,11 +242,11 @@
 
 // 15. How do you remove a key from an object without mutating the original object?
 
-let newObj = {
-  name: "Zeeshan",
-  age: 23,
-  gender: "Male",
-};
+// let newObj = {
+//   name: "Zeeshan",
+//   age: 23,
+//   gender: "Male",
+// };
 
 // let obj = { ...newObj };
 // delete obj.age;
