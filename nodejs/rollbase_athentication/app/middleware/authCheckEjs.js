@@ -38,4 +38,5 @@ const adminCheckEjs = (req, res, next) => {
   return next();
 };
 
+
 module.exports = { isLoginEjs, adminCheckEjs };

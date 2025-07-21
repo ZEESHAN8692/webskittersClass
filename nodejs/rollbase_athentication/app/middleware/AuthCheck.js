@@ -1,5 +1,6 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const roles = require("../middleware/Roll/roles");
 
 const hsahePassword = (password) => {
   try {
@@ -60,4 +61,26 @@ const adminCheck = (req, res, next) => {
   return next();
 };
 
-module.exports = { hsahePassword, comparePassword, AuthCheck, adminCheck };
+const rollBaseWork = (action) => {
+  return (req, res, next) => {
+    const userRole = req?.user.role;
+    const permissions = roles[userRole];
+
+    if (permissions && permissions.includes(action)) {
+      console.log(`User with role ${userRole} has permission to ${action}`); 
+      return next();
+    } else {
+      return res.status(403).json({
+        message: "You don't have permission to perform this action",
+      });
+    }
+  };
+};
+
+module.exports = {
+  hsahePassword,
+  comparePassword,
+  AuthCheck,
+  adminCheck,
+  rollBaseWork,
+};
