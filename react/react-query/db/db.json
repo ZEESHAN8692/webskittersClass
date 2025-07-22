@@ -10,5 +10,34 @@
             "name":"Zeeshan Khan",
             "age":25
         }
+    ],
+    "userRoll":[
+        {
+            "id":"roll1",
+            "roll":"developer",
+            "salary":35000
+        },
+        {
+            "id":"roll2",
+            "roll":"manager",
+            "salary":50000
+        }
+
+    ],
+    "employee":[
+        {
+            "id":"1",
+            "name":"Zeeshan",
+            "email":"zeeshan@gmail.com",
+            "position":"roll1"
+
+        },
+        {
+            "id":"2",
+            "name":"deepika",
+            "email":"deepika@gmail.com",
+            "position":"roll2"
+        }
+
     ]
 }
