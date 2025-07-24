@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const RQUser = () => {
   const fetchUser = async () => axios.get("http://localhost:3000/user");
-  const { isLoading, data, isError, error, isFetching } = useQuery({
+  const { isLoading, data, isError, error } = useQuery({
     queryKey: ["user"],
     queryFn: fetchUser,
   });
