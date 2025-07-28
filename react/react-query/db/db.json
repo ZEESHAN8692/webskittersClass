@@ -1,113 +1,125 @@
 {
-    "user":[
-        {
-            "id":"sad1",
-            "name":"Zeeshan",
-            "age":25
-        },
-        {
-            "id":"sad2",
-            "name":"Zeeshan Khan",
-            "age":25
-        },
-        {
-            "id":"sad2",
-            "name":"Zeeshan Khan",
-            "age":25
-        },
-        {
-            "id":"sad2",
-            "name":"Zeeshan Khan",
-            "age":25
-        },
-        {
-            "id":"sad2",
-            "name":"Zeeshan Khan",
-            "age":25
-        },
-        {
-            "id":"sad2",
-            "name":"Zeeshan Khan",
-            "age":25
-        },
-        {
-            "id":"sad2",
-            "name":"Zeeshan Khan",
-            "age":25
-        },
-        {
-            "id":"sad2",
-            "name":"Zeeshan Khan",
-            "age":25
-        },
-        {
-            "id":"sad2",
-            "name":"Zeeshan Khan",
-            "age":25
-        },
-        {
-            "id":"sad2",
-            "name":"Zeeshan Khan",
-            "age":25
-        },
-        {
-            "id":"sad2",
-            "name":"Zeeshan Khan",
-            "age":25
-        },
-        {
-            "id":"sad2",
-            "name":"Zeeshan Khan",
-            "age":25
-        },
-        {
-            "id":"sad2",
-            "name":"Zeeshan Khan",
-            "age":25
-        },
-        {
-            "id":"sad2",
-            "name":"Zeeshan Khan",
-            "age":25
-        },
-        {
-            "id":"sad2",
-            "name":"Zeeshan Khan",
-            "age":25
-        },
-        {
-            "id":"sad2",
-            "name":"Zeeshan Khan",
-            "age":25
-        }
-    ],
-    "userRoll":[
-        {
-            "id":"roll1",
-            "roll":"developer",
-            "salary":35000
-        },
-        {
-            "id":"roll2",
-            "roll":"manager",
-            "salary":50000
-        }
-
-    ],
-    "employee":[
-        {
-            "id":"1",
-            "name":"Zeeshan",
-            "email":"zeeshan@gmail.com",
-            "position":"roll1"
-
-        },
-        {
-            "id":"2",
-            "name":"deepika",
-            "email":"deepika@gmail.com",
-            "position":"roll2"
-        }
-
-    ]
+  "user": [
+    {
+      "id": "sad1",
+      "name": "Zeeshan",
+      "age": 25
+    },
+    {
+      "id": "sad2",
+      "name": "Zeeshan Khan",
+      "age": 25
+    },
+    {
+      "id": "sad2",
+      "name": "Zeeshan Khan",
+      "age": 25
+    },
+    {
+      "id": "sad2",
+      "name": "Zeeshan Khan",
+      "age": 25
+    },
+    {
+      "id": "sad2",
+      "name": "Zeeshan Khan",
+      "age": 25
+    },
+    {
+      "id": "sad2",
+      "name": "Zeeshan Khan",
+      "age": 25
+    },
+    {
+      "id": "sad2",
+      "name": "Zeeshan Khan",
+      "age": 25
+    },
+    {
+      "id": "sad2",
+      "name": "Zeeshan Khan",
+      "age": 25
+    },
+    {
+      "id": "sad2",
+      "name": "Zeeshan Khan",
+      "age": 25
+    },
+    {
+      "id": "sad2",
+      "name": "Zeeshan Khan",
+      "age": 25
+    },
+    {
+      "id": "sad2",
+      "name": "Zeeshan Khan",
+      "age": 25
+    },
+    {
+      "id": "sad2",
+      "name": "Zeeshan Khan",
+      "age": 25
+    },
+    {
+      "id": "sad2",
+      "name": "Zeeshan Khan",
+      "age": 25
+    },
+    {
+      "id": "sad2",
+      "name": "Zeeshan Khan",
+      "age": 25
+    },
+    {
+      "id": "sad2",
+      "name": "Zeeshan Khan",
+      "age": 25
+    },
+    {
+      "id": "sad2",
+      "name": "Zeeshan Khan",
+      "age": 25
+    },
+    {
+      "id": "9cfe",
+      "name": "Tatiana Guerra",
+      "age": "Laborum quod dolorum"
+    },
+    {
+      "id": "9b30",
+      "name": "Elliott Hewitt",
+      "age": "Laborum exercitation"
+    },
+    {
+      "id": "00fc",
+      "name": "Samuel Lester",
+      "age": "Est esse aliquid ex"
+    }
+  ],
+  "userRoll": [
+    {
+      "id": "roll1",
+      "roll": "developer",
+      "salary": 35000
+    },
+    {
+      "id": "roll2",
+      "roll": "manager",
+      "salary": 50000
+    }
+  ],
+  "employee": [
+    {
+      "id": "1",
+      "name": "Zeeshan",
+      "email": "zeeshan@gmail.com",
+      "position": "roll1"
+    },
+    {
+      "id": "2",
+      "name": "deepika",
+      "email": "deepika@gmail.com",
+      "position": "roll2"
+    }
+  ]
 }

@@ -6,6 +6,7 @@ import SingleUser from "./Components/SingleUser";
 import DependentQuery from "./Components/DependentQuery";
 import Pagination from "./Components/Pagination";
 import InfiniteQuery from "./Components/infiniteQuery";
+import AddData from "./Components/addData";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/dependent" element={<DependentQuery id="1" />} />
           <Route path="/pagination" element={<Pagination />} />
           <Route path="/infinite" element={<InfiniteQuery />} />
+          <Route path="/add-data" element={<AddData />} />
         </Routes>
       </BrowserRouter>
     </>
