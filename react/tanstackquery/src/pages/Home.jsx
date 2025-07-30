@@ -39,7 +39,9 @@ const Home = () => {
   };
   const handleCloseAddModel = () => setShowAddModel(false);
   const handleShowAddModel = (id) => {
-    if (id) {
+    if (typeof id === "object") {
+      setUpdateId(null);
+    } else {
       setUpdateId(id);
     }
     setShowAddModel(true);
