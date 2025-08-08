@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <%- include('./common/head.ejs') %>
+  <body>
+   
+    <%- include('./common/navbar.ejs') %>
+
+    <h1>Dashboard page</h1>
+      <div class="container">
+      welcome to : <%= data.name %>
+
+      <h1><a href="/logout" class="btn btn-info">Logout</a></h1>
+      </div>
+
+   
+      <%- include('./common/footer.ejs') %>
