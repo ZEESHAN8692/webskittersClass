@@ -6,10 +6,9 @@ router.post("/add-employee", employeeController.addEmployee);
 router.get("/employees", employeeController.allEmployees);
 
 // Search req.query
-router.get('/search',employeeController.search)
+router.get("/search", employeeController.search);
 
 // Aggregation
-router.get('/match',employeeController.match)
-
+router.get("/match", employeeController.match);
 
 export default router;
