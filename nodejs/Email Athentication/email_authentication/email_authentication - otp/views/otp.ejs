@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enter OTP</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .otp-container {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 350px;
+    }
+
+    .otp-container h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .otp-container input[type="text"] {
+      padding: 10px;
+      width: 80%;
+      font-size: 16px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .otp-container button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .otp-container button:hover {
+      background-color: #0056b3;
+    }
+
+    #timer {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ff0000;
+      margin-top: 10px;
+    }
+
+    .timer-text {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="otp-container">
+    <h2>Enter the OTP sent to your email</h2>
+    <form action="/otp" method="POST">
+      <input type="text" name="otp" placeholder="Enter OTP" required />
+      <br />
+      <button type="submit">Verify</button>
+    </form>
+    <div class="timer-text">
+      OTP expires in <span id="timer">02:00</span>
+    </div>
+  </div>
+
+  <script>
+    let totalSeconds = 2 * 60; // 2 minutes
+    const timerDisplay = document.getElementById('timer');
+
+    const countdown = setInterval(() => {
+      let minutes = Math.floor(totalSeconds / 60);
+      let seconds = totalSeconds % 60;
+
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+
+      timerDisplay.textContent = `${minutes}:${seconds}`;
+
+      if (totalSeconds <= 0) {
+        clearInterval(countdown);
+        timerDisplay.textContent = "Expired";
+      }
+
+      totalSeconds--;
+    }, 1000);
+  </script>
+
+</body>
+</html>
