@@ -1067,3 +1067,15 @@
 // console.log(a.length);
 
 //------------------------------------------------
+
+// sum only negative numbers
+  
+let a = [ -2, -5, -3, -5, 34, 34, 45, 56 ];
+function sumNegatives(arr, index = 0) {
+  if (index >= arr.length) return 0;
+  let current = arr[index] < 0 ? arr[index] : 0;
+  return current + sumNegatives(arr, index + 1);
+}
+let result = sumNegatives(a);
+console.log(result); // Output: -15
+
