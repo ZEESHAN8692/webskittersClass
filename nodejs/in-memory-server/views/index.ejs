@@ -13,16 +13,16 @@
     <div class="container mt-5">
         <h3 class="text-center mb-4">Dynamic Form Using Bootstrap & jQuery</h3>
 
-        <form id="mainForm">
+        <form id="mainForm" action="" method="post">
             <div id="formContainer">
                 <div class="form-row align-items-end mb-3 form-section">
                     <div class="col-md-5">
                         <label>Name</label>
-                        <input type="text" class="form-control" placeholder="Enter Name">
+                        <input type="text" class="form-control" placeholder="Enter Name" name="name" id="username">
                     </div>
                     <div class="col-md-5">
                         <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Enter Email">
+                        <input type="email" class="form-control" placeholder="Enter Email" , name="email" id="useremail">
                     </div>
                     <div class="col-md-2 text-right">
                         <button type="button" class="btn btn-success btn-add">+</button>
@@ -34,6 +34,26 @@
             <button type="submit" class="btn btn-primary mt-3">Submit</button>
         </form>
     </div>
+    <br>
+    
+    <div class="container">
+        <button class="btn btn-success mt-5" id="showdata">Show Data</button>
+    <br>
+        <h1 class="text-center">Ajex User Data List</h1>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="userDataList">
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -43,6 +63,7 @@
         $(document).ready(function () {
             
             $(document).on('click', '.btn-add', function () {
+                if($('.form-section').length > 5) return alert('Maximum 5 forms are allowed');
                 let formSection = $(this).closest('.form-section').clone();
                 formSection.find('input').val(''); 
                 $('#formContainer').append(formSection);
@@ -56,6 +77,83 @@
                     alert("At least one form section is required!");
                 }
             });
+
+
+            $(document).on('submit', '#mainForm', function (e) {
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "/create-user",
+                    data: JSON.stringify({
+                        name: $('#username').val(),
+                        email: $('#useremail').val()
+                    }),
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (response) {
+                         clearInput()
+                         Show()
+                        console.log(response);
+                        alert('data is inserted');
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                })
+            });
+
+            function clearInput(){
+                $('#username').val('');
+                $('#useremail').val('');
+            
+            }
+
+
+            $('#showdata').click(function(){
+                Show()
+            });
+
+
+            function Show() {
+                console.log('show data call');
+                $.ajax({
+                    type: 'GET',
+                    url: '/users',
+                    dataType: "json",
+                    success: function (data) {
+                        console.log('user',data?.data);
+                        {
+                            var html = '';
+                            if (data?.data?.length > 0) {
+                                for (var count = 0; count < data?.data?.length; count++) {
+                                    html += `
+                        <tr>
+                            <td>`+ data.data[count].name + `</td>
+                            <td>`+ data.data[count].email + `</td>
+                           
+                            // <td><button type="button" class="btn btn-danger btn-sm delete" data-id="` + data.data[count]._id + `">Delete</button></td>
+                        </tr>
+                        `;
+                                }
+                            }
+
+
+                            $('#sample_data >tbody').html(html);
+                        }
+
+                    },
+                    error: function () {
+                    }
+                })
+            }
+
+
+            
+
+
+
+
+
         });
     </script>
 
