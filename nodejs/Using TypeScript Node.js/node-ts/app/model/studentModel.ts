@@ -10,7 +10,6 @@ export const StudentSchemaValidate = Joi.object({
 
 })
 
-
 const studentSchema=new Schema<StudentInterface>({
     name: {
         type: String,
