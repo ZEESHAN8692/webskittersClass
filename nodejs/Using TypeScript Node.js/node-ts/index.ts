@@ -1,6 +1,7 @@
-import express from 'express'
+
 import dotenv from 'dotenv'
 dotenv.config()
+import express from 'express'
 
 import { dbConnection } from './app/config/dbCon'
 
@@ -14,6 +15,7 @@ app.use('/uploads', express.static(__dirname + '/uploads'))
 // Then your routes
 import { router } from './app/router/studentRoute'
 app.use(router)
+app.use("/", (req, res) => res.send("Hello World!"))
 
 // DB connection + Start server
 dbConnection.then(() => {
