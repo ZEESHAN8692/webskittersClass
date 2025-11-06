@@ -1,25 +1,25 @@
-import dotenv from "dotenv"
+
+import dotenv from 'dotenv'
 dotenv.config()
-import express from "express"
-import { database } from "./app/config/database.js"
+import express from 'express'
+
+import { dbConnection } from './app/config/dbCon'
 
 const app = express()
 
+//Middlewares first
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+app.use('/uploads', express.static(__dirname + '/uploads'))
 
+// Then your routes
+import { router } from './app/router/studentRoute'
+app.use(router)
+app.use("/", (req, res) => res.send("Hello World!"))
 
-// Database
-database()
-const PORT = process.env.PORT || 3000
-app.listen(PORT, () => {
-    console.log(`Server running on port ${process.env.PORT}`)
+// DB connection + Start server
+dbConnection.then(() => {
+    app.listen(process.env.PORT, () => 
+        console.log(`Server is listening on http://localhost:${process.env.PORT}`)
+    )
 })
-
-app.get("/", (req, res) => {
-    res.send("Hello World")
-})
-
-// mongoose.connect(`${process.env.MONGO_URL}`).then(() => {
-//     console.log("Database connected");
-// }).catch((err) => {
-//     console.log("Databse error",err);
-// })
