@@ -1,0 +1,32 @@
+{
+    "swaggerDefinition": {
+      "info": {
+        "title": "Blog Api",
+        "version": "1.0.0",
+        "description": "Blog API documentation create by raju",
+        "contact": {
+          "name": "Raju kayal"
+        },
+        "servers": [
+          "http://localhost:1234",
+          "https://ajax-node-mongodb-swagger-apidoc.onrender.com/api-docs"
+        ]  
+      },
+      "tags": [
+        {
+            "name": "Auth",
+            "description": "Auth API"
+        },
+        {
+            "name": "Student",
+            "description": "Student CRUD API"
+        }
+    ],
+    "schemes": "['https', 'http']"
+      
+    },
+    "apis": [
+      "server.js",
+      "./route/*.js"
+    ]
+  }
