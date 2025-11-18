@@ -14,3 +14,5 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Successfull connected posrt ${PORT}`);
 });
+
+module.exports = app;
