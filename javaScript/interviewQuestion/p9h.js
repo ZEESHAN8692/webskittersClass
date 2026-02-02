@@ -152,6 +152,8 @@
 //   console.log(e);
 // };
 
+
+
 // Hello("ZEESHAN");
 
 //---------------------------------------------------------------
@@ -1068,14 +1070,45 @@
 
 //------------------------------------------------
 
+
+// ------------------------------------------------
+
+// let arr = [2, 5 ,45, 36 ,5 ]
+// let target = 45
+
+
+// let found = false
+
+// for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] == target) {
+//         console.log(`found at index ${i}`);
+//         found = true
+//         break;
+//     }
+// }
+// if (found == false) {
+//     console.log("not found");
+// }
+
+// let a = arr.indexOf(target)
+// if (a == -1) {
+//     console.log("not found");
+// } else {
+//     console.log(`found at index ${a}`);
+// }
+
+
+// ------------------------------------------------
+
 // sum only negative numbers
   
-let a = [ -2, -5, -3, -5, 34, 34, 45, 56 ];
-function sumNegatives(arr, index = 0) {
-  if (index >= arr.length) return 0;
-  let current = arr[index] < 0 ? arr[index] : 0;
-  return current + sumNegatives(arr, index + 1);
-}
-let result = sumNegatives(a);
-console.log(result); // Output: -15
+// let a = [ -2, -5, -3, -5, 34, 34, 45, 56 ];
+// function sumNegatives(arr, index = 0) {
+//   if (index >= arr.length) return 0;
+//   let current = arr[index] < 0 ? arr[index] : 0;
+//   return current + sumNegatives(arr, index + 1);
+// }
+// let result = sumNegatives(a);
+// console.log(result); // Output: -15
 
+ 
