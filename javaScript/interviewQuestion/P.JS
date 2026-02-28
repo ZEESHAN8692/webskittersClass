@@ -294,9 +294,9 @@
 // console.log(number.join(""));
 // console.log(special.join(""));
 
-// let str = "hello i am zeeshan";
-// let b = str
-//   .split(" ")
-//   .map((item) => item.charAt(0).toUpperCase() + item.slice(1))
-//   .join(" ");
-// console.log(b);
+let str = "hello i am zeeshan";
+let b = str
+  .split(" ")
+  .map((item) => item.charAt(0).toUpperCase() + item.slice(1))
+  .join(" ");
+console.log(b);

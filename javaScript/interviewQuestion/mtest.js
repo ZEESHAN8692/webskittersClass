@@ -21,16 +21,16 @@
 // }
 // high(20, 30, call);
 
-const promise = new Promise((resolve, reject) => {
-  let random = Math.floor(Math.random() * 10);
-  setTimeout(() => {
-    if (random < 5) {
-      resolve("Lessthen 5");
-    } else {
-      reject("More than 5");
-    }
-  }, 1000);
-});
+// const promise = new Promise((resolve, reject) => {
+//   let random = Math.floor(Math.random() * 10);
+//   setTimeout(() => {
+//     if (random < 5) {
+//       resolve("Lessthen 5");
+//     } else {
+//       reject("More than 5");
+//     }
+//   }, 1000);
+// });
 
 // promise.then((res) => console.log(res)).catch((err) => console.log(err));
 
@@ -39,6 +39,7 @@ const promise = new Promise((resolve, reject) => {
 //   const data = await respose.json();
 //   return data;
 // }
+
 
 // async function API() {
 //   return promise;
@@ -57,5 +58,19 @@ const promise = new Promise((resolve, reject) => {
 
 // obj.name = "Anis";
 // console.log(obj);
-// let b = { ...obj, name: "Anis" };
+// let b = { ...obj, name: "Anis", age:20 };
 // console.log(b);
+
+
+
+// const apiCall = async()=>{
+//   try {
+//     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+//     const data = await response.json();
+//     console.log(data)
+//   } catch (error) {
+//     console.log(error); 
+//   }
+// }
+
+// apiCall()
