@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+:root {
+  /* --background: #ffffff;
+  --foreground: #171717; */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  /* :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  } */
+}
+
+body {
+  background: linear-gradient(90deg , red , yellow, orange);
+  background-attachment: fixed;
+}
+
+
+
+button{
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Variants */
+
+.primary{
+  background-color: blue;
+  color: white;
+  border: 1px solid gray;
+ 
+}
+.primary:hover {
+  background-color: white;
+  color: blue;
+  border: 1px solid gray;
+}
+
+.secondary{
+  background-color: green;
+  color: white;
+  /* border: 1px solid gray; */
+}
+
+.secondary:hover {
+  background-color: white;
+  color: green;
+  border: 1px solid gray;
+}
+
+.danger{
+  background-color: red;
+  color: white;
+  /* border: 1px solid gray; */
+}
+
+.danger:hover {
+  background-color: white;
+  color: red;
+}
+
+.sm{
+  font-size: 12px;
+  width: 100px;
+  height: 40px;
+}
+
+.md{
+  font-size: 16px;
+  width: 150px;
+  height: 50px;
+}
+
+.lg{
+  font-size: 20px;
+  width: 200px;
+  height: 60px;
+}
+
+/* Card Start  */
+
+.CardContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.card{
+  width: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  
+}
+
+/* Variants of Cards */
+.primaryCard{
+  border: 2px solid blue !important;
+  color:blue;
+}
+.secondaryCard{
+  border: 2px solid green !important;
+  color:white;
+
+}
+
+
+
+/*  */
+
+.container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.controls button {
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.content {
+  margin-top: 50px;
+  transition: transform 0.3s ease;
+}
+
+
+
