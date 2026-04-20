@@ -140,3 +140,69 @@ button{
 
 
 
+
+
+.responsiveDiv{
+  width: 500px;
+  height: 500px;
+}
+
+@media (min-width:500px) {
+
+  .responsiveDiv{
+    background-color: green;
+  }
+}
+
+@media (max-width:400px) {
+
+  .responsiveDiv{
+    background-color: red;
+    margin: 20px;
+  }
+}
+
+
+
+
+.main{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+
+}
+
+.main div{
+  width: 200px;
+  height: 200px;
+  border: 1px solid white;
+}
+
+.box1{
+  background-color: red;
+  /* position: relative;
+  top: 100px;
+  left:10px */
+}
+.box2{
+  background-color: green;
+  /* position: absolute; */
+  /* top: 110px */
+  /* right: 10px */
+
+}
+.box3{
+  background-color: blue;
+  /* position: fixed; */
+  /* top:10px */
+}
+.box4{
+  background-color: yellow;
+  position:sticky;
+  top:10px
+}
+.text{
+  font-size: 50px;
+  width: 300px;
+}
