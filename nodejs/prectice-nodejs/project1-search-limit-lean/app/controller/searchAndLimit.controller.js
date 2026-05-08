@@ -17,7 +17,7 @@ class SearchAndLimitController {
 
   async getFullData(req, res) {
     try {
-      const data = SearchAndLimitModel.find({});
+      const data = await SearchAndLimitModel.find({});
       res
         .status(200)
         .json({ status: true, message: "Full Data Fetch Success", data });
@@ -93,6 +93,30 @@ class SearchAndLimitController {
       res.status(500).json({ status: false, message: "Something went wrong" });
     }
   }
+
+
+  // Aggregate Method
+
+  async getUsersAgg(req , res){
+    try {
+      const data = await SearchAndLimitModel.aggregate([
+        {
+        //   $match:{
+        //     category:"customer",
+        //     phone:9876543210
+        //   }
+        }
+      ])
+      res.status(200).json({status:true , message:"Data fetch sucess" , data})
+      
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ status: false, message: "Something went wrong" });
+      
+    }
+  }
+
+
 }
 
 export default new SearchAndLimitController();
